@@ -37,7 +37,8 @@ import {
   Building,
   Users,
   BookOpen,
-  Phone
+  Phone,
+  Check
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MarqueeBanner } from "@/components/marquee-banner"
@@ -49,7 +50,7 @@ export function Navbar() {
     { name: "Product Design (UI/UX)", href: "/services/product-design", icon: Palette },
     { name: "Application Development", href: "/services/application-development", icon: Code },
     { name: "Custom Software Development", href: "/services/custom-software", icon: Wrench },
-    { name: "QA & Testing", href: "/services/qa-testing", icon: TestTube },
+    { name: "QA & Testing", href: "/services/qa-testing", icon: Check },
     { name: "DevOps & Deployment", href: "/services/devops-deployment", icon: Rocket },
     { name: "Product Management", href: "/services/product-management", icon: Briefcase },
   ]
