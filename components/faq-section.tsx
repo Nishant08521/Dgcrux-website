@@ -1,57 +1,87 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+"use client"
+
+import { useState } from "react"
+import { Minus, Plus } from "lucide-react"
 
 const faqs = [
   {
-    question: "What kinds of projects do you work on?",
+    question: "How does digital marketing help businesses?",
     answer:
-      "We work on a wide range of projects including custom software development, mobile apps, web applications, AI solutions, cloud services, and e-commerce platforms. Whether you need a simple website or a complex enterprise system, we have the expertise to deliver.",
+      "It increases visibility, drives qualified traffic, and builds trust through consistent messaging across channels like search, social, and email.",
   },
   {
-    question: "What technologies do you use?",
+    question: "How do we measure the success of digital marketing campaigns?",
     answer:
-      "We use modern technologies including React, Next.js, Node.js, Python, AWS, MongoDB, and many more. Our tech stack is carefully selected based on your project requirements to ensure optimal performance and scalability.",
+      "We track KPIs such as conversions, cost per lead, ROAS, organic rankings, and engagement to tie performance back to revenue.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "How much does digital marketing cost?",
     answer:
-      "Project timelines vary based on complexity and scope. Simple websites can be delivered in 2-4 weeks, while larger enterprise applications may take 3-6 months. We provide detailed timelines during the project planning phase.",
+      "Budgets vary by scope and channel mix. We tailor spend to your goals and continually optimize to improve efficiency and ROI.",
   },
   {
-    question: "Do you provide ongoing support and maintenance?",
-    answer:
-      "Yes! We offer comprehensive maintenance and support packages to keep your application running smoothly. This includes updates, bug fixes, security patches, and technical support.",
+    question: "What is the average ROAS in performance marketing?",
+    answer: "Targets depend on industry and maturity. We benchmark, test quickly, and scale what performs to beat baseline ROAS.",
   },
   {
-    question: "Can you help with existing projects?",
+    question: "What all technology do we use for app development?",
     answer:
-      "We can take over existing projects, perform code reviews, fix bugs, add new features, or completely revamp your application. Our team is experienced in working with legacy codebases.",
+      "We leverage modern stacks like React Native, Flutter, Swift/Kotlin, and scalable backends with Node.js, Python, and cloud services.",
   },
   {
-    question: "What are your pricing models?",
+    question: "What all technology do we use for web development?",
     answer:
-      "We offer flexible pricing models including fixed-price projects, hourly rates, and dedicated team engagements. The best model depends on your project scope and requirements. Contact us for a detailed quote.",
+      "We build with React/Next.js, performant APIs, modern styling systems, and cloud-native tooling for speed, security, and scalability.",
   },
 ]
 
 export function FAQSection() {
+  const [openId, setOpenId] = useState<string | null>(null)
+
+  const toggle = (id: string) => {
+    setOpenId((prev) => (prev === id ? null : id))
+  }
+
   return (
-    <section className="py-24 bg-background">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Frequently Asked Questions
-          </h2>
-          <p className="mt-4 text-pretty text-lg text-muted-foreground">Got questions? We've got answers</p>
+    <section className="bg-[#f4f7fa] py-16 sm:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">FAQs</h2>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left hover:no-underline">{faq.question}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {faqs.map((faq, idx) => {
+            const id = `faq-${idx}`
+            const isOpen = openId === id
+
+            return (
+              <button
+                key={id}
+                onClick={() => toggle(id)}
+                className="group w-full rounded-xl border border-slate-200 bg-white px-5 py-5 text-left shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="pt-0.5 text-lg font-semibold text-amber-500">{idx + 1}.</span>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-lg font-semibold text-slate-900">{faq.question}</p>
+                      <span className="text-amber-500 transition group-hover:scale-110">
+                        {isOpen ? <Minus className="h-5 w-5" strokeWidth={2.5} /> : <Plus className="h-5 w-5" strokeWidth={2.5} />}
+                      </span>
+                    </div>
+                    <div
+                      className={`mt-3 text-sm leading-relaxed text-slate-600 transition-all duration-300 ${
+                        isOpen ? "max-h-40 opacity-100" : "max-h-0 overflow-hidden opacity-0"
+                      }`}
+                    >
+                      {faq.answer}
+                    </div>
+                  </div>
+                </div>
+              </button>
+            )
+          })}
+        </div>
       </div>
     </section>
   )

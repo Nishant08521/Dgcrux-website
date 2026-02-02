@@ -1,774 +1,458 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
-import { useState } from "react"
 import Image from "next/image"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+import { useState } from "react"
+import { 
+  ChevronDown, 
+  Menu, 
+  X, 
+  Palette, 
+  Code, 
+  Wrench, 
+  TestTube, 
+  Rocket, 
+  Briefcase,
+  Brain,
+  Sparkles,
+  Bot,
+  Eye,
+  MessageSquare,
+  Zap,
+  Cloud,
+  Database,
+  Shield,
+  DollarSign,
+  Settings,
+  ShoppingCart,
+  Store,
+  Package,
+  BarChart,
+  Share2,
+  Target,
+  TrendingUp,
+  GraduationCap,
+  FileText,
+  Sun,
+  Building,
+  Users,
+  BookOpen,
+  Phone
+} from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { MarqueeBanner } from "@/components/marquee-banner"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null)
+
+  const softwareDevelopment = [
+    { name: "Product Design (UI/UX)", href: "/services/product-design", icon: Palette },
+    { name: "Application Development", href: "/services/application-development", icon: Code },
+    { name: "Custom Software Development", href: "/services/custom-software", icon: Wrench },
+    { name: "QA & Testing", href: "/services/qa-testing", icon: TestTube },
+    { name: "DevOps & Deployment", href: "/services/devops-deployment", icon: Rocket },
+    { name: "Product Management", href: "/services/product-management", icon: Briefcase },
+  ]
+
+  const aiSolutions = [
+    { name: "AI Strategy & Consulting", href: "/services/ai-strategy-consulting", icon: Brain },
+    { name: "AI/ML Development", href: "/services/ai-ml-development", icon: Sparkles },
+    { name: "Generative AI Solutions", href: "/services/generative-ai-solutions", icon: Sparkles },
+    { name: "AI Agent Development", href: "/services/ai-agent-development", icon: Bot },
+    { name: "Computer Vision Solutions", href: "/services/computer-vision-solutions", icon: Eye },
+    { name: "AI Chatbot Development", href: "/services/ai-chatbot-development", icon: MessageSquare },
+    { name: "AI Integration & Automation", href: "/services/ai-integration-automation", icon: Zap },
+    { name: "AI Cloud Deployment", href: "/services/ai-cloud-deployment", icon: Cloud },
+  ]
+
+  const cloudSolutions = [
+    { name: "Cloud Strategy & Assessment", href: "/services/cloud-strategy-assessment", icon: Cloud },
+    { name: "Cloud Migration & Modernization", href: "/services/cloud-migration-modernization", icon: Database },
+    { name: "DevOps, CI/CD & Automation", href: "/services/devops-cicd-automation", icon: Rocket },
+    { name: "Cloud Security & Governance", href: "/services/cloud-security-governance", icon: Shield },
+    { name: "Cost Optimization & FinOps", href: "/services/cost-optimization-finops", icon: DollarSign },
+    { name: "AI/ML Cloud Services", href: "/services/ai-ml-cloud-services", icon: Brain },
+    { name: "Managed Cloud & Support", href: "/services/managed-cloud-support", icon: Settings },
+  ]
+
+  const ecommerce = [
+    { name: "Shopify Store Development", href: "/services/shopify-store-development", icon: Store },
+    { name: "Custom eCommerce Platforms", href: "/services/custom-ecommerce-platforms", icon: ShoppingCart },
+    { name: "Marketplace Development", href: "/services/marketplace-development", icon: Package },
+    { name: "Maintenance & Support", href: "/services/ecommerce-maintenance-support", icon: Settings },
+  ]
+
+  const digitalMarketing = [
+    { name: "SEO", href: "/services/seo", icon: BarChart },
+    { name: "Social Media Marketing", href: "/services/social-media-marketing", icon: Share2 },
+    { name: "Paid Ads", href: "/services/paid-ads", icon: Target },
+    { name: "Conversion Funnel", href: "/services/conversion-funnel", icon: TrendingUp },
+  ]
+
+  const products = [
+    { name: "AI Proctoring Exam Software", href: "/products/ai-proctor", icon: Eye },
+    { name: "AI-Powered ATS", href: "/products/ats", icon: Users },
+    { name: "AI Question Paper Generator", href: "/products/qp-generator", icon: FileText },
+    { name: "Solar EPC ERP Solution", href: "/products/solar-erp", icon: Sun },
+    { name: "Dealer Management System", href: "/products/dms", icon: Building },
+    { name: "AI Hotel Booking Engine", href: "/products/hotel-booking", icon: Building },
+    { name: "Restaurant Management System", href: "/products/restaurant-management", icon: Store },
+    { name: "Learning Management System", href: "/products/lms", icon: GraduationCap },
+  ]
+
+  const company = [
+    { name: "About Us", href: "/about", icon: Building },
+    { name: "Our Clients", href: "/#clients", icon: Users },
+    { name: "Case Studies", href: "/case-studies", icon: BookOpen },
+    { name: "Blogs", href: "/blogs", icon: FileText },
+    { name: "Contact Us", href: "/contact", icon: Phone },
+  ]
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/dgcrux-logo.png" alt="DgCrux Logo" width={120} height={40} className="h-10 w-auto" />
-            </Link>
-          </div>
+    <nav className="sticky top-0 w-full z-50 bg-background">
+      <MarqueeBanner />
+      <div className="border-b border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="https://dgcrux.com/images/logo.png"
+              alt="dgcrux"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:block">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Software Development</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[500px] gap-2 p-4">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/software-development#product-design"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Product Design (UI/UX)</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/software-development#app-development"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Application Development (Web & Mobile)</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/software-development#custom-software"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Custom Software Development</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/software-development#qa-testing"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">QA & Testing</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/software-development#devops"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">DevOps & Deployment</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/software-development#product-management"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Product Management</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+          <div className="hidden lg:flex items-center gap-1">
+            <div className="group relative">
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                Software Development <ChevronDown className="h-4 w-4" />
+              </button>
+              <div className="absolute left-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="p-6">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Software Development Services</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {softwareDevelopment.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                        >
+                          <div className="flex items-start gap-3">
+                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                              {item.name}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>AI Solutions</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[550px] gap-2 p-4 md:grid-cols-2">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ai-solutions#strategy"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI Strategy & Consulting</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ai-solutions#ml-development"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI/ML Development</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ai-solutions#generative-ai"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Generative AI Solutions</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ai-solutions#ai-agents"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI Agent Development</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ai-solutions#computer-vision"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Computer Vision Solutions</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ai-solutions#chatbot"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI Chatbot & Virtual Assistant</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ai-solutions#automation"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI Integration & Automation (RPA)</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ai-solutions#cloud-deployment"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI Cloud Deployment</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+            <div className="group relative">
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                AI Solutions <ChevronDown className="h-4 w-4" />
+              </button>
+              <div className="absolute left-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="p-6">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">AI Solutions</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {aiSolutions.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                        >
+                          <div className="flex items-start gap-3">
+                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                              {item.name}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Cloud Solutions</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[500px] gap-2 p-4">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/cloud-solutions#strategy"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Cloud Strategy & Assessment</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/cloud-solutions#migration"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Cloud Migration & Modernization</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/cloud-solutions#devops"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">DevOps, CI/CD & Automation</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/cloud-solutions#security"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Cloud Security & Governance</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/cloud-solutions#cost-optimization"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Cost Optimization & FinOps</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/cloud-solutions#ai-ml"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI/ML & Specialized Cloud Services</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/cloud-solutions#managed"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Managed Cloud & Support</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+            <div className="group relative">
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                Cloud Solutions <ChevronDown className="h-4 w-4" />
+              </button>
+              <div className="absolute right-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="p-6">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Cloud Solutions</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {cloudSolutions.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                        >
+                          <div className="flex items-start gap-3">
+                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                              {item.name}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>eCommerce</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-2 p-4">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ecommerce#shopify"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Shopify Store Development</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ecommerce#custom"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Custom eCommerce Platforms</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ecommerce#marketplace"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Marketplace Development</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/ecommerce#maintenance"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Maintenance & Support</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+            <div className="group relative">
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                eCommerce <ChevronDown className="h-4 w-4" />
+              </button>
+              <div className="absolute right-0 top-full mt-2 w-[500px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="p-6">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">eCommerce Solutions</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {ecommerce.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                        >
+                          <div className="flex items-start gap-3">
+                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                              {item.name}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Digital Marketing</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-2 p-4">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/digital-marketing#seo"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">SEO (Search Engine Optimization)</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/digital-marketing#social-media"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Social Media Marketing</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/digital-marketing#paid-ads"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Paid Ads (Google, Facebook, LinkedIn)</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services/digital-marketing#conversion"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Conversion Funnel</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+            <div className="group relative">
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                Digital Marketing <ChevronDown className="h-4 w-4" />
+              </button>
+              <div className="absolute right-0 top-full mt-2 w-[500px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="p-6">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Digital Marketing Services</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {digitalMarketing.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                        >
+                          <div className="flex items-start gap-3">
+                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                              {item.name}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Our Products</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[450px] gap-2 p-4">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/products/ai-proctor"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI Proctoring Exam Software</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/products/ats"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI-Powered ATS (Applicant Tracking System)</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/products/qp-generator"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI Question Paper Generator</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/products/solar-erp"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Solar EPC ERP Solution</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/products/dms"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Dealer Management System (DMS)</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/products/hotel-booking"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">AI Hotel Booking Engine</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/products/restaurant-management"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Restaurant Management System</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/products/lms"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Learning Management System (LMS)</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+            <div className="group relative">
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                Products <ChevronDown className="h-4 w-4" />
+              </button>
+              <div className="absolute right-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="p-6">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Our Products</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {products.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                        >
+                          <div className="flex items-start gap-3">
+                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                              {item.name}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Company</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/about"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">About Us</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/#clients"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Our Clients</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/case-studies"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Case Studies</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/blog"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Blogs</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="#contact"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium">Contact Us</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <div className="group relative">
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                Company <ChevronDown className="h-4 w-4" />
+              </button>
+              <div className="absolute right-0 top-full mt-2 w-[400px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="p-6">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Company</h3>
+                  <div className="grid grid-cols-1 gap-3">
+                    {company.map((item) => {
+                      const Icon = item.icon
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                        >
+                          <div className="flex items-start gap-3">
+                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                              {item.name}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* <Button size="sm" className="ml-4">
+              Get Started
+            </Button> */}
           </div>
 
-          <div className="hidden lg:block">
-            <Button asChild>
-              <Link href="#contact">Get Started</Link>
-            </Button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2 text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+      {/* Mobile Navigation */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden border-t border-border bg-background">
+          <div className="px-4 py-6 space-y-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <div className="space-y-2">
+              <h3 className="font-semibold text-foreground">Software Development</h3>
+              {softwareDevelopment.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-semibold text-foreground">AI Solutions</h3>
+              {aiSolutions.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-semibold text-foreground">Cloud Solutions</h3>
+              {cloudSolutions.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-semibold text-foreground">eCommerce</h3>
+              {ecommerce.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-semibold text-foreground">Digital Marketing</h3>
+              {digitalMarketing.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-semibold text-foreground">Products</h3>
+              {products.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-semibold text-foreground">Company</h3>
+              {company.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* <Button className="w-full">Get Started</Button> */}
           </div>
         </div>
-
-        {mobileMenuOpen && (
-          <div className="lg:hidden py-4 space-y-2">
-            <div>
-              <button
-                onClick={() => setOpenMobileSubmenu(openMobileSubmenu === "software" ? null : "software")}
-                className="flex w-full items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
-              >
-                <span>Software Development</span>
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${openMobileSubmenu === "software" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openMobileSubmenu === "software" && (
-                <div className="pl-4 space-y-1 mt-1">
-                  <Link
-                    href="/services/software-development#product-design"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Product Design (UI/UX)
-                  </Link>
-                  <Link
-                    href="/services/software-development#app-development"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Application Development
-                  </Link>
-                  <Link
-                    href="/services/software-development#custom-software"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Custom Software Development
-                  </Link>
-                  <Link
-                    href="/services/software-development#qa-testing"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    QA & Testing
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <button
-                onClick={() => setOpenMobileSubmenu(openMobileSubmenu === "ai" ? null : "ai")}
-                className="flex w-full items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
-              >
-                <span>AI Solutions</span>
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${openMobileSubmenu === "ai" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openMobileSubmenu === "ai" && (
-                <div className="pl-4 space-y-1 mt-1">
-                  <Link
-                    href="/services/ai-solutions#strategy"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    AI Strategy & Consulting
-                  </Link>
-                  <Link
-                    href="/services/ai-solutions#ml-development"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    AI/ML Development
-                  </Link>
-                  <Link
-                    href="/services/ai-solutions#generative-ai"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Generative AI Solutions
-                  </Link>
-                  <Link
-                    href="/services/ai-solutions#chatbot"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    AI Chatbot & Virtual Assistant
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <button
-                onClick={() => setOpenMobileSubmenu(openMobileSubmenu === "cloud" ? null : "cloud")}
-                className="flex w-full items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
-              >
-                <span>Cloud Solutions</span>
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${openMobileSubmenu === "cloud" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openMobileSubmenu === "cloud" && (
-                <div className="pl-4 space-y-1 mt-1">
-                  <Link
-                    href="/services/cloud-solutions#strategy"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Cloud Strategy & Assessment
-                  </Link>
-                  <Link
-                    href="/services/cloud-solutions#migration"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Cloud Migration & Modernization
-                  </Link>
-                  <Link
-                    href="/services/cloud-solutions#devops"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    DevOps, CI/CD & Automation
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <button
-                onClick={() => setOpenMobileSubmenu(openMobileSubmenu === "ecommerce" ? null : "ecommerce")}
-                className="flex w-full items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
-              >
-                <span>eCommerce</span>
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${openMobileSubmenu === "ecommerce" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openMobileSubmenu === "ecommerce" && (
-                <div className="pl-4 space-y-1 mt-1">
-                  <Link
-                    href="/services/ecommerce#shopify"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Shopify Store Development
-                  </Link>
-                  <Link
-                    href="/services/ecommerce#custom"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Custom eCommerce Platforms
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <button
-                onClick={() => setOpenMobileSubmenu(openMobileSubmenu === "marketing" ? null : "marketing")}
-                className="flex w-full items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
-              >
-                <span>Digital Marketing</span>
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${openMobileSubmenu === "marketing" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openMobileSubmenu === "marketing" && (
-                <div className="pl-4 space-y-1 mt-1">
-                  <Link
-                    href="/services/digital-marketing#seo"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    SEO
-                  </Link>
-                  <Link
-                    href="/services/digital-marketing#social-media"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Social Media Marketing
-                  </Link>
-                  <Link
-                    href="/services/digital-marketing#paid-ads"
-                    className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
-                  >
-                    Paid Ads
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <button
-                onClick={() => setOpenMobileSubmenu(openMobileSubmenu === "products" ? null : "products")}
-                className="flex w-full items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
-              >
-                <span>Our Products</span>
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${openMobileSubmenu === "products" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openMobileSubmenu === "products" && (
-                <div className="pl-4 space-y-1 mt-1">
-                  <Link href="/products/ai-proctor" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    AI Proctoring Software
-                  </Link>
-                  <Link href="/products/ats" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    AI-Powered ATS
-                  </Link>
-                  <Link href="/products/qp-generator" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    Question Paper Generator
-                  </Link>
-                  <Link href="/products/dms" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    Dealer Management System
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <button
-                onClick={() => setOpenMobileSubmenu(openMobileSubmenu === "company" ? null : "company")}
-                className="flex w-full items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
-              >
-                <span>Company</span>
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${openMobileSubmenu === "company" ? "rotate-180" : ""}`}
-                />
-              </button>
-              {openMobileSubmenu === "company" && (
-                <div className="pl-4 space-y-1 mt-1">
-                  <Link href="/about" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    About Us
-                  </Link>
-                  <Link href="/#clients" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    Our Clients
-                  </Link>
-                  <Link href="/case-studies" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    Case Studies
-                  </Link>
-                  <Link href="/blog" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    Blogs
-                  </Link>
-                  <Link href="#contact" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
-                    Contact Us
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div className="px-4 pt-2">
-              <Button asChild className="w-full">
-                <Link href="#contact">Get Started</Link>
-              </Button>
-            </div>
-          </div>
-        )}
+      )}
       </div>
     </nav>
   )

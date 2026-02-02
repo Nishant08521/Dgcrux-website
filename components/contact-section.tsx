@@ -27,19 +27,19 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
+    <section id="contact" className="py-10 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* <div className="text-center mb-16">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Let's Build Something Great Together
           </h2>
           <p className="mt-4 text-pretty text-lg text-muted-foreground max-w-2xl mx-auto">
             Ready to transform your business? Get in touch with our team today
           </p>
-        </div>
+        </div> */}
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          <div className="space-y-6">
+        <div className="grid gap-8 lg:grid-cols-1">
+          {/* <div className="space-y-6">
             <Card>
               <CardHeader>
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 mb-2">
@@ -81,7 +81,7 @@ export function ContactSection() {
                 </CardDescription>
               </CardHeader>
             </Card>
-          </div>
+          </div> */}
 
           <Card className="lg:col-span-2">
             <CardHeader>

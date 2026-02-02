@@ -10,6 +10,9 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
+import { AboutSection } from "@/components/about-section"
+import { MissionVisionSection } from "@/components/mission-vision-section"
+import TechnologyStackPage from "./technology-stack/page"
 
 export default function HomePage() {
   return (
@@ -18,12 +21,15 @@ export default function HomePage() {
       <HeroSection />
       <RecognitionStrip />
       <ServicesSection />
-      <TechnologyStack />
+      <AboutSection />
+      <TechnologyStackPage />
+      {/* <TechnologyStack /> */}
       <ProductsSection />
-      <IndustriesSection />
+      {/* <IndustriesSection /> */}
       <ClientsSection />
       <TestimonialsSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
+      <MissionVisionSection />
       <FAQSection />
       <Footer />
     </main>

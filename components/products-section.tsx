@@ -71,17 +71,19 @@ export function ProductsSection() {
             return (
               <Card
                 key={product.title}
-                className="flex flex-col transition-all hover:shadow-lg hover:border-primary/50"
+                className="flex flex-col transition-all bg-[#1a1160] hover:bg-amber-500 hover:shadow-lg border-[#1a1160] hover:border-amber-500 group"
               >
                 <CardHeader>
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/20">
-                    <Icon className="h-5 w-5 text-accent" />
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 group-hover:bg-white/30">
+                    <Icon className="h-5 w-5 text-white" />
                   </div>
-                  <CardTitle className="text-lg">{product.title}</CardTitle>
-                  <CardDescription className="text-sm">{product.description}</CardDescription>
+                  <CardTitle className="text-lg text-white group-hover:text-white">{product.title}</CardTitle>
+                  <CardDescription className="text-sm text-white/80 group-hover:text-white/90">
+                    {product.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="mt-auto">
-                  <Button variant="ghost" size="sm" asChild className="w-full">
+                  <Button variant="ghost" size="sm" asChild className="w-full text-white hover:text-white hover:bg-white/20">
                     <Link href={product.href}>Learn More →</Link>
                   </Button>
                 </CardContent>

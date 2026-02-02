@@ -106,6 +106,26 @@ export function Footer() {
                   DgSkill
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy-policy" className="text-muted-foreground hover:text-yellow-400 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-and-conditions" className="text-muted-foreground hover:text-yellow-400 transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-policy" className="text-muted-foreground hover:text-yellow-400 transition-colors">
+                  Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq-section" className="text-muted-foreground hover:text-yellow-400 transition-colors">
+                FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
