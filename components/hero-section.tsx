@@ -2,103 +2,114 @@
 
 import { useEffect, useState } from "react"
 
-export function HeroSection() {
-  const slides = [
-    {
-      title: "Impact Driven Digital & IT Company",
-      subtitle: "Welcome to DgCrux Technology",
-      image: "https://img.freepik.com/free-photo/website-hosting-concept-with-bright-light_23-2149406783.jpg?semt=ais_hybrid&w=740&q=80",
-    },
-    {
-      title: "Embrace the power of Digital Technology",
-      subtitle: "Welcome to DgCrux Technology",
-      image: "https://imageio.forbes.com/specials-images/imageserve/66e8ad4b29ea61509edd8b63/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
-    },
-    {
-      title: "Stand out in the digital world",
-      subtitle: "Welcome to DgCrux Technology",
-      image: "https://static.vecteezy.com/system/resources/thumbnails/049/191/168/small/a-modern-workspace-featuring-advanced-technology-including-a-holographic-calendar-and-illuminated-data-streams-creating-an-innovative-and-dynamic-environment-for-productivity-photo.jpg",
-    },
-  ]
+const partners = [
+  { src: "https://vectorseek.com/wp-content/uploads/2023/09/Google-Partner-Logo-Vector.svg-.png", alt: "Partner 1" },
+  { src: "https://logowik.com/content/uploads/images/aws-partner-network2396.logowik.com.webp", alt: "Partner 2" },
+  { src: "https://www.uxdt.nic.in/wp-content/uploads/2020/06/Startup-India_Preview.png", alt: "Partner 3" },
+  { src: "https://media.licdn.com/dms/image/v2/C4E12AQHvuLCHhKuejQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520077509521?e=2147483647&v=beta&t=RlzC0uMNRc0wvHNLfqqeiruP6W91lSjzUf0tIZcvkrs", alt: "Partner 4" },
+  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPTksIuHkp-7zuNNa4tXwZQ-sI6d8x9v6QaA&s", alt: "Partner 5" },
+  { src: "https://p7.hiclipart.com/preview/85/385/219/iso-9000-quality-management-systems%E2%80%94requirements-iso-9001-logo-international-organization-for-standardization-iso-9001-thumbnail.jpg", alt: "Partner 6" },
+  { src: "https://miraculoustaxes.in/wp-content/uploads/2024/05/msme-ssi-registration.png", alt: "Partner 7" },
+]
 
-  const [current, setCurrent] = useState(0)
+export function HeroSection() {
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setCurrent((prev: number) => (prev + 1) % slides.length)
-    }, 4500)
-    return () => clearInterval(id)
-  }, [slides.length])
+    setIsMounted(true)
+  }, [])
 
-  const openForm = () => {
-    const el = document.getElementById("contact")
-    if (el) el.scrollIntoView({ behavior: "smooth" })
-  }
+  if (!isMounted) return null
 
   return (
-    <section className="relative overflow-hidden bg-slate-900 text-white">
-      <div className="relative h-[75vh] min-h-[560px] w-full">
-        {slides.map((slide, idx) => (
-          <div
-            key={slide.title}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              idx === current ? "opacity-100 z-10" : "opacity-0"
-            }`}
-            aria-hidden={idx !== current}
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
-            />
-            <div className="absolute inset-0 bg-slate-900/70" />
-            <div className="relative z-20 flex h-full items-center">
-              <div className="mx-auto flex w-full max-w-6xl flex-col px-4 sm:px-6 lg:px-8">
-                <div className="max-w-3xl space-y-6">
-                  <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-amber-400 backdrop-blur">
-                    {slide.subtitle}
-                  </div>
-                  <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">{slide.title}</h1>
-                  <p className="text-lg text-slate-200">
-                    We build high-impact digital experiences across web, mobile, and cloud with speed, quality, and
-                    measurable outcomes.
-                  </p>
-                  <div className="flex flex-wrap items-center gap-4">
-                    <button
-                      onClick={openForm}
-                      className="inline-flex items-center rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-slate-900 shadow-lg transition hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300"
+    <section className="relative min-h-screen w-full overflow-hidden bg-slate-900 text-white">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source
+          src="https://cdn.pixabay.com/video/2020/09/24/50541-462378877_large.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* Overlay with subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/80 backdrop-blur-sm" />
+
+      {/* Content Wrapper */}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-start px-4 pb-20 lg:flex-row lg:items-start lg:gap-12 lg:pt-16">
+        {/* Left Side: Text Content */}
+        <div className="flex-1 space-y-6 text-center lg:mt-12 lg:text-left">
+          {/* <div className="inline-flex items-center rounded-full bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-400 backdrop-blur-md">
+            Impact Driven Digital & IT Company
+          </div> */}
+          <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            Engineering the <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Next Generation</span> of Digital Systems
+          </h1>
+          <p className="max-w-xl text-base text-slate-300 sm:text-lg lg:mx-0">
+            We build high-impact digital experiences across web, mobile, and cloud with speed, quality, and measurable outcomes.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+            <button className="group relative overflow-hidden rounded-full bg-blue-600 px-8 py-4 font-bold text-white transition-all hover:bg-blue-500">
+              <span className="relative z-10">Get Started</span>
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-blue-400 to-indigo-500 transition-transform duration-300 group-hover:translate-x-0" />
+            </button>
+            <button className="rounded-full border border-white/20 bg-white/5 px-8 py-4 font-bold backdrop-blur-md transition-all hover:bg-white/10">
+              Our Services
+            </button>
+          </div>
+        </div>
+
+        {/* Right Side: Moving Box with Partners */}
+        <div className="mt-16 flex flex-1 flex-col items-center justify-center lg:mt-0 lg:items-end lg:self-end lg:pb-16">
+          <div className="w-full max-w-[480px]">
+            <p className="mb-4 text-center text-sm font-medium uppercase tracking-widest text-slate-400 lg:text-right">Our Trusted Partners</p>
+
+            <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-2xl shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5" />
+
+              {/* Horizontal Marquee */}
+              <div className="relative flex w-full overflow-hidden">
+                <div className="flex animate-marquee-horizontal items-center gap-8 py-2">
+                  {[...partners, ...partners].map((partner, idx) => (
+                    <div
+                      key={idx}
+                      className="flex h-14 w-[120px] flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110"
                     >
-                      Book a 15 Min Free Consultation
-                    </button>
-                    <a
-                      href="https://www.linkedin.com/company/dgcrux-technology/"
-                      target="_blank"
-                      className="text-sm font-semibold text-amber-300 underline-offset-4 hover:underline"
-                      rel="noreferrer"
-                    >
-                      LinkedIn
-                    </a>
-                  </div>
+                      <img
+                        src={partner.src}
+                        alt={partner.alt}
+                        className="max-h-full max-w-full object-contain filter brightness-110 contrast-125 transition-all duration-300"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              {/* Faders for smoother marquee edges */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950/80 to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950/80 to-transparent" />
             </div>
           </div>
-        ))}
-
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.08),transparent_25%)]" />
-
-        <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              aria-label={`Go to slide ${idx + 1}`}
-              onClick={() => setCurrent(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === current ? "w-6 bg-amber-400" : "w-2 bg-white/60 hover:bg-white"
-              }`}
-            />
-          ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes marquee-horizontal {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee-horizontal {
+          animation: marquee-horizontal 20s linear infinite;
+        }
+        .animate-marquee-horizontal:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   )
 }

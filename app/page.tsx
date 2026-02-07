@@ -12,6 +12,7 @@ import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { AboutSection } from "@/components/about-section"
 import { MissionVisionSection } from "@/components/mission-vision-section"
+import { ImpactStats } from "@/components/impact-stats"
 import TechnologyStackPage from "./technology-stack/page"
 
 export default function HomePage() {
@@ -19,12 +20,14 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <RecognitionStrip />
+      {/* <RecognitionStrip /> */}
+
       <ServicesSection />
       <AboutSection />
       <TechnologyStackPage />
       {/* <TechnologyStack /> */}
       <ProductsSection />
+      <ImpactStats />
       {/* <IndustriesSection /> */}
       <ClientsSection />
       <TestimonialsSection />

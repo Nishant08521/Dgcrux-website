@@ -123,7 +123,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/faq-section" className="text-muted-foreground hover:text-yellow-400 transition-colors">
-                FAQ
+                  FAQ
                 </Link>
               </li>
             </ul>
