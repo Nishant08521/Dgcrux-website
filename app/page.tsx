@@ -23,14 +23,16 @@ export default function HomePage() {
       {/* <RecognitionStrip /> */}
 
       <ServicesSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
+      <ClientsSection />
+      <TestimonialsSection />
       <TechnologyStackPage />
       {/* <TechnologyStack /> */}
       <ProductsSection />
       <ImpactStats />
       {/* <IndustriesSection /> */}
-      <ClientsSection />
-      <TestimonialsSection />
+
+
       {/* <ContactSection /> */}
       <MissionVisionSection />
       <FAQSection />

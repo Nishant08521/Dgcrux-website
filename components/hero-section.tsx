@@ -47,11 +47,11 @@ export function HeroSection() {
           {/* <div className="inline-flex items-center rounded-full bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-400 backdrop-blur-md">
             Impact Driven Digital & IT Company
           </div> */}
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            Engineering the <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Next Generation</span> of Digital Systems
+          <h1 className="max-w-xl text-2xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            Empowering Businesses with  <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">AI-Driven </span> Digital Product Engineering
           </h1>
           <p className="max-w-xl text-base text-slate-300 sm:text-lg lg:mx-0">
-            We build high-impact digital experiences across web, mobile, and cloud with speed, quality, and measurable outcomes.
+            DgCrux is your technology partner for digital transformation, helping startups and enterprises design, engineer, and scale intelligent software products built on AI, cloud, and modern architectures.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
             <button className="group relative overflow-hidden rounded-full bg-blue-600 px-8 py-4 font-bold text-white transition-all hover:bg-blue-500">
