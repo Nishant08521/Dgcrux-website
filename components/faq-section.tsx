@@ -5,33 +5,34 @@ import { Minus, Plus } from "lucide-react"
 
 const faqs = [
   {
-    question: "How does digital marketing help businesses?",
+    question: "What services does DGCrux provide?",
     answer:
-      "It increases visibility, drives qualified traffic, and builds trust through consistent messaging across channels like search, social, and email.",
+      "DGCrux offers end-to-end digital product engineering, including custom software development, SaaS product development, AI product engineering, cloud solutions, eCommerce development, digital marketing, and managed IT services. We help businesses build, scale, and optimize technology-driven products.",
   },
   {
-    question: "How do we measure the success of digital marketing campaigns?",
+    question: "What types of businesses does DGCrux work with?",
     answer:
-      "We track KPIs such as conversions, cost per lead, ROAS, organic rankings, and engagement to tie performance back to revenue.",
+      "We work with startups, growing companies, and enterprises across industries. Whether you're launching a new SaaS product, modernizing legacy systems, or scaling an AI-enabled platform, DGCrux adapts its approach to your business stage and goals.",
   },
   {
-    question: "How much does digital marketing cost?",
+    question: "How does DGCrux approach AI product engineering?",
     answer:
-      "Budgets vary by scope and channel mix. We tailor spend to your goals and continually optimize to improve efficiency and ROI.",
+      "Our AI product engineering focuses on practical, business-ready AI. We design and implement solutions like AI-powered software, automation, AI agents, chatbots, and data-driven applications that integrate seamlessly into your existing systems and workflows.",
   },
   {
-    question: "What is the average ROAS in performance marketing?",
-    answer: "Targets depend on industry and maturity. We benchmark, test quickly, and scale what performs to beat baseline ROAS.",
+    question: "How does DGCrux choose the right technology stack for a project?",
+    answer:
+      "We select the technology stack based on your product needs, scalability goals, and long-term growth. DGCrux works with modern technologies such as React, Next.js, Node.js, Python, cloud platforms, and AI/ML frameworks to build secure, high-performance digital products.",
   },
   {
-    question: "What all technology do we use for app development?",
+    question: "Does DGCrux build scalable and cloud-ready software?",
     answer:
-      "We leverage modern stacks like React Native, Flutter, Swift/Kotlin, and scalable backends with Node.js, Python, and cloud services.",
+      "Yes. All our solutions are designed with scalability, cloud readiness, and performance in mind. From cloud-native architectures to DevOps and deployment automation, we ensure your software can grow reliably as your business scales.",
   },
   {
-    question: "What all technology do we use for web development?",
+    question: "Does DGCrux build products with SEO and AI-readiness in mind?",
     answer:
-      "We build with React/Next.js, performant APIs, modern styling systems, and cloud-native tooling for speed, security, and scalability.",
+      "Absolutely. DGCrux develops digital products that are SEO-friendly, performance-optimized, and AI-ready. Our approach ensures your software is structured for search visibility, future AI integrations, and long-term digital growth.",
   },
 ]
 
@@ -46,7 +47,7 @@ export function FAQSection() {
     <section className="bg-[#f4f7fa] py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">FAQs</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Frequently Asked Questions</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -71,7 +72,7 @@ export function FAQSection() {
                     </div>
                     <div
                       className={`mt-3 text-sm leading-relaxed text-slate-600 transition-all duration-300 ${
-                        isOpen ? "max-h-40 opacity-100" : "max-h-0 overflow-hidden opacity-0"
+                        isOpen ? "max-h-[500px] opacity-100" : "max-h-0 overflow-hidden opacity-0"
                       }`}
                     >
                       {faq.answer}

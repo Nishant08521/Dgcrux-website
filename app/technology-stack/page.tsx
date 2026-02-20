@@ -171,7 +171,7 @@ const CircleCard = ({ tech, index }: { tech: Technology; index: number }) => {
         />
       </div>
 
-      <p className="text-black text-xs font-bold text-center">
+      <p className="text-white text-xs font-bold text-center">
         {tech.name}
       </p>
     </motion.div>
@@ -196,7 +196,7 @@ export default function TechnologyStack() {
   ]
 
   return (
-    <section className="relative w-full bg-[#f8fafc] py-20 font-sans">
+    <section className="relative w-full bg-black py-20 font-sans">
       {/* Dark Header Banner for White Text */}
       <div className="absolute top-0 left-0 w-full h-96 bg-slate-900 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-900 to-purple-900 opacity-90" />
@@ -240,11 +240,15 @@ export default function TechnologyStack() {
           ))}
         </div>
 
-        {/* Grid Area - Using a nice white card container */}
-        <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100">
+        {/* Grid Area - Card with gradient background matching header */}
+        <div className="relative rounded-[3rem] p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden">
+          <div className="absolute inset-0 bg-slate-900 z-0" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-900 to-purple-900 opacity-90 z-0" />
+          <div className="absolute -top-24 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none z-0" />
+          <div className="absolute -bottom-24 -right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px] pointer-events-none z-0" />
           <motion.div
             layout
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-8 gap-y-16 justify-items-center"
+            className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-8 gap-y-16 justify-items-center"
           >
             <AnimatePresence mode="popLayout">
               {filteredTech.map((tech, idx) => (

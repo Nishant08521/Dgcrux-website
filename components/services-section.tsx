@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { motion } from "framer-motion"
 import {
   Code2,
   BrainCircuit,
@@ -9,9 +12,32 @@ import {
   ArrowRight
 } from "lucide-react"
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
+    },
+  },
+}
+
 const services = [
   {
-    title: "Software Development & Product Engineeringt",
+    title: "Software Development & Product Engineering",
     description: "We specialize in custom software development and SaaS product engineering, helping businesses design, build, and scale secure, high-performance web and mobile applications using modern, cloud-native architectures.",
     icon: Code2,
     href: "/services/software-development",
@@ -23,7 +49,7 @@ const services = [
     description: "We help businesses design and deploy AI-powered products using machine learning, generative AI, intelligent automation, and AI-enabled software engineering.",
     icon: BrainCircuit,
     href: "/services/ai-solutions",
-    items: ["AI Strategy & Consulting", "AI/ML & Generative AI Development", "AI AI Agents & Intelligent Automation", "AI Enabled Software Development", "Computer Vision & NLP Solutions", "AI Chatbots & Virtual Assistants", "AI Cloud Deployment"],
+    items: ["AI Strategy & Consulting", "AI/ML & Generative AI Development", "AI Agents & Intelligent Automation", "AI Enabled Software Development", "Computer Vision & NLP Solutions", "AI Chatbots & Virtual Assistants", "AI Cloud Deployment"],
     color: "from-purple-500 to-pink-500"
   },
   {
@@ -50,7 +76,7 @@ const services = [
     description: "Deliver data-driven digital marketing services, SEO services, AI optimization that help businesses increase visibility, acquire customers, and scale growth through performance-focused campaigns and conversion optimization.",
     icon: BarChart3,
     href: "/services/digital-marketing",
-    items: ["SEO (Search Engine Optimization)", "AI Optimization", "Social Media Marketing", "Paid Ads (Google, Facebook, LinkedIn)", "Performance Marketing", "Performance Marketing"],
+    items: ["SEO (Search Engine Optimization)", "AI Optimization", "Social Media Marketing", "Paid Ads (Google, Facebook, LinkedIn)", "Performance Marketing", "Conversion Optimization"],
     color: "from-emerald-500 to-teal-500"
   },
   {
@@ -85,11 +111,17 @@ export function ServicesSection() {
           </p> */}
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
           {services.map((service, idx) => (
             <ServiceCard key={service.title} service={service} index={idx} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -105,9 +137,10 @@ function ServiceCard({
   const Icon = service.icon
 
   return (
+    <motion.div variants={cardVariants} className="h-full">
     <Link
       href={service.href}
-      className="group relative flex flex-col h-full rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 border border-purple-500/20 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(139,92,246,0.3)] overflow-hidden"
+      className="group relative flex flex-col h-full rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 border border-purple-500/20 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(139,92,246,0.3)] overflow-hidden block"
       style={{ backgroundColor: 'rgb(26, 17, 96)' }}
     >
       {/* Gradient accent top border */}
@@ -152,6 +185,7 @@ function ServiceCard({
       {/* Decorative blobs */}
       <div className={`absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br ${service.color} opacity-[0.15] rounded-full group-hover:scale-150 transition-transform duration-700`} />
     </Link>
+    </motion.div>
   )
 }
 
