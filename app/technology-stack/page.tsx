@@ -196,7 +196,7 @@ export default function TechnologyStack() {
   ]
 
   return (
-    <section className="relative w-full bg-black py-20 font-sans">
+    <section className="relative w-full py-20 font-sans">
       {/* Dark Header Banner for White Text */}
       <div className="absolute top-0 left-0 w-full h-96 bg-slate-900 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-900 to-purple-900 opacity-90" />
@@ -205,7 +205,9 @@ export default function TechnologyStack() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
+
         <div className="text-center mb-16 pt-12">
+
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -231,9 +233,14 @@ export default function TechnologyStack() {
               key={cat.id}
               onClick={() => setFilter(cat.id)}
               className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 border ${filter === cat.id
-                ? "bg-white text-blue-600 border-white shadow-xl scale-105"
-                : "bg-white/10 text-white/70 border-white/10 hover:bg-white/20 backdrop-blur-sm"
+                ? "text-white scale-105"
+                : "bg-white/10 text-white/70 border-white/10 hover:text-white backdrop-blur-sm"
                 }`}
+              style={{
+                backgroundColor: filter === cat.id ? "#ffaa17" : undefined,
+                borderColor: filter === cat.id ? "#ffaa17" : undefined,
+                boxShadow: filter === cat.id ? "0 0 20px rgba(255, 170, 23, 0.4)" : undefined,
+              }}
             >
               {cat.name}
             </button>

@@ -54,13 +54,13 @@ export function HeroSection() {
             DgCrux is your technology partner for digital transformation, helping startups and enterprises design, engineer, and scale intelligent software products built on AI, cloud, and modern architectures.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-            <button className="group relative overflow-hidden rounded-full bg-blue-600 px-8 py-4 font-bold text-white transition-all hover:bg-blue-500">
-              <span className="relative z-10">Get Started</span>
+            <button className="group relative overflow-hidden rounded-full bg-[#ffaa17] px-8 py-4 font-bold text-white transition-all hover:bg-blue-500">
+              <span className="relative z-10">BOOK A 15 MIN FREE CONSULTATION</span>
               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-blue-400 to-indigo-500 transition-transform duration-300 group-hover:translate-x-0" />
             </button>
-            <button className="rounded-full border border-white/20 bg-white/5 px-8 py-4 font-bold backdrop-blur-md transition-all hover:bg-white/10">
+            {/* <button className="rounded-full border border-white/20 bg-white/5 px-8 py-4 font-bold backdrop-blur-md transition-all hover:bg-white/10">
               Our Services
-            </button>
+            </button> */}
           </div>
         </div>
 

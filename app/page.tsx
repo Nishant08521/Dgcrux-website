@@ -9,11 +9,13 @@ import { ClientsSection } from "@/components/clients-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { FAQSection } from "@/components/faq-section"
+import { LocationSection } from "@/components/location-section"
 import { Footer } from "@/components/footer"
 import { AboutSection } from "@/components/about-section"
 import { MissionVisionSection } from "@/components/mission-vision-section"
 import { ImpactStats } from "@/components/impact-stats"
 import TechnologyStackPage from "./technology-stack/page"
+import { CaseStudiesSection } from "@/components/case-studies-section"
 
 export default function HomePage() {
   return (
@@ -25,17 +27,19 @@ export default function HomePage() {
       <ServicesSection />
       {/* <AboutSection /> */}
       <ClientsSection />
-      <TestimonialsSection />
       <TechnologyStackPage />
       {/* <TechnologyStack /> */}
       <ProductsSection />
       <ImpactStats />
       {/* <IndustriesSection /> */}
 
+      {/* <CaseStudiesSection /> */}
+      <TestimonialsSection />
 
       {/* <ContactSection /> */}
       <MissionVisionSection />
       <FAQSection />
+      <LocationSection />
       <Footer />
     </main>
   )

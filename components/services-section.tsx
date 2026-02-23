@@ -93,7 +93,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative bg-black py-20 sm:py-28 overflow-hidden"
+      className="relative bg-white py-20 sm:py-28 overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20" />
@@ -102,7 +102,7 @@ export function ServicesSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-sm font-bold uppercase tracking-widest text-blue-400 mb-4">Our Expertise</h2>
-          <h3 className="text-4xl sm:text-5xl font-extrabold text-white leading-[1.15] mb-6">
+          <h3 className="text-4xl sm:text-5xl font-extrabold text-black leading-[1.15] mb-6">
             What We Offer
           </h3>
           {/* <p className="text-lg text-slate-600 leading-relaxed">
@@ -138,53 +138,53 @@ function ServiceCard({
 
   return (
     <motion.div variants={cardVariants} className="h-full">
-    <Link
-      href={service.href}
-      className="group relative flex flex-col h-full rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 border border-purple-500/20 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(139,92,246,0.3)] overflow-hidden block"
-      style={{ backgroundColor: 'rgb(26, 17, 96)' }}
-    >
-      {/* Gradient accent top border */}
-      <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+      <Link
+        href={service.href}
+        className="group relative flex flex-col h-full rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 border border-purple-500/20 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(139,92,246,0.3)] overflow-hidden block"
+        style={{ backgroundColor: 'rgb(26, 17, 96)' }}
+      >
+        {/* Gradient accent top border */}
+        <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
-      {/* Icon */}
-      <div className="mb-5 relative">
-        <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} text-white shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
-          <Icon size={28} />
+        {/* Icon */}
+        <div className="mb-5 relative">
+          <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} text-white shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+            <Icon size={28} />
+          </div>
+          <span className="absolute -right-4 -top-4 text-5xl font-black text-white/10 select-none -z-10 transition-colors duration-500 group-hover:text-white/20">
+            {`0${index + 1}`}
+          </span>
         </div>
-        <span className="absolute -right-4 -top-4 text-5xl font-black text-white/10 select-none -z-10 transition-colors duration-500 group-hover:text-white/20">
-          {`0${index + 1}`}
-        </span>
-      </div>
 
-      {/* Content */}
-      <div className="flex-grow">
-        <h4 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
-          {service.title}
-        </h4>
-        <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-          {service.description}
-        </p>
+        {/* Content */}
+        <div className="flex-grow">
+          <h4 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+            {service.title}
+          </h4>
+          <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+            {service.description}
+          </p>
 
-        {/* Key items */}
-        <ul className="space-y-1.5 mb-5">
-          {service.items.map((item, i) => (
-            <li key={i} className="flex items-center text-xs text-gray-400 font-medium">
-              <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.color} mr-2 shrink-0`} />
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
+          {/* Key items */}
+          <ul className="space-y-1.5 mb-5">
+            {service.items.map((item, i) => (
+              <li key={i} className="flex items-center text-xs text-gray-400 font-medium">
+                <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.color} mr-2 shrink-0`} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      {/* Button footer */}
-      <div className="flex items-center text-xs font-bold text-white group-hover:text-blue-400 transition-colors duration-300 mt-auto">
-        Explore Service
-        <ArrowRight className="ml-2 w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-      </div>
+        {/* Button footer */}
+        <div className="flex items-center text-xs font-bold text-white group-hover:text-blue-400 transition-colors duration-300 mt-auto">
+          Explore Service
+          <ArrowRight className="ml-2 w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+        </div>
 
-      {/* Decorative blobs */}
-      <div className={`absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br ${service.color} opacity-[0.15] rounded-full group-hover:scale-150 transition-transform duration-700`} />
-    </Link>
+        {/* Decorative blobs */}
+        <div className={`absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br ${service.color} opacity-[0.15] rounded-full group-hover:scale-150 transition-transform duration-700`} />
+      </Link>
     </motion.div>
   )
 }
