@@ -3,15 +3,15 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { 
-  ChevronDown, 
-  Menu, 
-  X, 
-  Palette, 
-  Code, 
-  Wrench, 
-  TestTube, 
-  Rocket, 
+import {
+  ChevronDown,
+  Menu,
+  X,
+  Palette,
+  Code,
+  Wrench,
+  TestTube,
+  Rocket,
   Briefcase,
   Brain,
   Sparkles,
@@ -110,351 +110,354 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 w-full z-50 bg-background">
-      <MarqueeBanner />
-      <div className="border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="https://dgcrux.com/images/logo.png"
-              alt="dgcrux"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
-              priority
-            />
-          </Link>
+    <>
+      <nav className="fixed top-0 w-full z-[100] bg-background/95 backdrop-blur-md">
+        <MarqueeBanner />
+        <div className="border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              {/* Logo */}
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="https://dgcrux.com/images/logo.png"
+                  alt="dgcrux"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto"
+                  priority
+                />
+              </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            <div className="group relative">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
-                Software Development <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute left-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Software Development Services</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {softwareDevelopment.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
-                        >
-                          <div className="flex items-start gap-3">
-                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
-                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
-                              {item.name}
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
+              {/* Desktop Navigation */}
+              <div className="hidden lg:flex items-center gap-1">
+                <div className="group relative">
+                  <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                    Software Development <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="absolute left-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="p-6">
+                      <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Software Development Services</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        {softwareDevelopment.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                            >
+                              <div className="flex items-start gap-3">
+                                <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                                <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                                  {item.name}
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="group relative">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
-                AI Solutions <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute left-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">AI Solutions</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {aiSolutions.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
-                        >
-                          <div className="flex items-start gap-3">
-                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
-                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
-                              {item.name}
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
+                <div className="group relative">
+                  <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                    AI Solutions <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="absolute left-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="p-6">
+                      <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">AI Solutions</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        {aiSolutions.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                            >
+                              <div className="flex items-start gap-3">
+                                <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                                <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                                  {item.name}
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="group relative">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
-                Cloud Solutions <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute right-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Cloud Solutions</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {cloudSolutions.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
-                        >
-                          <div className="flex items-start gap-3">
-                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
-                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
-                              {item.name}
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
+                <div className="group relative">
+                  <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                    Cloud Solutions <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="absolute right-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="p-6">
+                      <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Cloud Solutions</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        {cloudSolutions.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                            >
+                              <div className="flex items-start gap-3">
+                                <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                                <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                                  {item.name}
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="group relative">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
-                eCommerce <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute right-0 top-full mt-2 w-[500px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">eCommerce Solutions</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {ecommerce.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
-                        >
-                          <div className="flex items-start gap-3">
-                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
-                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
-                              {item.name}
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
+                <div className="group relative">
+                  <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                    eCommerce <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="absolute right-0 top-full mt-2 w-[500px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="p-6">
+                      <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">eCommerce Solutions</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        {ecommerce.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                            >
+                              <div className="flex items-start gap-3">
+                                <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                                <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                                  {item.name}
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="group relative">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
-                Digital Marketing <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute right-0 top-full mt-2 w-[500px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Digital Marketing Services</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {digitalMarketing.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
-                        >
-                          <div className="flex items-start gap-3">
-                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
-                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
-                              {item.name}
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
+                <div className="group relative">
+                  <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                    Digital Marketing <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="absolute right-0 top-full mt-2 w-[500px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="p-6">
+                      <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Digital Marketing Services</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        {digitalMarketing.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                            >
+                              <div className="flex items-start gap-3">
+                                <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                                <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                                  {item.name}
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="group relative">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
-                Products <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute right-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Our Products</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {products.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
-                        >
-                          <div className="flex items-start gap-3">
-                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
-                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
-                              {item.name}
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
+                <div className="group relative">
+                  <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                    Products <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="absolute right-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="p-6">
+                      <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Our Products</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        {products.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                            >
+                              <div className="flex items-start gap-3">
+                                <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                                <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                                  {item.name}
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="group relative">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
-                Company <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute right-0 top-full mt-2 w-[400px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Company</h3>
-                  <div className="grid grid-cols-1 gap-3">
-                    {company.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
-                        >
-                          <div className="flex items-start gap-3">
-                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
-                            <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
-                              {item.name}
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
+                <div className="group relative">
+                  <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-yellow-400 hover:text-black transition-colors rounded-md">
+                    Company <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="absolute right-0 top-full mt-2 w-[400px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="p-6">
+                      <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Company</h3>
+                      <div className="grid grid-cols-1 gap-3">
+                        {company.map((item) => {
+                          const Icon = item.icon
+                          return (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="group/item p-4 rounded-lg border border-border hover:border-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-200"
+                            >
+                              <div className="flex items-start gap-3">
+                                <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400 flex-shrink-0 mt-0.5" />
+                                <div className="text-sm font-medium text-foreground group-hover/item:text-yellow-600 dark:group-hover/item:text-yellow-400">
+                                  {item.name}
+                                </div>
+                              </div>
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* <Button size="sm" className="ml-4">
+                {/* <Button size="sm" className="ml-4">
               Get Started
             </Button> */}
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="lg:hidden p-2 text-foreground"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden border-t border-border bg-background">
+              <div className="px-4 py-6 space-y-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Software Development</h3>
+                  {softwareDevelopment.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">AI Solutions</h3>
+                  {aiSolutions.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Cloud Solutions</h3>
+                  {cloudSolutions.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">eCommerce</h3>
+                  {ecommerce.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Digital Marketing</h3>
+                  {digitalMarketing.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Products</h3>
+                  {products.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Company</h3>
+                  {company.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* <Button className="w-full">Get Started</Button> */}
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-border bg-background">
-          <div className="px-4 py-6 space-y-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Software Development</h3>
-              {softwareDevelopment.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">AI Solutions</h3>
-              {aiSolutions.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Cloud Solutions</h3>
-              {cloudSolutions.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">eCommerce</h3>
-              {ecommerce.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Digital Marketing</h3>
-              {digitalMarketing.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Products</h3>
-              {products.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Company</h3>
-              {company.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-sm text-muted-foreground hover:bg-yellow-400 hover:text-black py-1 pl-4 rounded transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            {/* <Button className="w-full">Get Started</Button> */}
-          </div>
-        </div>
-      )}
-      </div>
-    </nav>
+      </nav>
+      <div className="h-[104px]" />
+    </>
   )
 }
