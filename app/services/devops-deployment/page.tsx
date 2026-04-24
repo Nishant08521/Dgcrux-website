@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { motion } from "framer-motion"
 import {
   GitBranch, Cloud, Settings, Shield, Rocket, ArrowRight, CheckCircle2,
   Star, Clock, TrendingUp, Cpu, Layers, Terminal, Lock, Activity, Server, RefreshCw, BarChart3,
@@ -45,196 +46,282 @@ const stats = [
   { value: "40%", label: "Avg. Cloud Cost Savings" },
 ]
 
+// Framer Motion Variants
+const containerVariant = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariant = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 100 }
+  }
+};
+
 export default function DevOpsDeploymentPage() {
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
+    <main className="min-h-screen bg-slate-950 overflow-x-hidden text-slate-50">
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0c0a00] via-[#1a1200] to-[#0a0800]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(245,158,11,0.2),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(234,88,12,0.15),transparent_55%)]" />
-        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(rgba(245,158,11,0.15) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-        <div className="absolute top-24 left-16 w-80 h-80 rounded-full bg-amber-600/20 blur-[100px] animate-pulse" />
-        <div className="absolute bottom-16 right-16 w-96 h-96 rounded-full bg-orange-600/15 blur-[120px] animate-pulse" style={{ animationDelay: "1.5s" }} />
+      {/* HERO SECTION */}
+      <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+        <div className="absolute inset-0 bg-slate-950" />
+        {/* Animated Orbs */}
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-amber-500/20 blur-[120px]" 
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-40 -left-20 w-80 h-80 rounded-full bg-orange-600/20 blur-[100px]" 
+        />
+        
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-32 sm:pt-36 sm:pb-44">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm font-medium text-amber-300 mb-8 backdrop-blur-sm">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={containerVariant}
+            className="flex flex-col items-center text-center"
+          >
+            <motion.div variants={itemVariant} className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm font-medium text-amber-300 mb-8 backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.2)]">
               <Rocket className="h-4 w-4" /> DevOps &amp; Deployment
-            </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.08]">
+            </motion.div>
+            
+            <motion.h1 variants={itemVariant} className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1] max-w-4xl">
               Ship Faster,{" "}
               <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent">Ship Smarter</span>
-            </h1>
-            <p className="max-w-2xl text-lg sm:text-xl text-slate-300 leading-relaxed mb-10">
-              Automate your pipeline, harden your infrastructure, and deploy with total confidence. We transform manual, error-prone releases into reliable, repeatable engineering.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild className="rounded-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white border-0 px-8 py-6 text-base font-semibold shadow-2xl shadow-amber-500/30 transition-all hover:scale-105">
+              <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400 bg-clip-text text-transparent">Ship Smarter</span>
+            </motion.h1>
+            
+            <motion.p variants={itemVariant} className="max-w-2xl text-lg sm:text-xl text-slate-400 leading-relaxed mb-10">
+              Automate your pipeline, harden your infrastructure, and deploy with total confidence. We transform manual, error-prone releases into reliable, repeatable engineering workflows.
+            </motion.p>
+            
+            <motion.div variants={itemVariant} className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" asChild className="rounded-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white border-0 px-8 py-6 text-base font-semibold shadow-[0_0_30px_rgba(245,158,11,0.3)] transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.5)]">
                 <Link href="/contact">Start Automating <ArrowRight className="ml-2 h-5 w-5" /></Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="rounded-full border-white/20 bg-white/5 text-white hover:bg-white/10 px-8 py-6 text-base font-semibold backdrop-blur-sm transition-all hover:scale-105">
-                <Link href="/case-studies">View Case Studies</Link>
+              <Button size="lg" variant="outline" asChild className="rounded-full border-slate-700 bg-slate-900/50 text-white hover:bg-slate-800 px-8 py-6 text-base font-semibold backdrop-blur-sm transition-all hover:scale-105">
+                <Link href="/case-studies">Explore Case Studies</Link>
               </Button>
-            </div>
-          </div>
-          <div className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-5">
-            {stats.map((s) => (
-              <div key={s.label} className="rounded-2xl border border-white/8 bg-white/5 backdrop-blur-md px-6 py-5 text-center hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
-                <div className="text-3xl font-extrabold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">{s.value}</div>
-                <div className="mt-1 text-sm text-slate-400">{s.label}</div>
-              </div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4"
+          >
+            {stats.map((s, i) => (
+              <motion.div 
+                key={s.label}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-md px-6 py-8 text-center"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl transform translate-x-12 -translate-y-12" />
+                <div className="relative z-10">
+                  <div className="text-4xl font-extrabold text-white mb-2">{s.value}</div>
+                  <div className="text-sm font-medium text-amber-500/80 uppercase tracking-wider">{s.label}</div>
+                </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="py-28 bg-gradient-to-b from-[#fffbeb] to-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-medium text-amber-700 mb-5">
-              <Server className="h-4 w-4" /> Our DevOps Services
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 tracking-tight">
-              Everything to{" "}
-              <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">deploy at speed</span>
-            </h2>
-            <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">From pipeline automation to platform engineering — every layer covered by DevOps specialists.</p>
-          </div>
+      {/* SERVICES SECTION */}
+      <section className="py-24 sm:py-32 bg-slate-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent opacity-50" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariant}
+            className="text-center mb-16 sm:mb-24"
+          >
+            <motion.h2 variants={itemVariant} className="text-3xl sm:text-5xl font-bold tracking-tight mb-6">
+              Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Excellence</span>
+            </motion.h2>
+            <motion.p variants={itemVariant} className="text-lg text-slate-400 max-w-2xl mx-auto">
+              From pipeline automation to complete platform engineering — every layer of your infrastructure covered by specialized DevOps engineers.
+            </motion.p>
+          </motion.div>
+
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
+            {services.map((service, i) => {
               const Icon = service.icon
               return (
-                <div key={service.title} className={`group relative rounded-2xl border ${service.border} bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-default`}>
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300`} />
-                  <div className={`relative mb-5 flex h-14 w-14 items-center justify-center rounded-2xl ${service.bg} group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className={`h-7 w-7 ${service.highlight}`} />
+                <motion.div 
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -5 }}
+                  className="group relative rounded-3xl border border-slate-800 bg-slate-900/60 p-8 hover:bg-slate-800/60 transition-colors overflow-hidden"
+                >
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-100 transition-opacity`} />
+                  
+                  <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 border border-slate-800 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] transition-all`}>
+                    <Icon className={`h-6 w-6 ${service.highlight}`} />
                   </div>
-                  <span className={`inline-block rounded-full ${service.bg} ${service.highlight} px-3 py-0.5 text-xs font-semibold tracking-wide mb-3`}>{service.tag}</span>
-                  <h3 className="relative text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="relative text-gray-500 leading-relaxed text-sm">{service.description}</p>
-                  <div className={`relative mt-6 flex items-center gap-1 text-sm font-semibold ${service.highlight} opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300`}>
-                    Learn more <ArrowRight className="h-4 w-4" />
+                  
+                  <div className="mb-4 flex items-center gap-3">
+                    <h3 className="text-xl font-bold text-white">{service.title}</h3>
                   </div>
-                </div>
+                  
+                  <p className="text-slate-400 leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-800">
+                    <span className="text-xs font-semibold text-slate-500">{service.tag}</span>
+                    <ArrowRight className="h-5 w-5 text-slate-600 group-hover:text-amber-500 transition-colors" />
+                  </div>
+                </motion.div>
               )
             })}
           </div>
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="py-28 bg-gradient-to-b from-[#0c0a00] to-[#1a1200] relative overflow-hidden">
-        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(rgba(245,158,11,0.07) 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-amber-600/10 blur-[140px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-orange-600/10 blur-[140px]" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-300 mb-5">
-              <GitBranch className="h-4 w-4" /> How We Work
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-              Our <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">DevOps Methodology</span>
-            </h2>
-            <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">Structured, transparent, and results-driven — from assessment to continuous optimisation.</p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {process.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.step} className="group relative rounded-2xl border border-white/8 bg-white/5 backdrop-blur-sm p-8 hover:border-amber-500/40 hover:bg-white/8 transition-all duration-300 hover:-translate-y-1">
-                  <div className="absolute top-5 right-6 text-6xl font-black text-white/4 group-hover:text-amber-500/10 transition-colors select-none leading-none">{item.step}</div>
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/15 border border-amber-500/20 group-hover:bg-amber-500/25 transition-colors">
-                    <Icon className="h-6 w-6 text-amber-400" />
-                  </div>
-                  <div className="text-xs font-bold text-amber-400 tracking-widest uppercase mb-2">Step {item.step}</div>
-                  <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* BENEFITS */}
-      <section className="py-28 bg-white">
+      {/* METHODOLOGY SECTION */}
+      <section className="py-24 sm:py-32 bg-slate-900 relative border-y border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-16 lg:grid-cols-2 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm font-medium text-amber-700 mb-6">
-                <Star className="h-4 w-4" /> The DGCrux Difference
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-300 mb-6">
+                <GitBranch className="h-4 w-4" /> The Playbook
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-6">
-                DevOps that <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">transforms delivery</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Our approach to <span className="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">continuous delivery</span>
               </h2>
-              <p className="text-lg text-gray-500 leading-relaxed mb-8">
-                We don't just set up pipelines and walk away. We embed with your team, transfer knowledge, and build a DevOps culture that outlasts the engagement.
+              <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+                We implement a structured, transparent, and results-driven methodology. From initial assessment to continuous optimisation, we ensure your infrastructure scales dynamically while remaining secure.
               </p>
-              <Button size="lg" asChild className="rounded-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white border-0 px-8 shadow-lg shadow-amber-500/25 hover:scale-105 transition-all">
-                <Link href="/contact">Book a DevOps Audit <ArrowRight className="ml-2 h-5 w-5" /></Link>
-              </Button>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {benefits.map((b) => {
-                const Icon = b.icon
-                return (
-                  <div key={b.text} className="group flex items-start gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-5 hover:border-amber-200 hover:bg-amber-50 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-                    <div className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 group-hover:bg-amber-200 transition-colors">
-                      <Icon className="h-5 w-5 text-amber-600" />
+              
+              <div className="space-y-4">
+                {benefits.slice(0, 4).map((benefit, i) => (
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    key={i} 
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-amber-500/20 text-amber-500">
+                      <CheckCircle2 className="h-5 w-5" />
                     </div>
-                    <span className="text-sm font-semibold text-gray-700 leading-snug pt-2">{b.text}</span>
-                  </div>
-                )
-              })}
+                    <span className="text-slate-300 font-medium">{benefit.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-orange-500/20 blur-3xl -z-10 rounded-full" />
+              <div className="grid gap-4 sm:grid-cols-2">
+                {process.map((item, i) => {
+                  const Icon = item.icon
+                  return (
+                    <motion.div 
+                      key={item.step}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1, duration: 0.4 }}
+                      whileHover={{ scale: 1.05 }}
+                      className={`rounded-2xl border border-slate-700 bg-slate-800/80 backdrop-blur-sm p-6 relative overflow-hidden ${i % 2 === 1 ? 'sm:mt-8' : ''}`}
+                    >
+                      <div className="absolute -right-4 -top-4 text-7xl font-black text-slate-700/30 select-none pb-2">{item.step}</div>
+                      <Icon className="h-8 w-8 text-amber-400 mb-4" />
+                      <h4 className="text-lg font-bold text-white mb-2 relative z-10">{item.title}</h4>
+                      <p className="text-sm text-slate-400 relative z-10">{item.description}</p>
+                    </motion.div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TECH */}
-      <section className="py-20 bg-gray-50 border-y border-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">Tools &amp; Platforms We Master</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {techStack.map((tech) => (
-              <span key={tech} className="rounded-full border border-gray-200 bg-white px-5 py-2 text-sm font-semibold text-gray-600 shadow-sm hover:border-amber-300 hover:text-amber-600 hover:shadow-md transition-all duration-200 cursor-default">{tech}</span>
+      {/* TECH STACK MARQUEE */}
+      <section className="py-20 bg-slate-950 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-10">
+          <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest">Technologies We Master</p>
+        </div>
+        
+        <div className="relative flex overflow-x-hidden">
+          <motion.div 
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ ease: "linear", duration: 25, repeat: Infinity }}
+            className="flex gap-6 px-3 whitespace-nowrap"
+          >
+            {[...techStack, ...techStack].map((tech, idx) => (
+              <span 
+                key={`${tech}-${idx}`} 
+                className="inline-flex items-center justify-center rounded-xl border border-slate-800 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-300 shadow-sm"
+              >
+                {tech}
+              </span>
             ))}
-          </div>
+          </motion.div>
+          {/* Faders */}
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-950 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-950 to-transparent pointer-events-none" />
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-700 via-orange-700 to-[#0c0a00]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.3),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:40px_40px]" />
-        <div className="absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full border border-white/10" />
-        <div className="absolute -bottom-24 -left-24 w-[480px] h-[480px] rounded-full border border-white/10" />
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-8 backdrop-blur-sm">
-            <Rocket className="h-4 w-4 text-amber-300" /> Ready to transform your delivery pipeline?
-          </div>
+      {/* CTA SECTION */}
+      <section className="relative py-24 sm:py-32 overflow-hidden border-t border-slate-800">
+        <div className="absolute inset-0 bg-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.15),transparent_70%)]" />
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center"
+        >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-            Deploy with <span className="bg-gradient-to-r from-amber-300 to-orange-300 bg-clip-text text-transparent">speed and confidence</span>
+            Stop firefighting. <br/>
+            <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Start deploying.</span>
           </h2>
-          <p className="text-lg sm:text-xl text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
-            Book a free DevOps assessment. We'll review your setup, identify bottlenecks, and outline a pragmatic improvement plan.
+          <p className="text-lg sm:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto">
+            Get a comprehensive DevOps assessment. We'll identify architectural bottlenecks, security vulnerabilities, and pipeline inefficiencies.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" asChild className="rounded-full bg-white text-amber-700 hover:bg-amber-50 border-0 px-8 py-6 text-base font-bold shadow-2xl hover:scale-105 transition-all">
-              <Link href="/contact">Book a Free Assessment <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            <Button size="lg" asChild className="rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 border-0 px-8 py-6 text-base font-bold shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:scale-105 transition-all">
+              <Link href="/contact">Schedule Technical Audit</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="rounded-full border-white/30 bg-white/10 text-white hover:bg-white/20 px-8 py-6 text-base font-semibold backdrop-blur-sm hover:scale-105 transition-all">
-              <Link href="/case-studies">See Our Work</Link>
+            <Button size="lg" variant="outline" asChild className="rounded-full border-slate-700 bg-slate-800 hover:bg-slate-700 text-white px-8 py-6 text-base font-semibold hover:scale-105 transition-all">
+              <Link href="/services">Explore More Services</Link>
             </Button>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />

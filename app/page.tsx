@@ -27,17 +27,17 @@ export default function HomePage() {
       <ServicesSection />
       {/* <AboutSection /> */}
       <ClientsSection />
-      <TechnologyStackPage />
-      {/* <TechnologyStack /> */}
+      {/* <TechnologyStackPage /> */}
+      <TechnologyStack />
       <ProductsSection />
       <ImpactStats />
       {/* <IndustriesSection /> */}
 
       {/* <CaseStudiesSection /> */}
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       {/* <ContactSection /> */}
-      <MissionVisionSection />
+      {/* <MissionVisionSection /> */}
       <FAQSection />
       <LocationSection />
       <Footer />

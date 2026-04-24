@@ -23,22 +23,19 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-slate-900 text-white">
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-      >
-        <source
-          src="https://cdn.pixabay.com/video/2020/09/24/50541-462378877_large.mp4"
-          type="video/mp4"
-        />
-      </video>
+      {/* Background Video (YouTube) */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <iframe
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[177.77777778vh] h-[56.25vw]"
+          src="https://www.youtube.com/embed/7DfxPcM05E4?autoplay=1&mute=1&loop=1&playlist=7DfxPcM05E4&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        ></iframe>
+      </div>
 
       {/* Overlay with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/80 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/80" />
 
       {/* Content Wrapper */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-start px-4 pb-20 lg:flex-row lg:items-start lg:gap-12 lg:pt-16">
@@ -69,7 +66,7 @@ export function HeroSection() {
           <div className="w-full max-w-[480px]">
             <p className="mb-4 text-center text-sm font-medium uppercase tracking-widest text-slate-400 lg:text-right">Our Trusted Partners</p>
 
-            <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-2xl shadow-xl">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5" />
 
               {/* Horizontal Marquee */}

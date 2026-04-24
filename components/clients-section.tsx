@@ -25,7 +25,7 @@ export function ClientsSection() {
   const fullRow2 = [...clientsRow2, ...clientsRow2, ...clientsRow2]
 
   return (
-    <section className="py-24 bg-white overflow-hidden relative border-y border-slate-100">
+    <section className="py-12 bg-white overflow-hidden relative border-y border-slate-100">
       {/* Soft gradient edges */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white via-transparent to-white opacity-80" />

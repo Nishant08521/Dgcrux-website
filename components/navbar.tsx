@@ -38,7 +38,8 @@ import {
   Users,
   BookOpen,
   Phone,
-  Check
+  Check,
+  ArrowRight
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MarqueeBanner } from "@/components/marquee-banner"
@@ -287,7 +288,7 @@ export function Navbar() {
                   <div className="absolute right-0 top-full mt-2 w-[600px] bg-background border border-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="p-6">
                       <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Our Products</h3>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-2 gap-3 mb-6">
                         {products.map((item) => {
                           const Icon = item.icon
                           return (
@@ -306,6 +307,12 @@ export function Navbar() {
                           )
                         })}
                       </div>
+                      <Link 
+                        href="/products"
+                        className="flex items-center justify-center gap-2 p-3 rounded-lg bg-primary/5 text-primary text-sm font-bold hover:bg-primary hover:text-white transition-all duration-300"
+                      >
+                        View All Products <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
                 </div>

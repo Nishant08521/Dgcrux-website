@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2, Cloud, Server, Shield, DollarSign, Zap, Settings } from "lucide-react"
+import { CheckCircle2, Cloud, Server, Shield, DollarSign, Zap, Settings, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export default function CloudSolutionsPage() {
@@ -12,31 +12,37 @@ export default function CloudSolutionsPage() {
       icon: Cloud,
       title: "Cloud Strategy & Assessment",
       description: "Evaluate your infrastructure and develop a comprehensive cloud adoption strategy.",
+      href: "/services/cloud-strategy-assessment",
     },
     {
       icon: Server,
       title: "Cloud Migration & Modernization",
       description: "Seamlessly migrate your applications and data to AWS, GCP, or Azure with zero downtime.",
+      href: "/services/cloud-migration-modernization",
     },
     {
       icon: Zap,
       title: "DevOps, CI/CD & Automation",
       description: "Implement automated pipelines for faster, more reliable software delivery.",
+      href: "/services/devops-cicd-automation",
     },
     {
       icon: Shield,
       title: "Cloud Security & Governance",
       description: "Protect your cloud infrastructure with enterprise-grade security and compliance.",
+      href: "/services/cloud-security-governance",
     },
     {
       icon: DollarSign,
       title: "Cost Optimization & FinOps",
       description: "Reduce cloud spending while maintaining performance through intelligent optimization.",
+      href: "/services/cost-optimization-finops",
     },
     {
       icon: Settings,
       title: "Managed Cloud & Support",
       description: "24/7 monitoring, maintenance, and support for your cloud infrastructure.",
+      href: "/services/managed-cloud-support",
     },
   ]
 
@@ -118,15 +124,20 @@ export default function CloudSolutionsPage() {
             {services.map((service) => {
               const Icon = service.icon
               return (
-                <Card key={service.title} className="border-2 hover:border-primary/50 transition-all">
-                  <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardHeader>
-                </Card>
+                <Link key={service.title} href={service.href || "#"}>
+                  <Card className="border-2 hover:border-primary/50 transition-all h-full cursor-pointer group">
+                    <CardHeader>
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                      <div className="flex items-center gap-2 text-sm font-semibold text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        Learn More <ArrowRight className="h-4 w-4" />
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </Link>
               )
             })}
           </div>
