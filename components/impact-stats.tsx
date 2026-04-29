@@ -8,45 +8,45 @@ const stats = [
         number: "1600+",
         label: "TECHNOLOGY SPECIALISTS",
         description: "designing and building AI-led, cloud-native systems at enterprise scale",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+        image: "/new/imgi_94_technology-specialists-showcase-image.webp",
     },
     {
         number: "3000+",
-        label: "SOLUTIONS",
+        label: "SOLUTIONS DELIVERED",
         description: "delivered across consulting, engineering, and large-scale digital transformation initiatives",
-        logos: [
-            "https://logowik.com/content/uploads/images/google-logo-2020.jpg",
-            "https://logowik.com/content/uploads/images/kpmg1692.logowik.com.webp",
-            "https://logowik.com/content/uploads/images/kfc4456.jpg",
-            "https://logowik.com/content/uploads/images/american-express5153.logowik.com.webp",
-            "https://logowik.com/content/uploads/images/dominos-pizza9082.logowik.com.webp",
-            "https://logowik.com/content/uploads/images/emaar4131.logowik.com.webp",
-            "https://vectorseek.com/wp-content/uploads/2023/09/Google-Partner-Logo-Vector.svg-.png",
-            "https://logowik.com/content/uploads/images/hero-motocorp2985.jpg",
-        ],
-        isLogos: true,
-        image: "", // Fallback to satisfy lint
+        image: "/new/imgi_98_solutions-showcase-image.webp",
     },
     {
-        number: "150+",
-        label: "AI MODELS",
-        description: "deployed and operationalized across production systems, workflows, and decision platforms",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4e886d122?q=80&w=800&auto=format&fit=crop",
+        number: "10+",
+        label: "YEARS OF EXPERIENCE",
+        description: "pioneering digital excellence and driving innovation since our inception",
+        image: "/new/imgi_99_years-of-experience-showcase-image.webp",
     },
     {
         number: "35+",
-        label: "INDUSTRIES",
+        label: "INDUSTRIES MASTERED",
         description: "mastered with deep expertise across highly regulated, data-intensive, and complex industries",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
-        isIcons: true,
+        image: "/new/imgi_95_industries-showcase-image.webp",
+    },
+    {
+        number: "25+",
+        label: "GLOBAL RECOGNITIONS",
+        description: "honored for engineering excellence and impactful digital transformations worldwide",
+        image: "/new/imgi_96_global-recognitions-award-showcase-image-1.webp",
     },
 ]
 
 export function ImpactStats() {
     return (
-        <section className="bg-[#050505] py-24 overflow-hidden">
+        <section className="bg-[#050505] py-10 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 mb-16 text-center lg:text-left">
-                <h2 className="text-4xl font-extrabold text-white mb-4 tracking-tight">Engineering Excellence at Scale</h2>
+                {/* <div className="flex items-center gap-3 mb-6 justify-center lg:justify-start">
+                    <div className="w-12 h-[3px] bg-[#5740A1]" />
+                    <span className="text-[#5740A1] text-xs font-black uppercase tracking-[0.3em]">Our Impact & Scale</span>
+                </div> */}
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-[1.2]">
+                    Engineering <span className="text-[#5740A1] italic">Excellence</span> at <span className="text-[#FFB800]">Scale</span>
+                </h2>
                 <p className="text-slate-400 text-lg max-w-2xl">Fueling innovation through deep technical expertise and industry-specific solutions.</p>
             </div>
 
@@ -59,15 +59,15 @@ export function ImpactStats() {
                     {[...stats, ...stats, ...stats].map((stat, idx) => (
                         <div
                             key={idx}
-                            className="inline-block w-[420px] shrink-0 mx-6 bg-[#111] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:border-blue-500/50 hover:shadow-blue-500/10"
+                            className="inline-block w-[340px] shrink-0 mx-4 bg-[#111] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#5740A1]/50 hover:shadow-[#5740A1]/10"
                         >
                             {/* Top Section */}
-                            <div className="p-10 pb-6">
-                                <div className="flex flex-col gap-2 mb-6">
-                                    <span className="text-6xl font-black text-white tracking-tighter italic leading-none">
+                            <div className="p-8 pb-5">
+                                <div className="flex flex-col gap-1 mb-4">
+                                    <span className="text-5xl font-black text-white tracking-tighter italic leading-none">
                                         {stat.number}
                                     </span>
-                                    <span className="text-sm font-bold text-blue-400 uppercase tracking-[0.2em]">
+                                    <span className="text-sm font-bold text-[#5740A1] uppercase tracking-[0.2em]">
                                         {stat.label}
                                     </span>
                                 </div>
@@ -77,34 +77,16 @@ export function ImpactStats() {
                             </div>
 
                             {/* Bottom Section (Visual) */}
-                            <div className="relative h-72 w-full bg-[#0a0a0a] overflow-hidden">
-                                {stat.isLogos ? (
-                                    <div className="absolute inset-0 p-10 grid grid-cols-3 gap-8 items-center justify-items-center opacity-70">
-                                        {stat.logos?.map((url, i) => (
-                                            <img key={i} src={url} alt="client" className="max-h-12 w-auto grayscale brightness-150 contrast-125" />
-                                        ))}
-                                    </div>
-                                ) : stat.isIcons ? (
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="grid grid-cols-4 gap-6 p-10 opacity-40">
-                                            {[...Array(12)].map((_, i) => (
-                                                <div key={i} className="w-10 h-10 rounded-xl border border-white/20 flex items-center justify-center">
-                                                    <div className="w-4 h-4 rounded-full bg-white/20" />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <Image
-                                        src={stat.image}
-                                        alt={stat.label}
-                                        fill
-                                        className="object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700"
-                                    />
-                                )}
+                            <div className="relative h-56 w-full bg-[#0a0a0a] overflow-hidden">
+                                <Image
+                                    src={stat.image}
+                                    alt={stat.label}
+                                    fill
+                                    className="object-cover opacity-80 transition-all duration-700 group-hover:scale-105"
+                                />
                                 {/* Overlay Glow */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent" />
-                                <div className="absolute inset-0 bg-blue-500/5 transition-opacity group-hover:opacity-20" />
+                                <div className="absolute inset-0 bg-[#5740A1]/5 transition-opacity group-hover:opacity-20" />
                             </div>
                         </div>
                     ))}

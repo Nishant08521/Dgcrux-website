@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react"
 
 const partners = [
-  { src: "https://vectorseek.com/wp-content/uploads/2023/09/Google-Partner-Logo-Vector.svg-.png", alt: "Partner 1" },
-  { src: "https://logowik.com/content/uploads/images/aws-partner-network2396.logowik.com.webp", alt: "Partner 2" },
-  { src: "https://www.uxdt.nic.in/wp-content/uploads/2020/06/Startup-India_Preview.png", alt: "Partner 3" },
+  { src: "https://e7.pngegg.com/pngimages/740/237/png-clipart-google-adwords-google-partners-advertising-pay-per-click-google-partner-search-engine-optimization-company-thumbnail.png", alt: "Partner 1" },
+  { src: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/aws-color.png", alt: "Partner 2" },
+  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2SrOkC9DktLse5ViTRPpDZiph4wpmlqxcg&s", alt: "Partner 3" },
   { src: "https://media.licdn.com/dms/image/v2/C4E12AQHvuLCHhKuejQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520077509521?e=2147483647&v=beta&t=RlzC0uMNRc0wvHNLfqqeiruP6W91lSjzUf0tIZcvkrs", alt: "Partner 4" },
   { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPTksIuHkp-7zuNNa4tXwZQ-sI6d8x9v6QaA&s", alt: "Partner 5" },
   { src: "https://p7.hiclipart.com/preview/85/385/219/iso-9000-quality-management-systems%E2%80%94requirements-iso-9001-logo-international-organization-for-standardization-iso-9001-thumbnail.jpg", alt: "Partner 6" },
@@ -25,13 +25,15 @@ export function HeroSection() {
     <section className="relative min-h-screen w-full overflow-hidden bg-slate-900 text-white">
       {/* Background Video (YouTube) */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <iframe
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[177.77777778vh] h-[56.25vw]"
-          src="https://www.youtube.com/embed/7DfxPcM05E4?autoplay=1&mute=1&loop=1&playlist=7DfxPcM05E4&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1"
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        ></iframe>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover"
+        >
+          <source src="/appi-home-hero-video.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Overlay with subtle gradient */}
@@ -44,17 +46,17 @@ export function HeroSection() {
           {/* <div className="inline-flex items-center rounded-full bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-400 backdrop-blur-md">
             Impact Driven Digital & IT Company
           </div> */}
-          <h1 className="max-w-xl text-2xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            Empowering Businesses with  <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">AI-Driven </span> Digital Product Engineering
+          <h1 className="max-w-xl text-2xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Empowering Businesses with <span className="text-[#5740A1] italic">AI-Driven</span> Digital Product <span className="text-[#FFB800]">Engineering</span>
           </h1>
           <p className="max-w-xl text-base text-slate-300 sm:text-lg lg:mx-0">
             DgCrux is your technology partner for digital transformation, helping startups and enterprises design, engineer, and scale intelligent software products built on AI, cloud, and modern architectures.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-            <button className="group relative overflow-hidden rounded-full bg-[#ffaa17] px-8 py-4 font-bold text-white transition-all hover:bg-blue-500">
+            {/* <button className="group relative overflow-hidden rounded-full bg-[#ffaa17] px-8 py-4 font-bold text-white transition-all hover:bg-blue-500">
               <span className="relative z-10">BOOK A 15 MIN FREE CONSULTATION</span>
               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-blue-400 to-indigo-500 transition-transform duration-300 group-hover:translate-x-0" />
-            </button>
+            </button> */}
             {/* <button className="rounded-full border border-white/20 bg-white/5 px-8 py-4 font-bold backdrop-blur-md transition-all hover:bg-white/10">
               Our Services
             </button> */}
@@ -66,16 +68,13 @@ export function HeroSection() {
           <div className="w-full max-w-[480px]">
             <p className="mb-4 text-center text-sm font-medium uppercase tracking-widest text-slate-400 lg:text-right">Our Trusted Partners</p>
 
-            <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5" />
-
-              {/* Horizontal Marquee */}
+            <div className="relative w-full overflow-hidden">
               <div className="relative flex w-full overflow-hidden">
-                <div className="flex animate-marquee-horizontal items-center gap-8 py-2">
+                <div className="flex animate-marquee-horizontal items-center gap-4 py-2">
                   {[...partners, ...partners].map((partner, idx) => (
                     <div
                       key={idx}
-                      className="flex h-14 w-[120px] flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110"
+                      className="flex h-20 w-[160px] flex-shrink-0 items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-white/30 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-4"
                     >
                       <img
                         src={partner.src}

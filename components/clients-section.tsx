@@ -36,9 +36,9 @@ export function ClientsSection() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-4"
+            className="text-3xl md:text-5xl font-black tracking-tight text-[#1b1338] mb-4"
           >
-            Some of Our Esteemed Clients
+            Some of Our <span className="text-primary italic">Esteemed </span> <span className="text-secondary">Clients</span>
           </motion.h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full" />
         </div>
@@ -58,14 +58,14 @@ export function ClientsSection() {
               {fullRow1.map((client, index) => (
                 <div
                   key={`row1-${index}`}
-                  className="flex-shrink-0 w-[220px] h-[120px] flex flex-col items-center justify-center rounded-2xl bg-white border border-slate-100 p-6 shadow-sm hover:shadow-md hover:border-blue-100 transition-all cursor-pointer group/card"
+                  className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center transition-all cursor-pointer group/card"
                 >
                   <div className="h-full w-full relative">
                     <Image
                       src={client.logo}
                       alt={client.name}
                       fill
-                      className="object-contain transition-transform group-hover/card:scale-110"
+                      className="object-contain transition-transform duration-300 group-hover/card:scale-110"
                     />
                   </div>
                 </div>
@@ -87,14 +87,14 @@ export function ClientsSection() {
               {fullRow2.map((client, index) => (
                 <div
                   key={`row2-${index}`}
-                  className="flex-shrink-0 w-[220px] h-[120px] flex flex-col items-center justify-center rounded-2xl bg-white border border-slate-100 p-6 shadow-sm hover:shadow-md hover:border-blue-100 transition-all cursor-pointer group/card"
+                  className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center transition-all cursor-pointer group/card"
                 >
                   <div className="h-full w-full relative">
                     <Image
                       src={client.logo}
                       alt={client.name}
                       fill
-                      className="object-contain transition-transform group-hover/card:scale-110"
+                      className="object-contain transition-transform duration-300 group-hover/card:scale-110"
                     />
                   </div>
                 </div>

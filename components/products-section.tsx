@@ -86,7 +86,7 @@ const allProducts = [
 
 export function ProductsSection() {
   return (
-    <section className="relative py-24 px-4 bg-background overflow-hidden" id="products">
+    <section className="relative py-4 px-4 bg-background overflow-hidden" id="products">
       {/* Dynamic Background */}
       <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_var(--color-primary)_0%,_transparent_50%)]" />

@@ -71,7 +71,9 @@ export function FAQSection() {
       {/* ── Section Heading ─────────────────────────────── */}
       <div className="faq-section-header">
         {/* <span className="faq-section-eyebrow">Support</span> */}
-        <h2 className="faq-section-title">Frequently Asked Questions</h2>
+        <h2 className="faq-section-title">
+          Frequently Asked <span className="faq-highlight">Questions</span>
+        </h2>
         {/* <p className="faq-section-desc">
           Everything you need to know about DGCrux and our services. Can&apos;t find the answer you&apos;re looking for? Use the form below to reach out.
         </p> */}
@@ -267,12 +269,17 @@ export function FAQSection() {
         }
 
         .faq-section-title {
-          font-size: 2.4rem;
-          font-weight: 800;
-          color: #0f172a;
+          font-size: 2.8rem;
+          font-weight: 900;
+          color: #1b1338;
           line-height: 1.2;
           margin: 0 0 1rem 0;
           letter-spacing: -0.02em;
+        }
+
+        .faq-highlight {
+          color: #5740A1;
+          font-style: italic;
         }
 
         .faq-section-desc {

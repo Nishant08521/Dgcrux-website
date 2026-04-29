@@ -2,12 +2,12 @@
 
 import { useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { 
-  Code2, 
-  Database, 
-  Globe, 
-  Cpu, 
-  Smartphone, 
+import {
+  Code2,
+  Database,
+  Globe,
+  Cpu,
+  Smartphone,
   Cloud,
   Layers,
   Sparkles,
@@ -46,7 +46,7 @@ const getIconUrl = (name: string) => {
   const slug = lowName
     .replace(".js", "")
     .replace(" ", "")
-  
+
   return `https://skillicons.dev/icons?i=${slug}`
 }
 
@@ -116,16 +116,16 @@ export function TechnologyStack() {
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
         <div className="flex flex-col items-center mb-24 text-center">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 shadow-sm"
           >
             <Zap className="w-3 h-3 fill-blue-600" />
             Cutting Edge Tech Stack
-          </motion.div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 mb-6">
-            Technologies We <span className="text-blue-600 italic">Master</span>
+          </motion.div> */}
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-[#1b1338] mb-6">
+            Technologies <span className="text-primary italic">We </span> <span className="text-secondary">Master</span>
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl leading-relaxed">
             We leverage a diverse arsenal of industry-leading technologies to build scalable, secure, and intelligent digital products.
@@ -139,24 +139,21 @@ export function TechnologyStack() {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`group relative flex items-center gap-5 p-6 rounded-[2rem] border transition-all duration-500 text-left ${
-                  activeTab === cat.id 
-                  ? "bg-white border-blue-500/20 shadow-xl shadow-blue-500/10 scale-[1.02]" 
+                className={`group relative flex items-center gap-5 p-6 rounded-[2rem] border transition-all duration-500 text-left ${activeTab === cat.id
+                  ? "bg-white border-blue-500/20 shadow-xl shadow-blue-500/10 scale-[1.02]"
                   : "bg-slate-50/50 border-slate-200 hover:bg-white hover:border-blue-200"
-                }`}
+                  }`}
               >
-                <div className={`p-4 rounded-2xl transition-all duration-500 ${
-                  activeTab === cat.id 
-                  ? `bg-gradient-to-br ${cat.color} text-white shadow-lg` 
+                <div className={`p-4 rounded-2xl transition-all duration-500 ${activeTab === cat.id
+                  ? `bg-gradient-to-br ${cat.color} text-white shadow-lg`
                   : "bg-white text-slate-400 border border-slate-200 group-hover:bg-slate-100"
-                }`}>
+                  }`}>
                   <cat.icon className="w-5 h-5" />
                 </div>
-                
+
                 <div className="flex-1">
-                  <span className={`block text-base font-bold transition-colors ${
-                    activeTab === cat.id ? "text-slate-900" : "text-slate-500 group-hover:text-slate-700"
-                  }`}>
+                  <span className={`block text-base font-bold transition-colors ${activeTab === cat.id ? "text-slate-900" : "text-slate-500 group-hover:text-slate-700"
+                    }`}>
                     {cat.name}
                   </span>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
@@ -164,9 +161,8 @@ export function TechnologyStack() {
                   </span>
                 </div>
 
-                <div className={`transition-all duration-500 ${
-                  activeTab === cat.id ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
-                }`}>
+                <div className={`transition-all duration-500 ${activeTab === cat.id ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                  }`}>
                   <ArrowRight className="w-5 h-5 text-blue-500" />
                 </div>
               </button>
@@ -185,17 +181,17 @@ export function TechnologyStack() {
                 className={`h-full flex flex-col p-10 md:p-16 rounded-[3rem] border-2 border-slate-100 bg-white shadow-2xl shadow-slate-200 relative overflow-hidden`}
               >
                 {/* Dynamic Glow Background */}
-                <div 
+                <div
                   className="absolute -top-32 -right-32 w-96 h-96 rounded-full blur-[120px] transition-colors duration-1000 opacity-60"
                   style={{ backgroundColor: activeCategory.glow }}
                 />
-                
+
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-12 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
                     <Layers className="w-4 h-4" />
                     Stack Components
                   </div>
-                  
+
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                     {activeCategory.techs.map((tech, idx) => (
                       <motion.div
@@ -206,7 +202,7 @@ export function TechnologyStack() {
                         className="group relative aspect-square"
                       >
                         <div className="relative w-full h-full p-6 rounded-[2rem] bg-white border border-slate-200 flex flex-col items-center justify-center gap-4 transition-all duration-500 hover:border-blue-500/20 hover:shadow-xl hover:shadow-slate-200 hover:scale-110">
-                          <img 
+                          <img
                             src={getIconUrl(tech)}
                             alt={tech}
                             className="w-12 h-12 object-contain transition-all duration-500 group-hover:rotate-6"
@@ -232,7 +228,7 @@ export function TechnologyStack() {
             { label: "Agile Delivery", icon: Zap, value: "Real-time", color: "from-orange-600 to-red-500", bg: "bg-orange-50", border: "border-orange-200" },
             { label: "Future Ready", icon: Sparkles, value: "Cutting-Edge", color: "from-rose-600 to-pink-500", bg: "bg-rose-50", border: "border-rose-200" }
           ].map((stat, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -245,7 +241,7 @@ export function TechnologyStack() {
               </div>
               <div className="text-3xl font-black text-slate-900 mb-2">{stat.value}</div>
               <div className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">{stat.label}</div>
-              
+
               {/* Corner Accent Glow */}
               <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${stat.color} opacity-0 blur-3xl transition-opacity group-hover:opacity-10`} />
             </motion.div>
