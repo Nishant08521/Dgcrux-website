@@ -23,21 +23,31 @@ const getIconUrl = (name: string) => {
     "framer motion": "https://images.seeklogo.com/logo-png/44/2/framer-motion-logo-png_seeklogo-446185.png",
     "three.js": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Three.js_Icon.svg",
     "node.js": "https://skillicons.dev/icons?i=nodejs",
-    "keras": "https://w7.pngwing.com/pngs/571/118/png-transparent-keras-logo-thumbnail.png",
+    "next.js 15": "https://skillicons.dev/icons?i=nextjs",
+    "redux / zustand": "https://skillicons.dev/icons?i=redux",
+    "shadcn ui": "https://skillicons.dev/icons?i=tailwind", // Shadcn uses Tailwind
+    "vite": "https://skillicons.dev/icons?i=vite",
+    "express.js": "https://skillicons.dev/icons?i=express",
+    "nestjs": "https://skillicons.dev/icons?i=nestjs",
+    "graphql": "https://skillicons.dev/icons?i=graphql",
+    "prisma orm": "https://skillicons.dev/icons?i=prisma",
+    "expo": "https://skillicons.dev/icons?i=react",
+    "swiftui": "https://skillicons.dev/icons?i=swift",
+    "github actions": "https://skillicons.dev/icons?i=githubactions",
+    "openai api": "https://i.pinimg.com/736x/ad/01/1d/ad011d0a7d6387263473af7f7fd21c3e.jpg",
+    "keras": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZcfpuMykcJZBUX8233o3FB_-yoEMgHA3lQ&s",
+    "hugging face": "https://skillicons.dev/icons?i=pytorch", // Fallback for HF
+    "vector db": "https://skillicons.dev/icons?i=mongodb", // Fallback for Vector DB
+    "rag systems": "https://skillicons.dev/icons?i=py", // Fallback
+    "langchain": "https://skillicons.dev/icons?i=py", // Fallback
+    "ci/cd": "https://skillicons.dev/icons?i=github",
+    "rest api": "https://skillicons.dev/icons?i=js",
+    "jwt": "https://skillicons.dev/icons?i=js",
+    "digitalocean": "https://skillicons.dev/icons?i=digitalocean",
+    "vercel": "https://skillicons.dev/icons?i=vercel",
+    "nginx": "https://skillicons.dev/icons?i=nginx",
+    "ai chatbots": "https://png.pngtree.com/png-vector/20250903/ourlarge/pngtree-d-ai-chatbot-icon-cute-robot-head-with-glossy-blue-design-png-image_17355891.webp",
     "react native": "https://skillicons.dev/icons?i=react",
-    "next.js": "https://skillicons.dev/icons?i=nextjs",
-    "tailwind css": "https://skillicons.dev/icons?i=tailwind",
-    "typescript": "https://skillicons.dev/icons?i=ts",
-    "javascript": "https://skillicons.dev/icons?i=js",
-    "python": "https://skillicons.dev/icons?i=py",
-    "django": "https://skillicons.dev/icons?i=django",
-    "laravel": "https://skillicons.dev/icons?i=laravel",
-    "aws": "https://skillicons.dev/icons?i=aws",
-    "google cloud": "https://skillicons.dev/icons?i=gcp",
-    "docker": "https://skillicons.dev/icons?i=docker",
-    "kubernetes": "https://skillicons.dev/icons?i=kubernetes",
-    "mongodb": "https://skillicons.dev/icons?i=mongodb",
-    "postgresql": "https://skillicons.dev/icons?i=postgres",
   }
 
   const lowName = name.toLowerCase()
@@ -46,6 +56,7 @@ const getIconUrl = (name: string) => {
   const slug = lowName
     .replace(".js", "")
     .replace(" ", "")
+    .replace("15", "")
 
   return `https://skillicons.dev/icons?i=${slug}`
 }
@@ -55,7 +66,7 @@ const categories = [
     id: "frontend",
     name: "Frontend",
     icon: Globe,
-    techs: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js", "Angular", "Vue.js"],
+    techs: ["React.js", "Next.js 15", "TypeScript", "JavaScript", "Tailwind CSS", "Framer Motion", "Three.js", "Angular", "Vue.js", "Redux / Zustand", "ShadCN UI", "Vite"],
     color: "from-blue-600 to-cyan-500",
     glow: "rgba(37, 99, 235, 0.08)",
     bg: "bg-blue-50/50"
@@ -64,7 +75,7 @@ const categories = [
     id: "backend",
     name: "Backend",
     icon: Code2,
-    techs: ["Node.js", "Python", "Django", "Laravel", "NestJS", "FastAPI", "Express.js", "Spring"],
+    techs: ["Node.js", "Python", "Django", "Laravel", "NestJS", "FastAPI", "Express.js", "Spring", "GraphQL", "REST API", "JWT", "Prisma ORM"],
     color: "from-emerald-600 to-teal-500",
     glow: "rgba(16, 185, 129, 0.08)",
     bg: "bg-emerald-50/50"
@@ -73,7 +84,7 @@ const categories = [
     id: "mobile",
     name: "Mobile",
     icon: Smartphone,
-    techs: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "Dart"],
+    techs: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "Dart", "Expo", "SwiftUI"],
     color: "from-purple-600 to-pink-500",
     glow: "rgba(168, 85, 247, 0.08)",
     bg: "bg-purple-50/50"
@@ -82,7 +93,7 @@ const categories = [
     id: "database",
     name: "Database",
     icon: Database,
-    techs: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Elasticsearch", "Prisma"],
+    techs: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Elasticsearch", "Firebase", "Prisma"],
     color: "from-orange-600 to-amber-500",
     glow: "rgba(249, 115, 22, 0.08)",
     bg: "bg-orange-50/50"
@@ -91,7 +102,7 @@ const categories = [
     id: "cloud",
     name: "Cloud & DevOps",
     icon: Cloud,
-    techs: ["AWS", "Google Cloud", "Azure", "Docker", "Kubernetes", "Github Actions", "Terraform"],
+    techs: ["AWS", "Google Cloud", "Azure", "Docker", "Kubernetes", "Github Actions", "Terraform", "Vercel", "DigitalOcean", "Nginx", "CI/CD"],
     color: "from-sky-600 to-indigo-500",
     glow: "rgba(14, 165, 233, 0.08)",
     bg: "bg-sky-50/50"
@@ -100,7 +111,7 @@ const categories = [
     id: "ai",
     name: "AI & ML",
     icon: Cpu,
-    techs: ["TensorFlow", "PyTorch", "OpenAI", "Keras", "Python"],
+    techs: ["TensorFlow", "PyTorch", "OpenAI API", "Keras", "Python", "LangChain", "Hugging Face", "RAG Systems", "Vector DB", "AI Chatbots"],
     color: "from-rose-600 to-red-500",
     glow: "rgba(244, 63, 94, 0.08)",
     bg: "bg-rose-50/50"
@@ -125,7 +136,7 @@ export function TechnologyStack() {
             Cutting Edge Tech Stack
           </motion.div> */}
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-[#1b1338] mb-6">
-            Technologies <span className="text-primary italic">We </span> <span className="text-secondary">Master</span>
+            Technologies <span className="text-blue-600 italic">We </span> <span className="text-secondary">Master</span>
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl leading-relaxed">
             We leverage a diverse arsenal of industry-leading technologies to build scalable, secure, and intelligent digital products.
@@ -223,10 +234,10 @@ export function TechnologyStack() {
         {/* Footer Stats - Box Type & Colorful */}
         <div className="mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { label: "Proven Expertise", icon: ShieldCheck, value: "100%", color: "from-blue-600 to-indigo-500", bg: "bg-blue-50", border: "border-blue-200" },
-            { label: "Digital Products", icon: Laptop, value: "250+", color: "from-emerald-600 to-teal-500", bg: "bg-emerald-50", border: "border-emerald-200" },
-            { label: "Agile Delivery", icon: Zap, value: "Real-time", color: "from-orange-600 to-red-500", bg: "bg-orange-50", border: "border-orange-200" },
-            { label: "Future Ready", icon: Sparkles, value: "Cutting-Edge", color: "from-rose-600 to-pink-500", bg: "bg-rose-50", border: "border-rose-200" }
+            { label: "WEBSITE DEVELOPED", icon: Laptop, value: "350+", color: "from-blue-600 to-indigo-500", bg: "bg-blue-50", border: "border-blue-200" },
+            { label: "YEARS OF DOMAIN EXPERTISE", icon: ShieldCheck, value: "12+", color: "from-emerald-600 to-teal-500", bg: "bg-emerald-50", border: "border-emerald-200" },
+            { label: "CUSTOMER SATISFACTION", icon: Zap, value: "100%", color: "from-orange-600 to-red-500", bg: "bg-orange-50", border: "border-orange-200" },
+            { label: "TECH STACK", icon: Sparkles, value: "30+", color: "from-rose-600 to-pink-500", bg: "bg-rose-50", border: "border-rose-200" }
           ].map((stat, i) => (
             <motion.div
               key={i}

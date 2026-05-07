@@ -34,6 +34,16 @@ const faqs = [
     answer:
       "Absolutely. DGCrux develops digital products that are SEO-friendly, performance-optimized, and AI-ready. Our approach ensures your software is structured for search visibility, future AI integrations, and long-term digital growth.",
   },
+  {
+    question: "How long does a typical digital product project take?",
+    answer:
+      "The timeline depends on the complexity of the product. A Minimum Viable Product (MVP) typically takes 8–12 weeks, while more complex enterprise solutions or AI-driven platforms may take 4–6 months. We provide a detailed roadmap after our initial discovery phase.",
+  },
+  {
+    question: "Do you offer post-launch support and maintenance?",
+    answer:
+      "Yes. We believe in long-term partnerships. DGCrux offers managed IT services and dedicated support plans to ensure your product remains secure, updated, and high-performing as your user base and business needs grow.",
+  },
 ]
 
 const budgetOptions = [
@@ -278,7 +288,7 @@ export function FAQSection() {
         }
 
         .faq-highlight {
-          color: #5740A1;
+          color: #2563eb;
           font-style: italic;
         }
 

@@ -22,16 +22,16 @@ export function Footer() {
               Transforming businesses through innovative digital product engineering, AI solutions, and scalable cloud architectures. Empowering the modern era.
             </p>
             <div className="flex gap-4 pt-2">
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#5740A1] hover:text-white hover:border-[#5740A1] transition-all duration-300">
+              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
                 <Facebook className="h-4 w-4" />
               </Link>
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#5740A1] hover:text-white hover:border-[#5740A1] transition-all duration-300">
+              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
                 <Twitter className="h-4 w-4" />
               </Link>
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#5740A1] hover:text-white hover:border-[#5740A1] transition-all duration-300">
+              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
                 <Linkedin className="h-4 w-4" />
               </Link>
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#5740A1] hover:text-white hover:border-[#5740A1] transition-all duration-300">
+              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
                 <Instagram className="h-4 w-4" />
               </Link>
             </div>
@@ -43,27 +43,27 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="/services/software-development" className="text-slate-400 hover:text-[#FFB800] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5740A1]" /> Software Development
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb]" /> Software Development
                 </Link>
               </li>
               <li>
                 <Link href="/services/ai-solutions" className="text-slate-400 hover:text-[#FFB800] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5740A1]" /> AI Solutions
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb]" /> AI Solutions
                 </Link>
               </li>
               <li>
                 <Link href="/services/cloud-solutions" className="text-slate-400 hover:text-[#FFB800] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5740A1]" /> Cloud Solutions
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb]" /> Cloud Solutions
                 </Link>
               </li>
               <li>
                 <Link href="/services/ecommerce" className="text-slate-400 hover:text-[#FFB800] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5740A1]" /> eCommerce
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb]" /> eCommerce
                 </Link>
               </li>
               <li>
                 <Link href="/services/digital-marketing" className="text-slate-400 hover:text-[#FFB800] transition-colors flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5740A1]" /> Digital Marketing
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb]" /> Digital Marketing
                 </Link>
               </li>
             </ul>
@@ -99,17 +99,17 @@ export function Footer() {
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider text-sm">Contact Us</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#5740A1] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" />
                 <span className="text-slate-400">123 Business Park, Tech City<br />New Delhi, India 110001</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#5740A1] flex-shrink-0" />
+                <Mail className="w-5 h-5 text-[#2563eb] flex-shrink-0" />
                 <a href="mailto:info@dgcrux.com" className="text-slate-400 hover:text-[#FFB800] transition-colors">
                   info@dgcrux.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <PhoneCall className="w-5 h-5 text-[#5740A1] flex-shrink-0" />
+                <PhoneCall className="w-5 h-5 text-[#2563eb] flex-shrink-0" />
                 <a href="tel:+911234567890" className="text-slate-400 hover:text-[#FFB800] transition-colors">
                   +91 123-456-7890
                 </a>

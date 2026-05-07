@@ -40,12 +40,8 @@ export function ImpactStats() {
     return (
         <section className="bg-[#050505] py-10 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 mb-16 text-center lg:text-left">
-                {/* <div className="flex items-center gap-3 mb-6 justify-center lg:justify-start">
-                    <div className="w-12 h-[3px] bg-[#5740A1]" />
-                    <span className="text-[#5740A1] text-xs font-black uppercase tracking-[0.3em]">Our Impact & Scale</span>
-                </div> */}
                 <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-[1.2]">
-                    Engineering <span className="text-[#5740A1] italic">Excellence</span> at <span className="text-[#FFB800]">Scale</span>
+                    Engineering <span className="text-[#2563eb] italic">Excellence</span> at <span className="text-[#FFB800]">Scale</span>
                 </h2>
                 <p className="text-slate-400 text-lg max-w-2xl">Fueling innovation through deep technical expertise and industry-specific solutions.</p>
             </div>
@@ -59,7 +55,7 @@ export function ImpactStats() {
                     {[...stats, ...stats, ...stats].map((stat, idx) => (
                         <div
                             key={idx}
-                            className="inline-block w-[340px] shrink-0 mx-4 bg-[#111] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#5740A1]/50 hover:shadow-[#5740A1]/10"
+                            className="inline-block w-[340px] shrink-0 mx-4 bg-[#111] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:border-[#2563eb]/50 hover:shadow-[#2563eb]/10"
                         >
                             {/* Top Section */}
                             <div className="p-8 pb-5">
@@ -67,7 +63,7 @@ export function ImpactStats() {
                                     <span className="text-5xl font-black text-white tracking-tighter italic leading-none">
                                         {stat.number}
                                     </span>
-                                    <span className="text-sm font-bold text-[#5740A1] uppercase tracking-[0.2em]">
+                                    <span className="text-sm font-bold text-[#2563eb] uppercase tracking-[0.2em]">
                                         {stat.label}
                                     </span>
                                 </div>
@@ -86,7 +82,7 @@ export function ImpactStats() {
                                 />
                                 {/* Overlay Glow */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent" />
-                                <div className="absolute inset-0 bg-[#5740A1]/5 transition-opacity group-hover:opacity-20" />
+                                <div className="absolute inset-0 bg-[#2563eb]/5 transition-opacity group-hover:opacity-20" />
                             </div>
                         </div>
                     ))}

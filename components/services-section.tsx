@@ -81,7 +81,7 @@ export function ServicesSection() {
   return (
     <section id="services" className="relative pt-6 pb-4 sm:py-8 overflow-hidden">
       {/* Background stays transparent/inherited */}
-      
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Clean Light Header */}
         <div className="flex flex-col items-center text-center mb-12">
@@ -93,15 +93,15 @@ export function ServicesSection() {
             <Sparkles className="w-3 h-3" />
             Core Expertise
           </motion.div> */}
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-black text-[#1b1338] tracking-tight leading-tight mb-6"
           >
-            Digital Solutions for the <span className="text-primary italic">Modern </span><span className="text-secondary">Era</span>
+            Digital & AI Solutions for the <span className="text-blue-600 italic">Modern </span><span className="text-secondary">Era</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -163,7 +163,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
             ))}
           </div>
 
-          <Link 
+          <Link
             href={service.href}
             className="flex items-center gap-3 text-sm font-black text-slate-900 group-hover:translate-x-2 transition-transform uppercase tracking-widest"
           >

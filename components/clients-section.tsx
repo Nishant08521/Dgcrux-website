@@ -38,7 +38,7 @@ export function ClientsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-5xl font-black tracking-tight text-[#1b1338] mb-4"
           >
-            Some of Our <span className="text-primary italic">Esteemed </span> <span className="text-secondary">Clients</span>
+            Some of Our <span className="text-blue-600 italic">Esteemed </span> <span className="text-secondary">Clients</span>
           </motion.h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full" />
         </div>

@@ -59,8 +59,8 @@ export function LocationSection() {
                                     key={index}
                                     onClick={() => setActiveTab(index)}
                                     className={`w-full text-left group relative p-4 rounded-xl border transition-all duration-300 transform ${activeTab === index
-                                            ? "bg-white border-primary shadow-lg shadow-primary/5 scale-[1.01]"
-                                            : "bg-card/50 border-border hover:bg-white hover:border-primary/20"
+                                        ? "bg-white border-primary shadow-lg shadow-primary/5 scale-[1.01]"
+                                        : "bg-card/50 border-border hover:bg-white hover:border-primary/20"
                                         }`}
                                 >
                                     <div className="flex items-start gap-4">
