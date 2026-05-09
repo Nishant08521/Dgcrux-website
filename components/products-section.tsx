@@ -115,7 +115,7 @@ export function ProductsSection() {
               className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight"
             >
               Built for <span className="text-blue-600 italic">Excellence</span>, <br />
-              Powered by <span className="text-secondary">AI</span>
+              Powered by AI
             </motion.h2>
           </div>
           <motion.p

@@ -25,7 +25,7 @@ export default function HomePage() {
       {/* <RecognitionStrip /> */}
 
       <ServicesSection />
-      {/* <AboutSection /> */}
+      <AboutSection />
       <ClientsSection />
       {/* <TechnologyStackPage /> */}
       <TechnologyStack />

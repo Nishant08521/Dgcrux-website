@@ -69,7 +69,7 @@ export function HeroSection() {
             DgCrux is your technology partner for digital transformation, helping startups and enterprises design, engineer, and scale intelligent software products built on AI, cloud, and modern architectures.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-            <button 
+            <button
               onClick={() => setIsPopupOpen(true)}
               className="group relative overflow-hidden rounded-full bg-blue-600 px-8 py-4 font-bold text-white transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
             >

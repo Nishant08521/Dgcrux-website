@@ -43,7 +43,7 @@ const getIconUrl = (name: string) => {
     "ci/cd": "https://skillicons.dev/icons?i=github",
     "rest api": "https://skillicons.dev/icons?i=js",
     "jwt": "https://skillicons.dev/icons?i=js",
-    "digitalocean": "https://skillicons.dev/icons?i=digitalocean",
+    "digitalocean": "https://w7.pngwing.com/pngs/410/265/png-transparent-digitalocean-icon-hd-logo.png",
     "vercel": "https://skillicons.dev/icons?i=vercel",
     "nginx": "https://skillicons.dev/icons?i=nginx",
     "ai chatbots": "https://png.pngtree.com/png-vector/20250903/ourlarge/pngtree-d-ai-chatbot-icon-cute-robot-head-with-glossy-blue-design-png-image_17355891.webp",
@@ -136,7 +136,7 @@ export function TechnologyStack() {
             Cutting Edge Tech Stack
           </motion.div> */}
           <h2 className="text-4xl md:text-6xl font-black tracking-tight text-[#1b1338] mb-6">
-            Technologies <span className="text-blue-600 italic">We </span> <span className="text-secondary">Master</span>
+            Technologies <span className="text-blue-600 italic">We </span> Master
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl leading-relaxed">
             We leverage a diverse arsenal of industry-leading technologies to build scalable, secure, and intelligent digital products.

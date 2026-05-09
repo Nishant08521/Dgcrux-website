@@ -1,63 +1,112 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
+
+const carouselImages = [
+  "https://dgcrux.com/images/gallery/ceo.jpg",
+  "https://dgcrux.com/images/gallery/award1.jpg",
+  "https://dgcrux.com/images/gallery/award2.jpg",
+  "https://dgcrux.com/images/gallery/award3.jpg",
+  "https://lh3.googleusercontent.com/p/AF1QipMFSjeTkdUB1gTXBta30t7ZFP_r5ASKzAe5DEFC=s1360-w1360-h1020-rw",
+
+]
 
 export function AboutSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
-    <section id="about" className="about-section bg-white py-16 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="relative w-full max-w-2xl pb-20">
-            <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-xl">
-              <Image
-                src="https://dgcrux.com/images/dgcrux-technology-about.jpg"
-                alt="About helping businesses"
-                width={820}
-                height={560}
-                className="h-auto w-full object-cover"
-                priority
-              />
+    <section id="about" className="relative overflow-hidden bg-white py-8 sm:py-10">
+      {/* Background Decorative Elements */}
+      <div className="absolute left-0 top-0 -z-10 h-full w-full opacity-10">
+        <div className="absolute left-[10%] top-[20%] h-64 w-64 rounded-full bg-blue-400 blur-3xl" />
+        <div className="absolute right-[5%] bottom-[10%] h-96 w-96 rounded-full bg-indigo-300 blur-3xl" />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
+          {/* Left Side: Image Stack */}
+          <div className="relative order-2 lg:order-1 lg:col-span-5 py-12">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl bg-slate-100">
+              {carouselImages.map((src, index) => (
+                <div
+                  key={src}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+                    }`}
+                >
+                  <Image
+                    src={src}
+                    alt={`Gallery image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                  />
+                </div>
+              ))}
             </div>
-            <div className="absolute bottom-[-230px]  w-[400px] sm:w-[420px] md:w-[450px] overflow-hidden rounded-2xl border border-slate-100 shadow-xl transform -translate-y-1/2">
-              <Image
-                src="https://dgcrux.com/images/founder.jpg"
-                alt="Founder"
-                width={450}
-                height={450}
-                className="h-auto w-full object-cover"
-              />
-            </div>
+            {/* Overlay Card */}
+            {/* <div className="absolute -bottom-10 -right-10 hidden rounded-2xl bg-blue-600 p-8 text-white shadow-2xl sm:block lg:-bottom-6 lg:-right-6">
+              <div className="flex flex-col gap-1">
+                <span className="text-4xl font-bold">10+</span>
+                <span className="text-sm font-medium uppercase tracking-wider text-blue-100">Years of Innovation</span>
+              </div>
+            </div> */}
           </div>
 
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <h3 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
-                We are Committed to provide outstanding service
+          {/* Right Side: Content */}
+          <div className="order-1 lg:order-2 lg:col-span-7 space-y-8">
+            <div className="space-y-4">
+              <h2 className="text-sm font-bold uppercase tracking-widest text-blue-600">About DgCrux</h2>
+              <h3 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+                Engineering the <span className="text-blue-600">Future</span> of Digital & AI Products
               </h3>
-              <p className="text-lg font-semibold uppercase tracking-wide text-amber-500">
-                Passionate about helping businesses succeed in the digital age
+              <p className="text-xl text-slate-600 leading-relaxed">
+                At DgCrux, we don't just build software; we architect experiences that drive growth. Our mission is to empower businesses with cutting-edge AI and cloud solutions.
               </p>
             </div>
 
-            <div className="text-lg leading-8 text-slate-700">
-              <p>
-                At DgCrux, we understand that the digital landscape is constantly changing, and we strive to stay ahead
-                of the curve. Our team of experienced and knowledgeable digital marketers will create and implement
-                effective strategies to maximize your online presence and help you reach your goals. We offer a wide
-                variety of Digital &amp; IT services, we&apos;re committed to providing outstanding customer service and
-                delivering results that exceed your expectations.
-              </p>
-              <p className="mt-4">
-                We look forward to helping you achieve success in the digital world!
-              </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                "AI-Driven Solutions",
+                "Scalable Architecture",
+                "Cloud-Native Apps",
+                "UX-First Design",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-blue-600" />
+                  <span className="font-semibold text-slate-700">{item}</span>
+                </div>
+              ))}
             </div>
 
-            <div>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-slate-900 shadow-lg transition hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300"
-              >
-                Contact Us
-              </Link>
+            <div className="space-y-6 pt-4">
+              <p className="text-lg text-slate-600">
+                Our team of experts brings together decades of experience in digital transformation. We partner with startups and enterprises to turn complex challenges into seamless digital realities.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-sm font-bold text-white transition-all hover:bg-blue-700 hover:shadow-lg"
+                >
+                  LEARN MORE ABOUT US <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 py-4 text-sm font-bold text-slate-900 transition-all hover:border-blue-600 hover:text-blue-600"
+                >
+                  GET IN TOUCH
+                </Link>
+              </div>
             </div>
           </div>
         </div>

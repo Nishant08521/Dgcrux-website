@@ -99,7 +99,7 @@ export function ServicesSection() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-black text-[#1b1338] tracking-tight leading-tight mb-6"
           >
-            Digital & AI Solutions for the <span className="text-blue-600 italic">Modern </span><span className="text-secondary">Era</span>
+            Digital & AI Solutions for the <span className="text-blue-600 italic">Modern </span> Era
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
