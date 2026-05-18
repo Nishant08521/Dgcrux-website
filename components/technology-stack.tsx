@@ -143,19 +143,19 @@ export function TechnologyStack() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:min-h-[600px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:min-h-[600px]">
           {/* Tabs Sidebar */}
-          <div className="lg:col-span-4 flex flex-col gap-4">
+          <div className="lg:col-span-4 flex flex-col gap-3">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`group relative flex items-center gap-5 p-6 rounded-[2rem] border transition-all duration-500 text-left ${activeTab === cat.id
+                className={`group relative flex items-center gap-4 p-4.5 rounded-2xl border transition-all duration-500 text-left ${activeTab === cat.id
                   ? "bg-white border-blue-500/20 shadow-xl shadow-blue-500/10 scale-[1.02]"
                   : "bg-slate-50/50 border-slate-200 hover:bg-white hover:border-blue-200"
                   }`}
               >
-                <div className={`p-4 rounded-2xl transition-all duration-500 ${activeTab === cat.id
+                <div className={`p-3 rounded-xl transition-all duration-500 ${activeTab === cat.id
                   ? `bg-gradient-to-br ${cat.color} text-white shadow-lg`
                   : "bg-white text-slate-400 border border-slate-200 group-hover:bg-slate-100"
                   }`}>
