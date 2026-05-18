@@ -9,13 +9,14 @@ const clientsRow1 = [
   { name: "Rapido", logo: "https://dgcrux.com/images/Dgcruxclient/3.png" },
   { name: "Zeross", logo: "https://dgcrux.com/images/Dgcruxclient/4.png" },
   { name: "Sourcx.ai", logo: "https://dgcrux.com/images/Dgcruxclient/5.png" },
+  
 ]
 
 const clientsRow2 = [
   { name: "Medicine", logo: "https://dgcrux.com/images/Dgcruxclient/6.png" },
-  { name: "I-Bee Farm", logo: "https://dgcrux.com/images/Dgcruxclient/7.png" },
+  { name: "I-Bee Farm", logo: "https://dgcrux.com/images/Dgcruxclient/22.png" },
   { name: "Mamma", logo: "https://dgcrux.com/images/Dgcruxclient/19.png" },
-  { name: "Grohood", logo: "https://dgcrux.com/images/Dgcruxclient/16.png" },
+  { name: "Grohood", logo: "https://dgcrux.com/images/Dgcruxclient/8.png" },
   { name: "Client J", logo: "https://dgcrux.com/images/Dgcruxclient/18.png" },
 ]
 
@@ -65,7 +66,7 @@ export function ClientsSection() {
                       src={client.logo}
                       alt={client.name}
                       fill
-                      className="object-contain transition-transform duration-300 group-hover/card:scale-110"
+                      className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-60 group-hover/card:opacity-100 group-hover/card:scale-110"
                     />
                   </div>
                 </div>
@@ -94,7 +95,7 @@ export function ClientsSection() {
                       src={client.logo}
                       alt={client.name}
                       fill
-                      className="object-contain transition-transform duration-300 group-hover/card:scale-110"
+                      className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-60 group-hover/card:opacity-100 group-hover/card:scale-110"
                     />
                   </div>
                 </div>

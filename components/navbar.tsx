@@ -40,7 +40,8 @@ import {
   BookOpen,
   Phone,
   Check,
-  ArrowRight
+  ArrowRight,
+  BrainCircuit
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MarqueeBanner } from "@/components/marquee-banner"
@@ -119,7 +120,14 @@ export function Navbar() {
       color: "bg-purple-600"
     },
     {
-      name: "QP Generator",
+      name: "Next-Gen AI-ATS",
+      href: "/products/ai-ats",
+      icon: BrainCircuit,
+      description: "Neural talent acquisition & predictive hiring.",
+      color: "bg-indigo-700"
+    },
+    {
+      name: "AI QP Generator",
       href: "/products/qp-generator",
       icon: FileText,
       description: "Instantly create balanced question papers.",

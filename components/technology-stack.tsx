@@ -234,9 +234,9 @@ export function TechnologyStack() {
         {/* Footer Stats - Box Type & Colorful */}
         <div className="mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { label: "WEBSITE DEVELOPED", icon: Laptop, value: "350+", color: "from-blue-600 to-indigo-500", bg: "bg-blue-50", border: "border-blue-200" },
+            { label: "PROJECTS DELIVERED", icon: Laptop, value: "350+", color: "from-blue-600 to-indigo-500", bg: "bg-blue-50", border: "border-blue-200" },
             { label: "YEARS OF DOMAIN EXPERTISE", icon: ShieldCheck, value: "12+", color: "from-emerald-600 to-teal-500", bg: "bg-emerald-50", border: "border-emerald-200" },
-            { label: "CUSTOMER SATISFACTION", icon: Zap, value: "100%", color: "from-orange-600 to-red-500", bg: "bg-orange-50", border: "border-orange-200" },
+            { label: "CLIENTS SATISFACTION", icon: Zap, value: "100%", color: "from-orange-600 to-red-500", bg: "bg-orange-50", border: "border-orange-200" },
             { label: "TECH STACK", icon: Sparkles, value: "30+", color: "from-rose-600 to-pink-500", bg: "bg-rose-50", border: "border-rose-200" }
           ].map((stat, i) => (
             <motion.div

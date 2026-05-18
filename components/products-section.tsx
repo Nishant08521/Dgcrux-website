@@ -36,7 +36,7 @@ const allProducts = [
     color: "from-purple-600/20 to-pink-500/20"
   },
   {
-    title: "QP Generator",
+    title: "AI QP Generator",
     icon: Sparkles,
     description: "Instantly create balanced question papers.",
     href: "/products/qp-generator",

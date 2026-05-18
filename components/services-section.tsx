@@ -138,7 +138,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
       <div className="relative z-10 flex flex-col h-full">
         {/* Header: Icon with Color BG */}
         <div className="mb-8">
-          <div className={`flex h-16 w-16 items-center justify-center rounded-2xl ${service.bg} bg-opacity-50 transition-all duration-500 group-hover:scale-110 group-hover:bg-gradient-to-br ${service.color} group-hover:text-white`}>
+          <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} text-white shadow-lg transition-all duration-500 group-hover:scale-110`}>
             <Icon size={32} strokeWidth={1.5} />
           </div>
         </div>
@@ -168,7 +168,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
             className="flex items-center gap-3 text-sm font-black text-slate-900 group-hover:translate-x-2 transition-transform uppercase tracking-widest"
           >
             Explore
-            <div className={`h-10 w-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center transition-all group-hover:bg-gradient-to-br ${service.color} group-hover:text-white group-hover:border-transparent`}>
+            <div className={`h-10 w-10 rounded-full bg-gradient-to-br ${service.color} text-white flex items-center justify-center shadow-lg transition-all group-hover:scale-110`}>
               <ArrowRight size={18} />
             </div>
           </Link>

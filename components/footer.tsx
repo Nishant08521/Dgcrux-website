@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Twitter, Linkedin, Instagram, Youtube, MapPin, Mail, PhoneCall } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, MapPin, Mail, PhoneCall, Sparkles } from "lucide-react"
 
 export function Footer() {
   return (
@@ -112,6 +112,23 @@ export function Footer() {
                 <PhoneCall className="w-5 h-5 text-[#2563eb] flex-shrink-0" />
                 <a href="tel:+911234567890" className="text-slate-400 hover:text-[#FFB800] transition-colors">
                   +91 123-456-7890
+                </a>
+              </li>
+              <li className="pt-4">
+                <a
+                  href="https://clutch.co/profile/dgcrux-technology"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-transform hover:scale-105"
+                >
+                  <Image
+                    src="https://www.crosslink.ae/wp-content/uploads/New-Clutch-Tagline-logo-1024x404.png.webp"
+                    alt="Clutch Profile"
+                    width={140}
+                    height={50}
+                    className="opacity-90 hover:opacity-100 transition-all h-auto w-32 object-contain"
+                    style={{ filter: "invert(36%) sepia(85%) saturate(5437%) hue-rotate(346deg) brightness(98%) contrast(106%)" }}
+                  />
                 </a>
               </li>
             </ul>

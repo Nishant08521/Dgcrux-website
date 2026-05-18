@@ -16,17 +16,19 @@ import { MissionVisionSection } from "@/components/mission-vision-section"
 import { ImpactStats } from "@/components/impact-stats"
 import TechnologyStackPage from "./technology-stack/page"
 import { CaseStudiesSection } from "@/components/case-studies-section"
+import { RecognitionPartners } from "@/components/recognition-partners"
 
 export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <ClientsSection />
       {/* <RecognitionStrip /> */}
 
       <ServicesSection />
       <AboutSection />
-      <ClientsSection />
+
       {/* <TechnologyStackPage /> */}
       <TechnologyStack />
       <ProductsSection />
@@ -40,6 +42,7 @@ export default function HomePage() {
       {/* <MissionVisionSection /> */}
       <FAQSection />
       <LocationSection />
+      <RecognitionPartners />
       <Footer />
     </main>
   )

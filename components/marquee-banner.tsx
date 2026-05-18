@@ -16,12 +16,12 @@ export function MarqueeBanner({ isScrolled, isTransparent }: { isScrolled?: bool
           {/* Marquee Text */}
           <div className="flex-1 overflow-hidden">
             <div className="animate-marquee whitespace-nowrap inline-block">
-              <span className="text-sm font-medium mx-4">🎉 Welcome to dgcrux - Your Technology Partner</span>
-              <span className="text-sm font-medium mx-4">🚀 Building innovative solutions for your business</span>
-              <span className="text-sm font-medium mx-4">💡 AI • Cloud • Software Development • Digital Marketing</span>
-              <span className="text-sm font-medium mx-4">🎉 Welcome to dgcrux - Your Technology Partner</span>
-              <span className="text-sm font-medium mx-4">🚀 Building innovative solutions for your business</span>
-              <span className="text-sm font-medium mx-4">💡 AI • Cloud • Software Development • Digital Marketing</span>
+              <span className="text-sm font-medium mx-4">☆ Welcome to dgcrux - Your Technology Partner</span>
+              <span className="text-sm font-medium mx-4">☆ Building innovative solutions for your business</span>
+              <span className="text-sm font-medium mx-4">☆ AI • Cloud • Software Development • Digital Marketing</span>
+              <span className="text-sm font-medium mx-4">☆ Welcome to dgcrux - Your Technology Partner</span>
+              <span className="text-sm font-medium mx-4">☆ Building innovative solutions for your business</span>
+              <span className="text-sm font-medium mx-4">☆ AI • Cloud • Software Development • Digital Marketing</span>
             </div>
           </div>
 

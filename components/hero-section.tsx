@@ -63,7 +63,7 @@ export function HeroSection() {
             Impact Driven Digital & IT Company
           </div> */}
           <h1 className="max-w-xl text-2xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Empowering Businesses with <span className="text-blue-600 italic">AI-Driven</span> Digital Product <span className="text-[#FFB800]">Engineering</span>
+            Empowering Businesses with <span className="text-blue-600 italic">AI-First</span> Digital Product <span className="text-[#FFB800]">Engineering</span>
           </h1>
           <p className="max-w-xl text-base text-slate-300 sm:text-lg lg:mx-0">
             DgCrux is your technology partner for digital transformation, helping startups and enterprises design, engineer, and scale intelligent software products built on AI, cloud, and modern architectures.
@@ -84,8 +84,8 @@ export function HeroSection() {
 
         {/* Right Side: Moving Box with Partners */}
         <div className="mt-24 flex flex-1 flex-col items-center justify-center lg:mt-32 lg:items-end">
-          <div className="w-full max-w-[480px]">
-            <p className="mb-4 text-center text-sm font-medium uppercase tracking-widest text-slate-400 lg:text-right">Our Trusted Partners</p>
+          <div className="w-full max-w-[600px]">
+            <p className="mb-4 text-center text-sm font-medium uppercase tracking-widest text-slate-400 lg:text-right">Our Recognition Partners</p>
 
             <div className="relative w-full overflow-hidden">
               <div className="relative flex w-full overflow-hidden">
