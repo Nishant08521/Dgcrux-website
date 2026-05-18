@@ -123,7 +123,7 @@ export function TechnologyStack() {
   const activeCategory = categories.find(c => c.id === activeTab) || categories[0]
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden bg-white">
+    <section className="relative py-8 px-4 overflow-hidden bg-white">
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
         <div className="flex flex-col items-center mb-24 text-center">
