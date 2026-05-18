@@ -232,7 +232,7 @@ export function RequirementsPopup() {
                 {[...brandLogos, ...brandLogos].map((brand, i) => (
                   <div 
                     key={i} 
-                    className="flex-shrink-0 w-24 h-6 relative grayscale opacity-45 hover:grayscale-0 hover:opacity-100 transition-all duration-355 flex items-center justify-center"
+                    className="flex-shrink-0 w-24 h-6 relative flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300"
                   >
                     <img
                       src={brand.logo}
