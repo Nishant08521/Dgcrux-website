@@ -219,9 +219,9 @@ export function RequirementsPopup() {
           {/* Trusted by Global Brands Moving Marquee */}
           <div className="mt-3 pt-3 border-t border-slate-200 shrink-0 overflow-hidden relative w-full">
             <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Trusted by global brands</p>
-            <div className="relative flex overflow-hidden w-full h-8">
+            <div className="relative flex overflow-hidden w-full h-12">
               <motion.div
-                className="flex gap-10 items-center whitespace-nowrap"
+                className="flex gap-12 items-center whitespace-nowrap h-full"
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{
                   ease: "linear",
@@ -232,7 +232,7 @@ export function RequirementsPopup() {
                 {[...brandLogos, ...brandLogos].map((brand, i) => (
                   <div 
                     key={i} 
-                    className="flex-shrink-0 w-24 h-6 relative flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300"
+                    className="flex-shrink-0 w-32 h-10 relative flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300"
                   >
                     <img
                       src={brand.logo}
