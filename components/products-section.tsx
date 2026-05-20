@@ -25,8 +25,9 @@ const allProducts = [
     description: "Secure exams with real-time AI monitoring.",
     href: "/products/ai-proctor",
     image: "/products/ai-proctoring.png",
+    
     color: "from-blue-600/20 to-cyan-500/20"
-  },
+  }, 
   {
     title: "AI-Powered ATS",
     icon: Users,
