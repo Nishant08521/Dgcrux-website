@@ -32,7 +32,7 @@ const allProducts = [
     icon: Users,
     description: "Smart recruitment with automated screening.",
     href: "/products/ats",
-    image: "/products/talentbot.png",
+    image: "/products/ats1.png",
     color: "from-purple-600/20 to-pink-500/20"
   },
   {
@@ -40,7 +40,7 @@ const allProducts = [
     icon: Sparkles,
     description: "Instantly create balanced question papers.",
     href: "/products/qp-generator",
-    image: "/online-learning-platform.png",
+    image: "/products/aiqp.png",
     color: "from-rose-600/20 to-red-500/20"
   },
   {
@@ -48,7 +48,7 @@ const allProducts = [
     icon: Sun,
     description: "Manage end-to-end solar project lifecycle.",
     href: "/products/solar-erp",
-    image: "/telemedicine-video-call.jpg",
+    image: "/products/solar.png",
     color: "from-yellow-500/20 to-orange-400/20"
   },
   {
@@ -56,7 +56,7 @@ const allProducts = [
     icon: Car,
     description: "Streamline operations for dealer networks.",
     href: "/products/dms",
-    image: "/modern-technology-office-team-collaboration.jpg",
+    image: "/products/delar.png",
     color: "from-sky-600/20 to-indigo-500/20"
   },
   {
