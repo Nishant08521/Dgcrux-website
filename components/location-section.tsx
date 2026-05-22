@@ -36,8 +36,8 @@ export function LocationSection() {
     return (
         <section className="py-16 bg-white relative overflow-hidden" id="locations">
             {/* Decorative Background Element */}
-            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-50" />
-            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-50" />
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50" />
+            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50" />
 
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
@@ -46,7 +46,7 @@ export function LocationSection() {
                     <div className="lg:col-span-5 flex flex-col justify-center">
                         <div className="mb-6">
                             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-3">
-                                Our Presence <span className="text-primary tracking-tighter">—</span>
+                                Our Presence <span className="text-blue-600 tracking-tighter">—</span>
                             </h2>
                             <p className="text-base text-muted-foreground">
                                 Click on a location to view it on the map.
@@ -59,20 +59,20 @@ export function LocationSection() {
                                     key={index}
                                     onClick={() => setActiveTab(index)}
                                     className={`w-full text-left group relative p-4 rounded-xl border transition-all duration-300 transform ${activeTab === index
-                                        ? "bg-white border-primary shadow-lg shadow-primary/5 scale-[1.01]"
+                                        ? "bg-white border-blue-600 shadow-lg scale-[1.01]"
                                         : "bg-card/50 border-border hover:bg-white hover:border-primary/20"
                                         }`}
                                 >
                                     <div className="flex items-start gap-4">
-                                        <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors duration-300 ${activeTab === index ? "bg-primary text-white" : "bg-primary/10 text-primary group-hover:bg-primary/20"
+                                            <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors duration-300 ${activeTab === index ? "bg-blue-600 text-white" : "bg-blue-50 text-blue-600 group-hover:bg-blue-100"
                                             }`}>
                                             <Building2 className="h-5 w-5" />
                                         </div>
                                         <div className="flex-1">
                                             <div className="flex items-center justify-between mb-0.5">
-                                                <h3 className={`text-lg font-bold transition-colors ${activeTab === index ? "text-primary" : "text-foreground"
+                                                <h3 className={`text-lg font-bold transition-colors ${activeTab === index ? "text-blue-600" : "text-foreground"
                                                     }`}>{loc.city}</h3>
-                                                <span className={`text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded ${activeTab === index ? "bg-primary text-white" : "bg-primary/10 text-primary"
+                                                <span className={`text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded ${activeTab === index ? "bg-blue-600 text-white" : "bg-blue-50 text-blue-600"
                                                     }`}>
                                                     {loc.description}
                                                 </span>
@@ -94,7 +94,7 @@ export function LocationSection() {
                                                 </div>
                                             )}
                                         </div>
-                                        <div className={`mt-0.5 transition-transform duration-300 ${activeTab === index ? "rotate-90 text-primary" : "text-muted-foreground"}`}>
+                                        <div className={`mt-0.5 transition-transform duration-300 ${activeTab === index ? "rotate-90 text-blue-600" : "text-muted-foreground"}`}>
                                             <ChevronRight className="h-4 w-4" />
                                         </div>
                                     </div>
