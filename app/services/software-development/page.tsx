@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle2, Code2, Smartphone, Globe, TestTube, Rocket, Users } from "lucide-react"
 import Link from "next/link"
@@ -11,142 +11,173 @@ export default function SoftwareDevelopmentPage() {
     {
       icon: Users,
       title: "Product Design (UI/UX)",
-      description: "User-centered design that combines aesthetics with functionality for exceptional experiences.",
+      description: "Designing intuitive digital experiences that make every interaction feel effortless.",
     },
     {
       icon: Globe,
-      title: "Web Development",
-      description: "Responsive, scalable web applications using React, Next.js, and modern frameworks.",
+      title: "Web Applications",
+      description: "High-performance, responsive web apps built with modern frameworks and cloud-ready architecture.",
     },
     {
       icon: Smartphone,
-      title: "Mobile Development",
-      description: "Native and cross-platform mobile apps for iOS and Android using React Native and Flutter.",
+      title: "Mobile Solutions",
+      description: "Native and cross-platform mobile apps crafted for exceptional performance and engagement.",
     },
     {
       icon: Code2,
-      title: "Custom Software Development",
-      description: "Tailored software solutions designed specifically for your business needs and workflows.",
+      title: "Custom Software",
+      description: "Bespoke platforms built to solve your unique business challenges and accelerate growth.",
     },
     {
       icon: TestTube,
-      title: "QA & Testing",
-      description: "Comprehensive testing services ensuring quality, performance, and security.",
+      title: "QA & Automation",
+      description: "Automated testing, compliance checks, and performance validation for production-grade systems.",
     },
     {
       icon: Rocket,
-      title: "DevOps & Deployment",
-      description: "CI/CD pipelines, containerization, and automated deployment for seamless releases.",
+      title: "Cloud & DevOps",
+      description: "Continuous delivery, infrastructure automation, and secure deployment pipelines.",
     },
   ]
 
   const technologies = {
-    "Front-End": ["HTML5", "CSS3", "JavaScript", "React.js", "Next.js", "Vue.js", "Angular"],
-    "Back-End": ["Node.js", "Python", "PHP", "Django", "Laravel", "Express.js"],
+    "Front-End": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue", "Angular"],
+    "Back-End": ["Node.js", "Python", "Django", "Express", "Laravel", "GraphQL"],
     Mobile: ["React Native", "Flutter", "Swift", "Kotlin"],
-    Database: ["MongoDB", "PostgreSQL", "MySQL", "Redis"],
-    DevOps: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions"],
+    Database: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"],
+    DevOps: ["Docker", "Kubernetes", "GitHub Actions", "AWS", "Azure"],
   }
 
   const process = [
     {
-      step: "1",
-      title: "Discovery & Planning",
-      description:
-        "We thoroughly understand your business objectives, target audience, and project requirements to create a comprehensive roadmap.",
+      step: "01",
+      title: "Discovery",
+      description: "We align on goals, users, and constraints to define a product roadmap that delivers measurable outcomes.",
     },
     {
-      step: "2",
-      title: "Design & Prototyping",
-      description:
-        "Our designers create intuitive wireframes and interactive prototypes that align with your brand identity.",
+      step: "02",
+      title: "Prototype",
+      description: "Interactive wireframes and UI prototypes let you validate the experience before development begins.",
     },
     {
-      step: "3",
-      title: "Development & Implementation",
-      description:
-        "Our developers build your solution using cutting-edge technologies, following best practices and coding standards.",
+      step: "03",
+      title: "Build",
+      description: "Engineering teams build high-quality software using agile sprints, clean architecture, and automated testing.",
     },
     {
-      step: "4",
-      title: "Testing & Quality Assurance",
-      description:
-        "Rigorous testing across devices, browsers, and platforms ensures flawless performance and security.",
+      step: "04",
+      title: "Launch",
+      description: "We deploy with confidence, monitor performance, and hand over documentation and workflows.",
     },
     {
-      step: "5",
-      title: "Launch & Deployment",
-      description: "Seamless deployment to production with proper monitoring, documentation, and knowledge transfer.",
-    },
-    {
-      step: "6",
-      title: "Support & Maintenance",
-      description: "Ongoing support, updates, and enhancements to keep your application running at peak performance.",
+      step: "05",
+      title: "Scale",
+      description: "Continuous improvement and feature growth help your product adapt and stay competitive.",
     },
   ]
 
   const benefits = [
-    "Tailored solutions aligned with your business goals",
-    "Expertise in modern technologies and frameworks",
-    "Agile development methodology for flexibility",
-    "Scalable architecture for future growth",
-    "Comprehensive documentation and training",
-    "Dedicated project manager and support team",
-    "Transparent communication and regular updates",
-    "Competitive pricing and on-time delivery",
+    "Rapid MVP delivery with iterative feedback loops",
+    "Strong UX and product thinking in every release",
+    "Enterprise-grade engineering and architecture",
+    "Transparent communication and project governance",
+    "Dedicated support for launch and beyond",
+    "Flexible engagement models to fit your needs",
+    "Secure development practices and compliance-ready delivery",
+    "A partner focused on your long-term success",
   ]
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-slate-950 text-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-20 sm:py-32">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 py-24 sm:py-32">
+        <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_top_right,_rgba(56,189,248,0.14),_transparent_40%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-80 bg-[radial-gradient(circle_at_bottom_left,_rgba(99,102,241,0.16),_transparent_35%)]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-6">Software Development</Badge>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Custom Software Development Services
-            </h1>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Transform your vision into reality with our comprehensive software development services. We build
-              scalable, secure, and innovative solutions tailored to your business needs.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button size="lg" asChild>
-                <Link href="#contact">Start Your Project</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/case-studies">View Case Studies</Link>
-              </Button>
+          <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="space-y-8">
+              <Badge className="bg-sky-500/15 text-sky-300 border border-sky-500/20">Software Development</Badge>
+              <div className="space-y-5">
+                <p className="text-sm uppercase tracking-[0.32em] text-sky-300">Modern software for ambitious teams</p>
+                <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                  Build bold digital products with modern engineering and design.
+                </h1>
+                <p className="max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+                  DGCrux delivers scalable web, mobile and enterprise software that stands out through elegant design,
+                  fast performance, and secure architecture.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button size="lg" asChild>
+                  <Link href="#contact">Start Your Project</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link href="/case-studies">See Case Studies</Link>
+                </Button>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2 xl:max-w-2xl">
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-900/30 backdrop-blur">
+                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Time to MVP</p>
+                  <p className="mt-4 text-3xl font-semibold text-white">3–6 weeks</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">From discovery to launch for core digital products.</p>
+                </div>
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-900/30 backdrop-blur">
+                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Client satisfaction</p>
+                  <p className="mt-4 text-3xl font-semibold text-white">98%+</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">Clients praise our speed, quality, and communication.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/85 p-6 shadow-2xl shadow-slate-950/40">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.16),_transparent_35%)]" />
+              <div className="relative grid gap-6 sm:grid-cols-2">
+                {services.slice(0, 4).map((service) => {
+                  const Icon = service.icon
+                  return (
+                    <div key={service.title} className="rounded-[1.75rem] bg-slate-950/90 p-6 shadow-inner shadow-slate-950/40 transition hover:-translate-y-1">
+                      <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-sky-500/10 text-sky-300">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-300">{service.description}</p>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Software Development Expertise</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              End-to-end software development services for businesses of all sizes
+            <p className="text-sm uppercase tracking-[0.3em] text-sky-400">What we deliver</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">End-to-end software services for modern teams</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-400">
+              From strategic planning and UI design to full-stack engineering and post-launch support, we build
+              reliable software that fuels growth.
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => {
               const Icon = service.icon
               return (
-                <Card key={service.title} className="border-2 hover:border-primary/50 transition-all">
-                  <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <Icon className="h-6 w-6 text-primary" />
+                <Card key={service.title} className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/80 transition hover:-translate-y-1 hover:border-sky-400/30 hover:shadow-lg hover:shadow-sky-500/10">
+                  <CardContent className="space-y-6 p-8">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-slate-800 text-sky-300 transition group-hover:bg-sky-500/10">
+                      <Icon className="h-7 w-7" />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardHeader>
+                    <div>
+                      <CardTitle className="text-xl text-white">{service.title}</CardTitle>
+                      <CardDescription className="mt-3 text-sm text-slate-300">{service.description}</CardDescription>
+                    </div>
+                  </CardContent>
                 </Card>
               )
             })}
@@ -154,86 +185,26 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </section>
 
-      {/* Technology Stack */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-slate-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Technology Arsenal</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              We leverage cutting-edge technologies to build robust applications
-            </p>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(technologies).map(([category, techs]) => (
-              <Card key={category}>
-                <CardHeader>
-                  <CardTitle className="text-lg">{category}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {techs.map((tech) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Development Process */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Development Approach</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              A proven process that ensures successful project delivery
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {process.map((item) => (
-              <Card key={item.step} className="relative overflow-hidden">
-                <div className="absolute top-4 right-4 text-6xl font-bold text-muted/20">{item.step}</div>
-                <CardHeader>
-                  <CardTitle className="text-lg">{item.title}</CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-24 bg-muted/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-16 lg:grid-cols-[0.95fr_0.9fr] lg:items-center">
             <div>
-              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
-                Why Choose DgCrux for Software Development?
-              </h2>
-              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                We combine technical excellence with business understanding to deliver solutions that drive real
-                results. Our team of experienced developers, designers, and project managers work collaboratively to
-                bring your vision to life.
+              <p className="text-sm uppercase tracking-[0.32em] text-sky-300">Technology stack</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Built with modern technology</h2>
+              <p className="mt-4 max-w-2xl text-base leading-8 text-slate-400">
+                We select tools that deliver speed, scalability and secure performance across web, mobile, and backend platforms.
               </p>
-              <div className="mt-8">
-                <Button size="lg" asChild>
-                  <Link href="#contact">Get Started Today</Link>
-                </Button>
-              </div>
             </div>
 
-            <div className="grid gap-4">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">{benefit}</span>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {Object.entries(technologies).map(([category, techs]) => (
+                <div key={category} className="rounded-[1.75rem] border border-white/10 bg-slate-900/85 p-6 shadow-inner shadow-slate-950/30">
+                  <h3 className="text-lg font-semibold text-white">{category}</h3>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {techs.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="bg-white/5 text-slate-200">{tech}</Badge>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -241,20 +212,80 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="contact" className="py-24 bg-background">
+      <section className="py-24 bg-slate-900">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-[0.28em] text-sky-400">Process</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">A streamlined delivery process</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-400">
+              Our agile approach keeps your roadmap aligned with business goals while delivering quality results.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {process.map((item, index) => (
+              <div key={item.step} className="rounded-[1.75rem] border border-white/10 bg-slate-950/80 p-7 shadow-2xl shadow-slate-950/20">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-3xl bg-sky-500/15 text-sky-300 text-xl font-semibold">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{item.description}</p>
+                <div className="mt-6 h-1 rounded-full bg-white/10">
+                  <div className="h-full rounded-full bg-sky-500" style={{ width: `${((index + 1) / process.length) * 100}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_0.9fr] lg:items-center">
+            <div>
+              <p className="text-sm uppercase tracking-[0.28em] text-sky-300">Why choose us</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Your partner for reliable, future-ready software</h2>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400">
+                We combine product vision, expert engineering and ongoing support to help your software evolve with the market.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {benefits.slice(0, 4).map((benefit) => (
+                  <div key={benefit} className="rounded-3xl border border-white/10 bg-slate-900/80 p-5 text-sm text-slate-200">
+                    {benefit}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-4">
+              {benefits.slice(4).map((benefit) => (
+                <div key={benefit} className="flex items-start gap-4 rounded-3xl border border-white/10 bg-slate-900/80 p-6">
+                  <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-500/15 text-sky-300">
+                    <CheckCircle2 className="h-5 w-5" />
+                  </div>
+                  <p className="text-slate-200">{benefit}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-24 bg-slate-900">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Ready to Transform Your Business?</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Let's discuss your project and create something amazing together
-          </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" asChild>
-              <Link href="/#contact">Request a Callback</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="mailto:info@dgcrux.com">Email Us</Link>
-            </Button>
+          <div className="rounded-[2rem] border border-white/10 bg-slate-950/90 p-12 shadow-2xl shadow-slate-950/40">
+            <p className="text-sm uppercase tracking-[0.28em] text-sky-300">Ready to start</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Launch software that moves your business forward.</h2>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-400">
+              Chat with our team and let us help you shape the next generation of your product.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Button size="lg" asChild>
+                <Link href="/#contact">Request a Callback</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="mailto:info@dgcrux.com">Email Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

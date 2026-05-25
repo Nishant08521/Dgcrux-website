@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import ServiceContact from "@/components/service-contact"
 import Link from "next/link"
 
 export default function DigitalMarketingPage() {
@@ -9,22 +10,34 @@ export default function DigitalMarketingPage() {
     <main className="min-h-screen">
       <Navbar />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-20 sm:py-32">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-6">Digital Marketing</Badge>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Grow Your Business with Digital Marketing
-            </h1>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Drive traffic, generate leads, and increase conversions with our comprehensive digital marketing services
-              including SEO, social media marketing, and paid advertising.
-            </p>
-            <div className="mt-10">
-              <Button size="lg" asChild>
-                <Link href="/#contact">Get Marketing Strategy</Link>
-              </Button>
+      <section className="relative py-20 bg-gradient-to-tr from-white to-rose-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-2 items-center">
+            <div>
+              <Badge className="mb-3 bg-rose-50 text-rose-600">Digital Marketing</Badge>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Drive Growth with Data-Driven Marketing</h1>
+              <p className="text-lg text-slate-600 mb-6">SEO, paid media, social and content strategies that move the needle — measurable results, transparent reporting.</p>
+              <div>
+                <Button size="lg" className="bg-rose-600 hover:bg-rose-700"><Link href="/#contact">Get a Strategy</Link></Button>
+              </div>
+            </div>
+
+            <div className="pointer-events-none absolute -left-20 bottom-6 hidden lg:block opacity-25">
+              <svg width="280" height="280" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g2" x1="0%" x2="100%">
+                    <stop stopColor="#fb7185" offset="0%" />
+                    <stop stopColor="#fecdd3" offset="100%" />
+                  </linearGradient>
+                </defs>
+                <g transform="translate(300,300)">
+                  <path d="M110,-140C150,-100,180,-60,180,0C180,60,150,120,110,160C70,200,0,220,-50,200C-100,180,-150,120,-170,60C-190,0,-190,-60,-160,-110C-130,-160,-80,-190,-30,-200C20,-210,60,-200,110,-140Z" fill="url(#g2)" />
+                </g>
+              </svg>
+            </div>
+
+            <div className="w-full max-w-md">
+              <ServiceContact accent="rose" />
             </div>
           </div>
         </div>

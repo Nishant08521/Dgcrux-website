@@ -87,6 +87,19 @@ export default function CloudSolutionsPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-20 sm:py-32">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="pointer-events-none absolute left-6 top-8 hidden lg:block opacity-25">
+          <svg width="320" height="320" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g4" x1="0%" x2="100%">
+                <stop stopColor="#60a5fa" offset="0%" />
+                <stop stopColor="#bfdbfe" offset="100%" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(300,300)">
+              <path d="M120,-160C160,-120,180,-60,180,0C180,60,160,120,120,160C80,200,0,220,-60,200C-120,180,-160,120,-180,60C-200,0,-200,-60,-170,-110C-140,-160,-80,-190,-20,-200C40,-210,80,-200,120,-160Z" fill="url(#g4)" />
+            </g>
+          </svg>
+        </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <Badge className="mb-6">Cloud Solutions</Badge>
@@ -125,14 +138,14 @@ export default function CloudSolutionsPage() {
               const Icon = service.icon
               return (
                 <Link key={service.title} href={service.href || "#"}>
-                  <Card className="border-2 hover:border-primary/50 transition-all h-full cursor-pointer group">
+                  <Card className="border-2 hover:shadow-lg transition-all h-full cursor-pointer group border-l-4 border-sky-100 pl-6">
                     <CardHeader>
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-sky-50 text-sky-600 group-hover:bg-sky-100 transition-colors">
                         <Icon className="h-6 w-6" />
                       </div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
                       <CardDescription>{service.description}</CardDescription>
-                      <div className="flex items-center gap-2 text-sm font-semibold text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-sky-600 mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
                         Learn More <ArrowRight className="h-4 w-4" />
                       </div>
                     </CardHeader>

@@ -119,13 +119,13 @@ export function Navbar() {
       description: "Smart recruitment with automated screening.",
       color: "bg-purple-600"
     },
-    {
-      name: "Next-Gen AI-ATS",
-      href: "/products/ai-ats",
-      icon: BrainCircuit,
-      description: "Neural talent acquisition & predictive hiring.",
-      color: "bg-indigo-700"
-    },
+    // {
+    //   name: "Next-Gen AI-ATS",
+    //   href: "/products/ai-ats",
+    //   icon: BrainCircuit,
+    //   description: "Neural talent acquisition & predictive hiring.",
+    //   color: "bg-indigo-700"
+    // },
     {
       name: "AI QP Generator",
       href: "/products/qp-generator",
@@ -154,20 +154,20 @@ export function Navbar() {
       description: "Smart system with dynamic pricing.",
       color: "bg-red-500"
     },
-    {
-      name: "Restaurant Management",
-      href: "/products/restaurant-management",
-      icon: Store,
-      description: "Complete POS for modern eateries.",
-      color: "bg-green-600"
-    },
-    {
-      name: "Learning Management",
-      href: "/products/lms",
-      icon: GraduationCap,
-      description: "Engaging platform for digital learning.",
-      color: "bg-indigo-600"
-    },
+    // {
+    //   name: "Restaurant Management",
+    //   href: "/products/restaurant-management",
+    //   icon: Store,
+    //   description: "Complete POS for modern eateries.",
+    //   color: "bg-green-600"
+    // },
+    // {
+    //   name: "Learning Management",
+    //   href: "/products/lms",
+    //   icon: GraduationCap,
+    //   description: "Engaging platform for digital learning.",
+    //   color: "bg-indigo-600"
+    // },
   ]
 
   const company = [

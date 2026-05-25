@@ -3,7 +3,8 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2, Brain, Bot, Eye, MessageSquare, Workflow, Sparkles } from "lucide-react"
+import ServiceContact from "@/components/service-contact"
+import { CheckCircle2, Brain, Bot, Eye, MessageSquare, Workflow, Sparkles, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export default function AISolutionsPage() {
@@ -99,29 +100,36 @@ export default function AISolutionsPage() {
     <main className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-20 sm:py-32">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-6">AI Solutions & Services</Badge>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Transform Your Business with{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                AI Solutions
-              </span>
-            </h1>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Harness the power of artificial intelligence and machine learning to automate processes, gain insights,
-              and drive innovation across your organization.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button size="lg" asChild>
-                <Link href="#contact">Explore AI Solutions</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/case-studies">AI Case Studies</Link>
-              </Button>
+      {/* Hero (updated) */}
+      <section className="relative py-20 bg-gradient-to-b from-white to-indigo-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-2 items-center">
+            <div>
+              <Badge className="mb-3 bg-indigo-50 text-indigo-600">AI Solutions</Badge>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Turn Data into Intelligent Action</h1>
+              <p className="text-lg text-slate-600 mb-6">From prototypes to production-grade AI systems — we build solutions that scale and deliver measurable outcomes.</p>
+              <div className="flex gap-4">
+                <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700"><Link href="#contact">Start AI Project</Link></Button>
+                <Button size="lg" variant="outline"><Link href="/case-studies">Explore Use Cases</Link></Button>
+              </div>
+            </div>
+
+            <div className="pointer-events-none absolute right-6 top-8 hidden lg:block opacity-25">
+              <svg width="260" height="260" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g3" x1="0%" x2="100%">
+                    <stop stopColor="#6366f1" offset="0%" />
+                    <stop stopColor="#c7d2fe" offset="100%" />
+                  </linearGradient>
+                </defs>
+                <g transform="translate(300,300)">
+                  <path d="M120,-150C160,-110,180,-60,180,0C180,60,160,110,120,150C80,190,0,220,-60,200C-120,180,-160,120,-180,60C-200,0,-200,-60,-170,-110C-140,-160,-80,-190,-20,-200C40,-210,80,-200,120,-150Z" fill="url(#g3)" />
+                </g>
+              </svg>
+            </div>
+
+            <div className="w-full max-w-md">
+              <ServiceContact accent="indigo" />
             </div>
           </div>
         </div>
@@ -141,15 +149,17 @@ export default function AISolutionsPage() {
             {services.map((service) => {
               const Icon = service.icon
               return (
-                <Card key={service.title} className="border-2 hover:border-primary/50 transition-all">
-                  <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardHeader>
-                </Card>
+                <Link key={service.title} href={service.href || "#"}>
+                  <Card className="border-2 hover:shadow-lg transition-all h-full cursor-pointer group border-l-4 border-indigo-100 pl-6">
+                    <CardHeader>
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100 transition-colors">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </Link>
               )
             })}
           </div>

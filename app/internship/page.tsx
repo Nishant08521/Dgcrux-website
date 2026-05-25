@@ -799,10 +799,11 @@ export default function InternshipPage() {
                 </div>
 
                 <button
-                  onClick={scrollToForm}
                   className="mt-10 inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#ff4757] hover:bg-[#ff3748] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-fit"
                 >
+                    <a href="/certificate-verify" className="flex items-center gap-2">
                   Get Verified Certificate <ArrowRight className="h-4 w-4" />
+                    </a>
                 </button>
               </div>
 
@@ -873,6 +874,7 @@ export default function InternshipPage() {
 
         </div>
       </section>
+
 
       {/* Success Modal */}
       <AnimatePresence>
