@@ -35,8 +35,8 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
           {/* Left Side: Image Stack */}
-          <div className="relative order-2 lg:order-1 lg:col-span-5 py-12">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl bg-slate-100">
+          <div className="relative order-2 lg:order-1 lg:col-span-6 py-12">
+            <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[570px] overflow-hidden rounded-3xl shadow-2xl bg-slate-100">
               {carouselImages.map((src, index) => (
                 <div
                   key={src}
@@ -63,7 +63,7 @@ export function AboutSection() {
           </div>
 
           {/* Right Side: Content */}
-          <div className="order-1 lg:order-2 lg:col-span-7 space-y-8">
+          <div className="order-1 lg:order-2 lg:col-span-6 space-y-8">
             <div className="space-y-4">
               <h2 className="text-sm font-bold uppercase tracking-widest text-blue-600">About DgCrux</h2>
               <h3 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">

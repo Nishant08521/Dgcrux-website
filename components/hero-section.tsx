@@ -8,6 +8,7 @@ import google from "@/public/google.png"
 import cmmi from "@/public/cmmi.png"
 import startupindia from "@/public/startupindia.png"
 import iso from "@/public/iso.png"
+import aws from "@/public/aws.png"
 
 const partners = [
   // { src: "https://e7.pngegg.com/pngimages/740/237/png-clipart-google-adwords-google-partners-advertising-pay-per-click-google-partner-search-engine-optimization-company-thumbnail.png", alt: "Partner 1" },
@@ -23,7 +24,9 @@ const partners = [
   { src: cmmi, alt: "Partner 11" },
   { src: startupindia, alt: "Partner 12" },
   { src: "https://www.vhv.rs/dpng/d/581-5813421_certified-iso-9001-2015-company-hd-png-download.png", alt: "Partner 13" },
-  { src: iso, alt: "Partner 14" }
+  { src: iso, alt: "Partner 14" },
+  { src: aws, alt: "Partner 15" },
+ 
 
 ]
 
