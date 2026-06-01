@@ -614,6 +614,7 @@ export default function InternshipPage() {
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/30 mb-5 hover:rotate-12 transition-transform duration-300">
                 <Users className="h-7 w-7" />
               </div>
+             
               <h4 className="text-base font-extrabold text-[#0a0b22]">Experienced Mentors</h4>
               <p className="text-slate-500 text-xs mt-2">Learn from industry experts</p>
             </div>
