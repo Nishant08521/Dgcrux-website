@@ -46,6 +46,7 @@ interface FeeCard {
 }
 
 export default function InternshipPage() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
   // Global modes synced together for a cohesive experience
   const [isOnline, setIsOnline] = useState<boolean>(true)
 
@@ -184,7 +185,7 @@ export default function InternshipPage() {
 
     setIsSubmitting(true)
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/internship`, {
+      const res = await fetch(`${apiUrl}/api/internship`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -610,7 +611,7 @@ export default function InternshipPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
             {/* 1. Experienced Mentors */}
             <div className="text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-[#ff9f43] text-white flex items-center justify-center shadow-lg shadow-orange-500/10 mb-5 hover:rotate-12 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/30 mb-5 hover:rotate-12 transition-transform duration-300">
                 <Users className="h-7 w-7" />
               </div>
               <h4 className="text-base font-extrabold text-[#0a0b22]">Experienced Mentors</h4>
@@ -619,7 +620,7 @@ export default function InternshipPage() {
 
             {/* 2. Certificate */}
             <div className="text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-[#ff9f43] text-white flex items-center justify-center shadow-lg shadow-orange-500/10 mb-5 hover:rotate-12 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-white flex items-center justify-center shadow-lg shadow-orange-500/30 mb-5 hover:rotate-12 transition-transform duration-300">
                 <Award className="h-7 w-7" />
               </div>
               <h4 className="text-base font-extrabold text-[#0a0b22]">Certificate</h4>
@@ -628,7 +629,7 @@ export default function InternshipPage() {
 
             {/* 3. Live Projects */}
             <div className="text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-[#ff9f43] text-white flex items-center justify-center shadow-lg shadow-orange-500/10 mb-5 hover:rotate-12 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center shadow-lg shadow-purple-500/30 mb-5 hover:rotate-12 transition-transform duration-300">
                 <Briefcase className="h-7 w-7" />
               </div>
               <h4 className="text-base font-extrabold text-[#0a0b22]">Live Projects</h4>
@@ -637,7 +638,7 @@ export default function InternshipPage() {
 
             {/* 4. Google Partner */}
             <div className="text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-[#ff9f43] text-white flex items-center justify-center shadow-lg shadow-orange-500/10 mb-5 hover:rotate-12 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 mb-5 hover:rotate-12 transition-transform duration-300">
                 <Star className="h-7 w-7" />
               </div>
               <h4 className="text-base font-extrabold text-[#0a0b22]">Google Partner</h4>

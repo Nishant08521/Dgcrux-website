@@ -5,6 +5,7 @@ import { useState } from "react"
 import { CheckCircle2 } from "lucide-react"
 
 export function ContactSection() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +28,7 @@ export function ContactSection() {
         projectDescription: `Company: ${formData.company || "N/A"}\nMessage: ${formData.message}`
       }
 
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
+      const res = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
