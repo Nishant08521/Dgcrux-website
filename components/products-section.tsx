@@ -107,7 +107,7 @@ export function ProductsSection() {
               className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4"
             >
               <div className="w-8 h-[2px] bg-primary" />
-              Our Products
+              Our Clients Case Studies
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
