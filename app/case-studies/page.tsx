@@ -1,259 +1,360 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, TrendingUp, Users, Zap } from "lucide-react"
+import { ArrowRight, BadgeCheck, FileText, Hotel, ShieldCheck, Sun, UserSearch, Workflow } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+
+const products = [
+  {
+    title: "AI Proctoring",
+    description: "Secure exams with real-time AI monitoring.",
+    icon: ShieldCheck,
+    tags: ["Computer Vision", "Real-time", "Compliance"],
+    href: "/products/ai-proctor",
+    color: "from-red-500 to-red-600",
+    image: "https://images.unsplash.com/photo-1516534775068-bb4d2e0b6baf?w=500&h=300&fit=crop",
+  },
+  {
+    title: "AI-Powered ATS",
+    description: "Smart recruitment with automated screening.",
+    icon: UserSearch,
+    tags: ["Automation", "Ranking", "Workflow"],
+    href: "/products/ats",
+    color: "from-blue-500 to-blue-600",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+  },
+  {
+    title: "AI QP Generator",
+    description: "Instantly create balanced question papers.",
+    icon: FileText,
+    tags: ["Templates", "Difficulty Mix", "Export"],
+    href: "/products/qp-generator",
+    color: "from-purple-500 to-purple-600",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
+  },
+  {
+    title: "Solar ERP",
+    description: "Manage end-to-end solar project lifecycle.",
+    icon: Sun,
+    tags: ["CRM", "Inventory", "Reporting"],
+    href: "/products/solar-erp",
+    color: "from-yellow-500 to-yellow-600",
+    image: "https://images.unsplash.com/photo-1497440150194-51ff8a0bfc41?w=500&h=300&fit=crop",
+  },
+  {
+    title: "Dealer Management",
+    description: "Streamline operations for dealer networks.",
+    icon: Workflow,
+    tags: ["Orders", "Incentives", "Analytics"],
+    href: "/products/dms",
+    color: "from-emerald-500 to-emerald-600",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+  },
+  {
+    title: "Hotel Booking",
+    description: "Smart system with dynamic pricing.",
+    icon: Hotel,
+    tags: ["Channel Manager", "Pricing", "Payments"],
+    href: "/products/hotel-booking",
+    color: "from-orange-500 to-orange-600",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&h=300&fit=crop",
+  },
+] as const
+
+const caseStudies = [
+  {
+    id: 1,
+    title: "Online Exam Platform for 50K+ Students",
+    company: "Leading Education Board",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop",
+    category: "AI Proctoring",
+    challenge: "Managing fair and secure online exams for thousands of simultaneous test-takers",
+    solution: "Deployed AI Proctoring system with real-time monitoring",
+    results: [
+      "98.5% proctoring accuracy",
+      "Zero cheating incidents",
+      "10,000+ exams conducted monthly",
+    ],
+    testimonial: "DgCrux's AI Proctoring transformed our online assessment process. The system is reliable, secure, and student-friendly.",
+  },
+  {
+    id: 2,
+    title: "Recruitment Process Automation for 500+ Hires",
+    company: "Fortune 500 Tech Company",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop",
+    category: "AI-Powered ATS",
+    challenge: "Manual screening of 100K+ CVs per quarter was time-consuming",
+    solution: "Implemented AI-Powered ATS for intelligent candidate ranking",
+    results: [
+      "75% reduction in screening time",
+      "300% improvement in candidate quality",
+      "500 positions filled annually",
+    ],
+    testimonial: "The ATS identified candidates we would have missed manually. It's now integral to our hiring.",
+  },
+  {
+    id: 3,
+    title: "Solar Project Management Across 2000+ Sites",
+    company: "Leading Solar Energy Provider",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop",
+    category: "Solar ERP",
+    challenge: "Complex project tracking across distributed solar installations",
+    solution: "Deployed Solar ERP for end-to-end lifecycle management",
+    results: [
+      "40% faster project completion",
+      "Real-time monitoring of 2000+ sites",
+      "$5M annual savings",
+    ],
+    testimonial: "Solar ERP gave us unprecedented visibility into our operations. We reduced delays and improved profitability significantly.",
+  },
+  {
+    id: 4,
+    title: "Hotel Booking System for 200+ Properties",
+    company: "International Hotel Chain",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop",
+    category: "Hotel Booking",
+    challenge: "Fragmented booking systems across multiple properties",
+    solution: "Unified Hotel Booking platform with dynamic pricing",
+    results: [
+      "45% increase in booking velocity",
+      "28% revenue uplift",
+      "200+ properties integrated",
+    ],
+    testimonial: "The platform unified our booking experience. Guests love the simplicity, and our revenue has grown significantly.",
+  },
+]
 
 export default function CaseStudiesPage() {
-  const caseStudies = [
-    {
-      id: "human-pose-estimation",
-      title: "AI-Powered Pose Estimation for Athletes",
-      client: "Sports Tech Company",
-      industry: "Sports & Fitness",
-      challenge:
-        "A sports technology company needed an AI solution to analyze athlete movements and provide real-time feedback on form and technique.",
-      solution:
-        "We developed a computer vision platform using TensorFlow and pose estimation algorithms to track body movements, analyze form, and provide actionable insights to coaches and athletes.",
-      results: [
-        { metric: "95%", label: "Accuracy in pose detection" },
-        { metric: "40%", label: "Reduction in training injuries" },
-        { metric: "10K+", label: "Athletes using the platform" },
-      ],
-      technologies: ["TensorFlow", "Python", "OpenCV", "React", "AWS"],
-      image: "/athlete-pose-analysis.jpg",
-      link: "/case-studies/human-pose-estimation",
-    },
-    {
-      id: "ecommerce-marketplace",
-      title: "Multi-Vendor Marketplace Platform",
-      client: "Retail Startup",
-      industry: "E-commerce",
-      challenge:
-        "A retail startup wanted to create a multi-vendor marketplace similar to Amazon, connecting local sellers with customers across the region.",
-      solution:
-        "We built a scalable marketplace using Next.js, Node.js, and MongoDB, with features for vendor onboarding, product management, order processing, and secure payments.",
-      results: [
-        { metric: "500+", label: "Active vendors" },
-        { metric: "$2M+", label: "Monthly GMV" },
-        { metric: "50K+", label: "Active customers" },
-      ],
-      technologies: ["Next.js", "Node.js", "MongoDB", "Stripe", "AWS"],
-      image: "/ecommerce-marketplace.png",
-      link: "/case-studies/ecommerce-marketplace",
-    },
-    {
-      id: "healthcare-telemedicine",
-      title: "Telemedicine Platform for Healthcare",
-      client: "Healthcare Provider",
-      industry: "Healthcare",
-      challenge:
-        "A healthcare provider needed a HIPAA-compliant telemedicine platform to enable remote consultations and patient monitoring during the pandemic.",
-      solution:
-        "We developed a secure telemedicine platform with video consultations, electronic prescriptions, appointment scheduling, and patient health records management.",
-      results: [
-        { metric: "100K+", label: "Consultations completed" },
-        { metric: "99.9%", label: "Platform uptime" },
-        { metric: "4.8/5", label: "Patient satisfaction" },
-      ],
-      technologies: ["React", "Node.js", "WebRTC", "PostgreSQL", "Azure"],
-      image: "/telemedicine-video-call.jpg",
-      link: "/case-studies/healthcare-telemedicine",
-    },
-    {
-      id: "fintech-app",
-      title: "Mobile Banking Application",
-      client: "Financial Institution",
-      industry: "FinTech",
-      challenge:
-        "A financial institution wanted to modernize their banking experience with a mobile-first app for digital transactions and account management.",
-      solution:
-        "We created a secure mobile banking app with biometric authentication, instant transfers, bill payments, investment tracking, and AI-powered financial insights.",
-      results: [
-        { metric: "200K+", label: "Active users" },
-        { metric: "1M+", label: "Transactions monthly" },
-        { metric: "60%", label: "Reduction in branch visits" },
-      ],
-      technologies: ["React Native", "Node.js", "PostgreSQL", "AWS", "AI/ML"],
-      image: "/mobile-banking-app.png",
-      link: "/case-studies/fintech-app",
-    },
-    {
-      id: "education-lms",
-      title: "Enterprise Learning Management System",
-      client: "EdTech Company",
-      industry: "Education",
-      challenge:
-        "An education company needed a comprehensive LMS to deliver online courses, track student progress, and provide interactive learning experiences.",
-      solution:
-        "We built a feature-rich LMS with video streaming, interactive quizzes, progress tracking, certificates, and analytics dashboards for educators and administrators.",
-      results: [
-        { metric: "50K+", label: "Students enrolled" },
-        { metric: "1000+", label: "Courses available" },
-        { metric: "85%", label: "Course completion rate" },
-      ],
-      technologies: ["Next.js", "Django", "PostgreSQL", "Redis", "AWS S3"],
-      image: "/online-learning-platform.png",
-      link: "/case-studies/education-lms",
-    },
-    {
-      id: "ai-chatbot",
-      title: "AI Customer Support Chatbot",
-      client: "SaaS Company",
-      industry: "Technology",
-      challenge:
-        "A SaaS company was overwhelmed with support tickets and needed an AI solution to handle common customer queries 24/7.",
-      solution:
-        "We developed an intelligent chatbot using GPT-4 and custom training on their knowledge base, integrated with their ticketing system for seamless escalation.",
-      results: [
-        { metric: "70%", label: "Tickets resolved by AI" },
-        { metric: "80%", label: "Reduction in response time" },
-        { metric: "$100K+", label: "Annual cost savings" },
-      ],
-      technologies: ["OpenAI GPT-4", "Langchain", "Python", "React", "PostgreSQL"],
-      image: "/ai-chatbot-interface.png",
-      link: "/case-studies/ai-chatbot",
-    },
-  ]
-
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-20 sm:py-32">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      {/* Hero */}
+      <section className="relative overflow-hidden py-20 sm:py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-background">
+        <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:56px_56px]" />
+        <div className="absolute top-0 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-0 -right-40 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px]"></div>
+
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Case Studies
+            <Badge variant="secondary" className="mb-4">
+              Our Products
+            </Badge>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              Enterprise Products for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Tomorrow's Challenges</span>
             </h1>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Discover how we've helped businesses across industries transform their operations with innovative
-              technology solutions.
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
+              From AI-led automation to operational ERPs, our products help you launch faster, operate smarter, and grow with
+              confidence.
             </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700">
+                <Link href="/#contact">
+                  Get a Demo <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="border-slate-600 text-slate-200">
+                <Link href="/products">View All Products</Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-2xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl bg-blue-500/20 p-2 text-blue-400">
+                  <BadgeCheck className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-white">Enterprise-ready</div>
+                  <div className="text-sm text-slate-300">Roles, audit logs, secure access</div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl bg-purple-500/20 p-2 text-purple-400">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-white">AI + automation</div>
+                  <div className="text-sm text-slate-300">Reduce effort, improve decisions</div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl bg-emerald-500/20 p-2 text-emerald-400">
+                  <Workflow className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-white">Quick rollout</div>
+                  <div className="text-sm text-slate-300">Deploy in weeks, iterate fast</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-background">
+      {/* Products grid */}
+      <section className="py-24 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 text-center">
-            <div>
-              <div className="flex items-center justify-center mb-2">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-3xl font-bold text-foreground">200+</div>
-              <div className="mt-1 text-sm text-muted-foreground">Happy Clients</div>
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end mb-12">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Our Products</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Choose a product and we'll tailor integrations, workflows, and dashboards to match your business needs.
+              </p>
             </div>
-            <div>
-              <div className="flex items-center justify-center mb-2">
-                <Zap className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-3xl font-bold text-foreground">500+</div>
-              <div className="mt-1 text-sm text-muted-foreground">Projects Completed</div>
-            </div>
-            <div>
-              <div className="flex items-center justify-center mb-2">
-                <TrendingUp className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-3xl font-bold text-foreground">98%</div>
-              <div className="mt-1 text-sm text-muted-foreground">Client Satisfaction</div>
-            </div>
-            <div>
-              <div className="flex items-center justify-center mb-2">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-3xl font-bold text-foreground">50+</div>
-              <div className="mt-1 text-sm text-muted-foreground">Team Members</div>
-            </div>
+            <Button size="lg" asChild className="whitespace-nowrap">
+              <Link href="/#contact">
+                Talk to an Expert <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
-        </div>
-      </section>
 
-      {/* Case Studies Grid */}
-      <section className="py-24 bg-muted/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {caseStudies.map((study, index) => (
-              <Card key={study.id} className="overflow-hidden border-2">
-                <div className={`grid gap-8 lg:grid-cols-2 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-                  <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                    <img
-                      src={study.image || "/placeholder.svg"}
-                      alt={study.title}
-                      className="h-full w-full object-cover"
-                      style={{ minHeight: "300px" }}
-                    />
-                  </div>
-                  <div className={`p-8 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <div className="flex items-center gap-2 mb-4">
-                      <Badge variant="secondary">{study.industry}</Badge>
-                      <Badge variant="outline">{study.client}</Badge>
-                    </div>
-                    <h2 className="text-2xl font-bold text-foreground mb-4">{study.title}</h2>
-
-                    <div className="space-y-4 mb-6">
-                      <div>
-                        <h3 className="text-sm font-semibold text-foreground mb-2">Challenge</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{study.challenge}</p>
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-foreground mb-2">Solution</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{study.solution}</p>
-                      </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {products.map((product) => {
+              const Icon = product.icon
+              return (
+                <Link key={product.title} href={product.href} className="group">
+                  <div className="relative h-full overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:border-slate-300">
+                    {/* Product Image */}
+                    <div className="relative h-48 overflow-hidden bg-slate-100">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                      {study.results.map((result, idx) => (
-                        <div key={idx} className="text-center p-3 rounded-lg bg-muted/50">
-                          <div className="text-xl font-bold text-primary">{result.metric}</div>
-                          <div className="text-xs text-muted-foreground mt-1">{result.label}</div>
+                    {/* Gradient top border accent */}
+                    <div className={`h-1 bg-gradient-to-r ${product.color}`}></div>
+                    
+                    <div className="p-8">
+                      <div className="flex items-start justify-between gap-4 mb-6">
+                        <div className={`rounded-xl bg-gradient-to-br ${product.color} p-3 text-white shadow-lg`}>
+                          <Icon className="h-6 w-6" />
                         </div>
-                      ))}
-                    </div>
+                        <Badge className="shrink-0 bg-slate-100 text-slate-700">
+                          Ready
+                        </Badge>
+                      </div>
 
-                    <div className="mb-6">
-                      <h3 className="text-sm font-semibold text-foreground mb-3">Technologies Used</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {study.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary">
-                            {tech}
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-blue-600 transition-colors">{product.title}</h3>
+                      <p className="mt-3 text-base leading-relaxed text-muted-foreground">{product.description}</p>
+
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {product.tags.map((tag) => (
+                          <Badge key={tag} variant="outline" className="bg-slate-50 border-slate-200">
+                            {tag}
                           </Badge>
                         ))}
                       </div>
-                    </div>
 
-                    <Button variant="outline" asChild>
-                      <Link href={study.link}>
-                        Read Full Case Study
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                      <div className="mt-8 inline-flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
+                        Explore <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-24 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="mb-4">Success Stories</Badge>
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">Real Results from Real Customers</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              See how enterprises transformed their operations with our products
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {caseStudies.map((study, idx) => (
+              <div key={study.id} className={`grid gap-8 md:grid-cols-2 md:items-center ${idx % 2 === 1 ? "md:direction-reverse" : ""}`}>
+                <div className={idx % 2 === 1 ? "md:order-2" : ""}>
+                  <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl">
+                    <Image
+                      src={study.image}
+                      alt={study.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </div>
                 </div>
-              </Card>
+
+                <div className={idx % 2 === 1 ? "md:order-1" : ""}>
+                  <Badge variant="outline" className="mb-4">
+                    {study.category}
+                  </Badge>
+                  
+                  <h3 className="text-3xl font-bold text-foreground mb-2">{study.title}</h3>
+                  <p className="text-sm text-muted-foreground font-semibold mb-4">{study.company}</p>
+
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-2">Challenge</h4>
+                      <p className="text-muted-foreground">{study.challenge}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-2">Solution</h4>
+                      <p className="text-muted-foreground">{study.solution}</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-3">Results</h4>
+                    <ul className="space-y-2">
+                      {study.results.map((result, i) => (
+                        <li key={i} className="flex items-center gap-3">
+                          <div className="w-2 h-2 rounded-full bg-blue-600"></div>
+                          <span className="text-muted-foreground font-semibold">{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <blockquote className="border-l-4 border-blue-600 pl-4 py-2 italic text-muted-foreground mb-6">
+                    "{study.testimonial}"
+                  </blockquote>
+
+                  <Button asChild>
+                    <Link href="/#contact">
+                      Get Similar Results <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-background">
+      {/* CTA */}
+      <section className="py-24 bg-slate-50">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Ready to Write Your Success Story?</h2>
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Want to see it in action?</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Let's discuss how we can help transform your business with innovative technology solutions
+            Share your requirements and we’ll recommend the best product stack and a rollout plan.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" asChild>
-              <Link href="/#contact">Start Your Project</Link>
+              <Link href="/#contact">Book a Demo</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/about">Learn About Us</Link>
+              <Link href="/services">Explore Services</Link>
             </Button>
           </div>
         </div>

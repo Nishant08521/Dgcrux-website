@@ -4,11 +4,17 @@ import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ServiceContact from "@/components/service-contact"
-import { CheckCircle2, Brain, Bot, Eye, MessageSquare, Workflow, Sparkles, ArrowRight } from "lucide-react"
+import { CheckCircle2, Brain, Bot, Eye, MessageSquare, Workflow, Sparkles, type LucideIcon } from "lucide-react"
 import Link from "next/link"
 
+type Service = {
+  icon: LucideIcon
+  title: string
+  description: string
+}
+
 export default function AISolutionsPage() {
-  const services = [
+  const services: Service[] = [
     {
       icon: Brain,
       title: "AI Strategy & Consulting",
@@ -107,10 +113,14 @@ export default function AISolutionsPage() {
             <div>
               <Badge className="mb-3 bg-indigo-50 text-indigo-600">AI Solutions</Badge>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Turn Data into Intelligent Action</h1>
-              <p className="text-lg text-slate-600 mb-6">From prototypes to production-grade AI systems — we build solutions that scale and deliver measurable outcomes.</p>
+              <p className="text-lg text-slate-600 mb-6">From prototypes to production-grade AI systems - we build solutions that scale and deliver measurable outcomes.</p>
               <div className="flex gap-4">
-                <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700"><Link href="#contact">Start AI Project</Link></Button>
-                <Button size="lg" variant="outline"><Link href="/case-studies">Explore Use Cases</Link></Button>
+                <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700" asChild>
+                  <Link href="#contact">Start AI Project</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link href="/case-studies">Explore Use Cases</Link>
+                </Button>
               </div>
             </div>
 
@@ -149,17 +159,15 @@ export default function AISolutionsPage() {
             {services.map((service) => {
               const Icon = service.icon
               return (
-                <Link key={service.title} href={service.href || "#"}>
-                  <Card className="border-2 hover:shadow-lg transition-all h-full cursor-pointer group border-l-4 border-indigo-100 pl-6">
-                    <CardHeader>
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100 transition-colors">
-                        <Icon className="h-6 w-6" />
-                      </div>
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
-                      <CardDescription>{service.description}</CardDescription>
-                    </CardHeader>
-                  </Card>
-                </Link>
+                <Card key={service.title} className="border-2 hover:shadow-lg transition-all h-full group border-l-4 border-indigo-100 pl-6">
+                  <CardHeader>
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100 transition-colors">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
+                  </CardHeader>
+                </Card>
               )
             })}
           </div>
@@ -214,7 +222,7 @@ export default function AISolutionsPage() {
             <div>
               <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Why Invest in AI Solutions?</h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                AI is no longer a future technology—it's transforming businesses today. Our AI solutions help you stay
+                AI is no longer a future technology - it's transforming businesses today. Our AI solutions help you stay
                 competitive, reduce costs, and unlock new opportunities for growth and innovation.
               </p>
               <div className="mt-8">

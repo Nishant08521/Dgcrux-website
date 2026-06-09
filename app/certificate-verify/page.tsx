@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import { Calendar, Download, CheckCircle, User, BookOpen, CalendarDays, Hash } from "lucide-react"
 
 export default function CertificateVerifyPage() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
   const [certNo, setCertNo] = useState("")
   const [dob, setDob] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -38,7 +39,7 @@ export default function CertificateVerifyPage() {
   const handleDownload = async () => {
     if (!verifiedCert?.imagePath) return
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${verifiedCert.imagePath}`)
+      const res = await fetch(`${apiUrl.replace('/api', '')}${verifiedCert.imagePath}`)
       if (!res.ok) throw new Error("Failed to download certificate image")
       const blob = await res.blob()
       const url = URL.createObjectURL(blob)
@@ -65,7 +66,12 @@ export default function CertificateVerifyPage() {
 
           <div className="p-10 pt-12">
             <div className="text-center mb-8">
-              <img src="/images/logo.png" alt="DgCrux" className="h-14 mx-auto mb-6 object-contain" />
+              <div className="flex justify-center mb-6">
+                <div className="text-center">
+                  <h1 className="text-4xl font-extrabold text-[#5e17a3] mb-2">DgCrux</h1>
+                  <p className="text-sm text-slate-500 font-medium">Technology</p>
+                </div>
+              </div>
               <h1 className="text-3xl font-extrabold text-[#1a1c35]">Certificate Verification</h1>
             </div>
 
@@ -155,7 +161,7 @@ export default function CertificateVerifyPage() {
                   <p className="text-center text-sm font-bold text-slate-500 mb-4">Certificate Preview</p>
                   <div className="rounded-lg overflow-hidden border border-slate-200 bg-white shadow-sm p-2">
                     <img
-                      src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${verifiedCert.imagePath}`}
+                      src={`${apiUrl.replace('/api', '')}${verifiedCert.imagePath}`}
                       alt="Certificate Preview"
                       className="w-full h-auto object-contain rounded"
                     />
