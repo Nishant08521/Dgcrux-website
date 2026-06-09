@@ -88,14 +88,14 @@ export function ClientsSection() {
               {fullRow1.map((client, index) => (
                 <div
                   key={`row1-${index}`}
-                  className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center transition-all cursor-pointer group/card"
+                  className="flex-shrink-0 w-[160px] h-[60px] flex items-center justify-center transition-all cursor-pointer group/card"
                 >
                   <div className="h-full w-full relative">
                     <Image
                       src={client.logo}
                       alt={client.name}
                       fill
-                      sizes="200px"
+                      sizes="160px"
                       className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-60 group-hover/card:opacity-100 group-hover/card:scale-110"
                     />
                   </div>
@@ -118,14 +118,14 @@ export function ClientsSection() {
               {fullRow2.map((client, index) => (
                 <div
                   key={`row2-${index}`}
-                  className="flex-shrink-0 w-[200px] h-[80px] flex items-center justify-center transition-all cursor-pointer group/card"
+                  className="flex-shrink-0 w-[160px] h-[60px] flex items-center justify-center transition-all cursor-pointer group/card"
                 >
                   <div className="h-full w-full relative">
                     <Image
                       src={client.logo}
                       alt={client.name}
                       fill
-                      sizes="200px"
+                      sizes="160px"
                       className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-60 group-hover/card:opacity-100 group-hover/card:scale-110"
                     />
                   </div>
