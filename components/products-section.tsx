@@ -25,14 +25,15 @@ const allProducts = [
     description: "Secure exams with real-time AI monitoring.",
     href: "/products/ai-proctor",
     image: "/products/ai-proctoring.png",
+    
     color: "from-blue-600/20 to-cyan-500/20"
-  },
+  }, 
   {
     title: "AI-Powered ATS",
     icon: Users,
     description: "Smart recruitment with automated screening.",
     href: "/products/ats",
-    image: "/products/talentbot.png",
+    image: "/products/ats1.png",
     color: "from-purple-600/20 to-pink-500/20"
   },
   {
@@ -40,7 +41,7 @@ const allProducts = [
     icon: Sparkles,
     description: "Instantly create balanced question papers.",
     href: "/products/qp-generator",
-    image: "/online-learning-platform.png",
+    image: "/products/aiqp.png",
     color: "from-rose-600/20 to-red-500/20"
   },
   {
@@ -48,7 +49,7 @@ const allProducts = [
     icon: Sun,
     description: "Manage end-to-end solar project lifecycle.",
     href: "/products/solar-erp",
-    image: "/telemedicine-video-call.jpg",
+    image: "/products/solar.png",
     color: "from-yellow-500/20 to-orange-400/20"
   },
   {
@@ -56,7 +57,7 @@ const allProducts = [
     icon: Car,
     description: "Streamline operations for dealer networks.",
     href: "/products/dms",
-    image: "/modern-technology-office-team-collaboration.jpg",
+    image: "/products/delar.png",
     color: "from-sky-600/20 to-indigo-500/20"
   },
   {
@@ -201,13 +202,13 @@ export function ProductsSection() {
             viewport={{ once: true }}
             className="mt-2 text-center"
           >
-            <button
+            {/* <button
               onClick={() => setShowAll(true)}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all hover:shadow-[0_10px_30px_rgba(var(--primary),0.3)] group"
             >
               View More Products
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </button> */}
           </motion.div>
         )}
       </div>

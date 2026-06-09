@@ -1,44 +1,34 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ArrowRight, Phone } from "lucide-react"
 import Image from "next/image"
 import { ContactPopup } from "@/components/contact-popup"
 import google from "@/public/google.png"
 import cmmi from "@/public/cmmi.png"
-import startupindia from "@/public/startupindia.png"
 import iso from "@/public/iso.png"
-import aws from "@/public/aws.png"
+import msme from "@/public/msme logo.png"
+import aws from "@/public/aws2.png"
+import shopify from "@/public/shopify.png"
+import razorpay from "@/public/razorpayy.png"
+import startupkarnataka from "@/public/starup karnatak.png"
+import startupindia from "@/public/startupindia.png"
 
 const partners = [
-  // { src: "https://e7.pngegg.com/pngimages/740/237/png-clipart-google-adwords-google-partners-advertising-pay-per-click-google-partner-search-engine-optimization-company-thumbnail.png", alt: "Partner 1" },
-  // { src: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/aws-color.png", alt: "Partner 2" },
-  // { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2SrOkC9DktLse5ViTRPpDZiph4wpmlqxcg&s", alt: "Partner 3" },
-  // { src: "https://media.licdn.com/dms/image/v2/C4E12AQHvuLCHhKuejQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520077509521?e=2147483647&v=beta&t=RlzC0uMNRc0wvHNLfqqeiruP6W91lSjzUf0tIZcvkrs", alt: "Partner 4" },
-  // { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPTksIuHkp-7zuNNa4tXwZQ-sI6d8x9v6QaA&s", alt: "Partner 5" },
-  // { src: "https://p7.hiclipart.com/preview/85/385/219/iso-9000-quality-management-systems%E2%80%94requirements-iso-9001-logo-international-organization-for-standardization-iso-9001-thumbnail.jpg", alt: "Partner 6" },
-  { src: "https://miraculoustaxes.in/wp-content/uploads/2024/05/msme-ssi-registration.png", alt: "Partner 7" },
-  { src: "https://icon2.cleanpng.com/20180604/yrx/aa9q93eek.webp", alt: "Partner 8" },
-  { src: "https://intellectual-property-helpdesk.ec.europa.eu/sites/default/files/styles/oe_theme_medium_no_crop/public/2022-02/Startup%20Karnataka.png?itok=OP7rFUbL", alt: "Partner 9" },
-  { src: google, alt: "Partner 10" },
-  { src: cmmi, alt: "Partner 11" },
-  { src: startupindia, alt: "Partner 12" },
-  { src: "https://www.vhv.rs/dpng/d/581-5813421_certified-iso-9001-2015-company-hd-png-download.png", alt: "Partner 13" },
-  { src: iso, alt: "Partner 14" },
-  { src: aws, alt: "Partner 15" },
- 
+  { src: msme, alt: "Partner 1" },
+  { src: aws, alt: "Partner 2" },
+  { src: shopify, alt: "Partner3" },
+  { src: startupindia, alt: "Partner 4" },
+  { src: startupkarnataka, alt: "Partner 5" },
+  { src: razorpay, alt: "Partner 6" },
+  { src: google, alt: "Partner 7" },
+  { src: cmmi, alt: "Partner 8" },
+  { src: iso, alt: "Partner 9" }
 
 ]
 
 export function HeroSection() {
-  const [isMounted, setIsMounted] = useState(false)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  if (!isMounted) return null
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-slate-900 text-white">
@@ -116,6 +106,9 @@ export function HeroSection() {
             </div>
           </div>
         </div>
+         <div className="absolute bottom-4 right-4">
+        <iframe width="100" height="100" src="https://clutch.co/share/badges/2241869/51907?utm_source=clutch_top_company_badge&utm_medium=image_embed" title="Top Clutch Software Developers Information Technology Bengaluru"></iframe>
+                  </div>
       </div>
 
       <style jsx>{`

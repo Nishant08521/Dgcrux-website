@@ -114,11 +114,11 @@ export default function ATSPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="h-14 px-8 text-lg font-bold bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-500/20 rounded-full" asChild>
-                  <Link href="#contact">Request a Demo</Link>
+                  <a href="https://empquick.com/" target="_blank" rel="noopener noreferrer">
+                    Request a Demo
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold border-slate-700 text-white hover:bg-slate-800 rounded-full" asChild>
-                  <Link href="#features">Explore Features</Link>
-                </Button>
+            
               </div>
 
               <div className="mt-12 flex gap-8 items-center">
@@ -149,7 +149,7 @@ export default function ATSPage() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group bg-slate-800">
                 <Image
-                  src="/ats_hero_visualization.png"
+                  src="/products/atsemp.png"
                   alt="ATS Dashboard Visualization"
                   width={800}
                   height={600}
@@ -274,10 +274,12 @@ export default function ATSPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="h-16 px-10 text-lg font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-xl">
-                  Schedule Demo <ArrowRight className="ml-2 w-5 h-5" />
+                        <a href="https://empquick.com/" target="_blank" rel="noopener noreferrer">
+                  Schedule Demo 
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold border-white/20 text-white hover:bg-white/10 rounded-full">
-                  Contact Sales
+                <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold border-white/20 text-blue-600 hover:bg-white/10 rounded-full">
+                  <Link href="/contact">Contact Sales</Link>
                 </Button>
               </div>
             </div>

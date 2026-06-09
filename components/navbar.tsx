@@ -119,13 +119,13 @@ export function Navbar() {
       description: "Smart recruitment with automated screening.",
       color: "bg-purple-600"
     },
-    {
-      name: "Next-Gen AI-ATS",
-      href: "/products/ai-ats",
-      icon: BrainCircuit,
-      description: "Neural talent acquisition & predictive hiring.",
-      color: "bg-indigo-700"
-    },
+    // {
+    //   name: "Next-Gen AI-ATS",
+    //   href: "/products/ai-ats",
+    //   icon: BrainCircuit,
+    //   description: "Neural talent acquisition & predictive hiring.",
+    //   color: "bg-indigo-700"
+    // },
     {
       name: "AI QP Generator",
       href: "/products/qp-generator",
@@ -154,25 +154,25 @@ export function Navbar() {
       description: "Smart system with dynamic pricing.",
       color: "bg-red-500"
     },
-    {
-      name: "Restaurant Management",
-      href: "/products/restaurant-management",
-      icon: Store,
-      description: "Complete POS for modern eateries.",
-      color: "bg-green-600"
-    },
-    {
-      name: "Learning Management",
-      href: "/products/lms",
-      icon: GraduationCap,
-      description: "Engaging platform for digital learning.",
-      color: "bg-indigo-600"
-    },
+    // {
+    //   name: "Restaurant Management",
+    //   href: "/products/restaurant-management",
+    //   icon: Store,
+    //   description: "Complete POS for modern eateries.",
+    //   color: "bg-green-600"
+    // },
+    // {
+    //   name: "Learning Management",
+    //   href: "/products/lms",
+    //   icon: GraduationCap,
+    //   description: "Engaging platform for digital learning.",
+    //   color: "bg-indigo-600"
+    // },
   ]
 
   const company = [
     { name: "About Us", href: "/about", icon: Building, description: "Our journey and core values.", color: "bg-blue-600" },
-    { name: "Our Clients", href: "/#clients", icon: Users, description: "Global brands we partner with.", color: "bg-indigo-600" },
+    { name: "Our Clients", href: "/clients", icon: Users, description: "Global brands we partner with.", color: "bg-indigo-600" },
     { name: "Case Studies", href: "/case-studies", icon: BookOpen, description: "Success stories and project results.", color: "bg-purple-600" },
     { name: "Blogs", href: "/blogs", icon: FileText, description: "Latest insights and tech trends.", color: "bg-orange-600" },
     { name: "Contact Us", href: "/contact", icon: Phone, description: "Get in touch with our experts.", color: "bg-green-600" },

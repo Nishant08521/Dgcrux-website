@@ -22,16 +22,16 @@ export function Footer() {
               Transforming businesses through innovative digital product engineering, AI solutions, and scalable cloud architectures. Empowering the modern era.
             </p>
             <div className="flex gap-4 pt-2">
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
+              <Link href="https://www.facebook.com/dgcrux.technology" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
                 <Facebook className="h-4 w-4" />
               </Link>
               <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
                 <Twitter className="h-4 w-4" />
               </Link>
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
+              <Link href="https://www.linkedin.com/company/dgcrux-technology/" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
                 <Linkedin className="h-4 w-4" />
               </Link>
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
+              <Link href="https://www.instagram.com/dgcrux.technology/" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-400 hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-300">
                 <Instagram className="h-4 w-4" />
               </Link>
             </div>

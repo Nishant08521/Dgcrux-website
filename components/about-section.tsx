@@ -4,13 +4,20 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
+import sashi from "@/public/sahsi sir.png"
+import sashi2 from "@/public/team.png"
+import sashi3 from "@/public/group.png"
+import sashi4 from "@/public/sir3.png"
+import sashi5 from "@/public/award.png"
+
 
 const carouselImages = [
-  "https://dgcrux.com/images/gallery/ceo.jpg",
-  "https://dgcrux.com/images/gallery/award1.jpg",
-  "https://dgcrux.com/images/gallery/award2.jpg",
-  "https://dgcrux.com/images/gallery/award3.jpg",
-  "https://lh3.googleusercontent.com/p/AF1QipMFSjeTkdUB1gTXBta30t7ZFP_r5ASKzAe5DEFC=s1360-w1360-h1020-rw",
+
+  sashi,
+  sashi2,
+  sashi3,
+  sashi4,
+  sashi5,
 
 ]
 
@@ -35,19 +42,20 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
           {/* Left Side: Image Stack */}
-          <div className="relative order-2 lg:order-1 lg:col-span-6 py-12">
-            <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[570px] overflow-hidden rounded-3xl shadow-2xl bg-slate-100">
+          <div className="relative order-2 lg:order-1 lg:col-span-5 py-12 flex justify-center">
+            <div className="relative w-full max-w-[576px] h-[570px] overflow-hidden rounded-3xl shadow-2xl bg-slate-100">
               {carouselImages.map((src, index) => (
                 <div
-                  key={src}
+                  key={index}
                   className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
                     }`}
                 >
                   <Image
                     src={src}
                     alt={`Gallery image ${index + 1}`}
-                    fill
-                    className="object-cover"
+                    width={576}
+                    height={570}
+                    className="object-cover w-full h-full"
                     priority={index === 0}
                   />
                 </div>

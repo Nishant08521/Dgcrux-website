@@ -115,11 +115,11 @@ export default function AIProctoringPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="h-14 px-8 text-lg font-bold bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-500/20 rounded-full" asChild>
-                  <Link href="#contact">Get a Free Demo</Link>
+                  <a href="https://proctorai.in/ai-proctor" target="_blank" rel="noopener noreferrer">
+                    Get a Free Demo
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold border-slate-700 text-white hover:bg-slate-800 rounded-full" asChild>
-                  <Link href="#features">Explore Features</Link>
-                </Button>
+             
               </div>
               
               <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8">
@@ -233,8 +233,12 @@ export default function AIProctoringPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <div className="aspect-video bg-slate-800 flex items-center justify-center">
-                  <div className="text-center p-12">
+                <div
+                  className="aspect-video bg-cover bg-center relative flex items-center justify-center"
+                  style={{ backgroundImage: "url('/products/ai-proter.png')" }}
+                >
+                  <div className="absolute inset-0 bg-slate-900/30" />
+                  <div className="relative text-center p-12">
                     <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
                       <Monitor className="w-10 h-10 text-white" />
                     </div>
@@ -292,10 +296,12 @@ export default function AIProctoringPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="h-16 px-10 text-lg font-bold bg-white text-blue-600 hover:bg-slate-100 rounded-full shadow-xl">
-                  Book a Demo <ArrowRight className="ml-2 w-5 h-5" />
+                  <a href="https://proctorai.in/ai-proctor" target="_blank" rel="noopener noreferrer">
+                    Book a Demo
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold border-white/30 text-white hover:bg-white/10 rounded-full">
-                  Contact Sales
+                <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold border-white/30 text-blue-600 hover:bg-white/10 rounded-full">
+                 <Link href="/contact">Contact Sales</Link>
                 </Button>
               </div>
             </div>

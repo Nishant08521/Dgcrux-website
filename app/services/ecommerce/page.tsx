@@ -3,7 +3,8 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2, ShoppingCart, Store, Package, CreditCard, TrendingUp, Headphones } from "lucide-react"
+import ServiceContact from "@/components/service-contact"
+import { CheckCircle2, ShoppingCart, Store, Package, CreditCard, TrendingUp, Headphones, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export default function EcommercePage() {
@@ -93,29 +94,41 @@ export default function EcommercePage() {
     <main className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 py-20 sm:py-32">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-6">eCommerce Solutions</Badge>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Build Your{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Online Store
-              </span>
-            </h1>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Create powerful, secure, and scalable eCommerce platforms that drive sales and delight customers. From
-              Shopify stores to custom marketplaces, we've got you covered.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button size="lg" asChild>
-                <Link href="#contact">Start Your Store</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/case-studies">eCommerce Portfolio</Link>
-              </Button>
+      {/* Hero (fresh design) */}
+      <section className="relative py-20 bg-gradient-to-b from-white to-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-2 items-center">
+            <div>
+              <Badge className="mb-3 bg-teal-50 text-teal-600">eCommerce Solutions</Badge>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+                Launch High-Converting Stores with a Modern eCommerce Stack
+              </h1>
+              <p className="text-lg text-slate-600 mb-6">
+                We build fast, secure, and scalable online stores—Shopify, Magento, WooCommerce, and custom platforms—optimized for conversions and long-term growth.
+              </p>
+              <div className="flex gap-4">
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700"><Link href="#contact">Request Quote</Link></Button>
+                <Button size="lg" variant="outline"><Link href="/case-studies">View Work</Link></Button>
+              </div>
+            </div>
+
+            {/* decorative accent */}
+            <div className="pointer-events-none absolute -right-24 top-8 hidden lg:block opacity-30">
+              <svg width="320" height="320" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g1" x1="0%" x2="100%">
+                    <stop stopColor="#2dd4bf" offset="0%" />
+                    <stop stopColor="#99f6e4" offset="100%" />
+                  </linearGradient>
+                </defs>
+                <g transform="translate(300,300)">
+                  <path d="M120,-160C160,-120,180,-60,180,0C180,60,160,120,120,160C80,200,0,220,-60,200C-120,180,-160,120,-180,60C-200,0,-200,-60,-170,-110C-140,-160,-80,-190,-20,-200C40,-210,80,-200,120,-160Z" fill="url(#g1)" />
+                </g>
+              </svg>
+            </div>
+
+            <div className="w-full max-w-md">
+              <ServiceContact accent="teal" />
             </div>
           </div>
         </div>
@@ -133,15 +146,20 @@ export default function EcommercePage() {
             {services.map((service) => {
               const Icon = service.icon
               return (
-                <Card key={service.title} className="border-2 hover:border-primary/50 transition-all">
-                  <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardHeader>
-                </Card>
+                <Link key={service.title} href={service.href || "#"}>
+                  <Card className="border-2 hover:shadow-lg transition-all h-full cursor-pointer group border-l-4 border-teal-100 pl-6">
+                    <CardHeader>
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-teal-50 text-teal-600 group-hover:bg-teal-100 transition-colors">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                      <div className="flex items-center gap-2 text-sm font-semibold text-teal-600 mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                        Learn More <ArrowRight className="h-4 w-4" />
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </Link>
               )
             })}
           </div>
@@ -230,18 +248,17 @@ export default function EcommercePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="contact" className="py-24 bg-background">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Ready to Sell Online?</h2>
-          <p className="mt-4 text-lg text-muted-foreground">Let's build an eCommerce store that drives revenue</p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" asChild>
-              <Link href="/#contact">Request a Quote</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/case-studies">View eCommerce Projects</Link>
-            </Button>
+      {/* Contact CTA (embedded form) */}
+      <section id="contact" className="py-20 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-2 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Ready to Sell Online?</h2>
+              <p className="mt-4 text-lg text-slate-600">Tell us about your catalog and goals — we'll propose the best platform and plan.</p>
+            </div>
+            <div className="w-full max-w-md">
+              <ServiceContact accent="teal" />
+            </div>
           </div>
         </div>
       </section>

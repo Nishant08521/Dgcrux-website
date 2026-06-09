@@ -6,8 +6,12 @@ import { CookieBanner } from "@/components/cookie-banner"
 import { RequirementsPopup } from "@/components/requirements-popup"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const geistSans = Geist({
+  subsets: ["latin"],
+})
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   title: "DgCrux Technology - Custom Software Development & AI Solutions",
@@ -35,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className={`${geistSans.className} ${geistMono.className}`} suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
         {children}
         <CookieBanner />
