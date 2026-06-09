@@ -21,7 +21,9 @@ const partners = [
   { src: iso, alt: "ISO Logo" },
   { src: aws, alt: "AWS Partner" },
   { src: "https://1000logos.net/wp-content/uploads/2020/08/Shopify-Logo.jpg", alt: "Shopify Partner" },
-  { src: razorpay, alt: "Razorpay Partner" }
+  { src: razorpay, alt: "Razorpay Partner" },
+  { src: "https://png.pngtree.com/png-clipart/20250514/original/pngtree-iso-9001-certified-company-logo-badge-vector-png-image_20971536.png", alt: "ISO 9001 Certified" }
+
 ]
 
 export function RecognitionPartners() {

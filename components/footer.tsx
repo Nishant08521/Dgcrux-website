@@ -100,7 +100,13 @@ export function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">123 Business Park, Tech City<br />New Delhi, India 110001</span>
+                <span className="text-slate-400">108, Tower- 16, JANAADHAR SHUBHA PHASE PHASE-2, Attibele - Anekal Rd, Bengaluru, M.Medihalli, Karnataka 562106, India</span>
+
+              </li>
+                    <li className="flex items-start gap-2">
+                <MapPin className="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" />
+                <span className="text-slate-400">6th Floor, DS Business Park, Bailey Rd, Saguna More, Kaliket Nagar, Patna, Bihar 801503, India</span>
+
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#2563eb] flex-shrink-0" />
@@ -111,25 +117,11 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <PhoneCall className="w-5 h-5 text-[#2563eb] flex-shrink-0" />
                 <a href="tel:+911234567890" className="text-slate-400 hover:text-[#FFB800] transition-colors">
-                  +91 123-456-7890
+                  +91 9835166140
                 </a>
               </li>
               <li className="pt-4">
-                <a
-                  href="https://clutch.co/profile/dgcrux-technology"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-transform hover:scale-105"
-                >
-                  <Image
-                    src="https://www.crosslink.ae/wp-content/uploads/New-Clutch-Tagline-logo-1024x404.png.webp"
-                    alt="Clutch Profile"
-                    width={140}
-                    height={50}
-                    className="opacity-90 hover:opacity-100 transition-all h-auto w-32 object-contain"
-                    style={{ filter: "invert(36%) sepia(85%) saturate(5437%) hue-rotate(346deg) brightness(98%) contrast(106%)" }}
-                  />
-                </a>
+           <iframe width="100" height="100" src="https://clutch.co/share/badges/2241869/51907?utm_source=clutch_top_company_badge&utm_medium=image_embed" title="Top Clutch Software Developers Information Technology Bengaluru"></iframe>
               </li>
             </ul>
           </div>

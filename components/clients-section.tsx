@@ -2,22 +2,51 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import goal from "../public/goal.png"
+import digi from "../public/digi.png"
+import source from "../public/sourcex.png"
+import empquick from "../public/empquick.png"
+import pawsome from "../public/pawsome.jpeg"
+// import royal from "../public/royal.webp"
+import ws from "../public/wsmobility.jpg"
+import vajirao from "../public/vajiraonew.jpg"
+import suncity from "../public/suncity.png"
+import bing from "../public/bing x.png"
+import zeross from "../public/zeros.png"
+import rapido from "../public/rapido.png"
+import medicin from "../public/medicine.png"
+import ibee from "../public/ibee.png"
+import kidzee from "../public/kidzee.png"
+import mount from "../public/maount.png"
+import teenpati from "../public/teenpati.png"
+import meal from "../public/meal.png"
+
 
 const clientsRow1 = [
-  { name: "Suncity Projects", logo: "https://dgcrux.com/images/Dgcruxclient/1.png" },
-  { name: "BingX", logo: "https://dgcrux.com/images/Dgcruxclient/2.png" },
-  { name: "Rapido", logo: "https://dgcrux.com/images/Dgcruxclient/3.png" },
-  { name: "Zeross", logo: "https://dgcrux.com/images/Dgcruxclient/4.png" },
-  { name: "Sourcx.ai", logo: "https://dgcrux.com/images/Dgcruxclient/5.png" },
+  { name: "Suncity Projects", logo: suncity },
+  { name: "Goal", logo: goal },
+  { name: "Digi", logo: digi },
+  { name: "SourceX", logo: source },
+  { name: "Vajirao", logo: vajirao },
+  { name: "BingX", logo: bing },
+  { name: "Rapido", logo: rapido },
+  { name: "Zeross", logo: zeross },
+  { name: "Sourcx.ai", logo: kidzee },
+
   
 ]
 
 const clientsRow2 = [
-  { name: "Medicine", logo: "https://dgcrux.com/images/Dgcruxclient/6.png" },
-  { name: "I-Bee Farm", logo: "https://dgcrux.com/images/Dgcruxclient/22.png" },
-  { name: "Mamma", logo: "https://dgcrux.com/images/Dgcruxclient/19.png" },
-  { name: "Grohood", logo: "https://dgcrux.com/images/Dgcruxclient/8.png" },
-  { name: "Client J", logo: "https://dgcrux.com/images/Dgcruxclient/18.png" },
+  { name: "Medicine", logo: medicin },
+  { name: "Empquick", logo: empquick },
+  { name: "Pawsome", logo: pawsome },
+  // { name: "Royal Enfield", logo: royal },
+  { name: "WS Mobility", logo: ws },
+  
+  { name: "I-Bee Farm", logo: ibee },
+  { name: "Mamma", logo: meal },
+  { name: "Grohood", logo: mount },
+  { name: "Client J", logo: teenpati },
 ]
 
 export function ClientsSection() {
@@ -66,6 +95,7 @@ export function ClientsSection() {
                       src={client.logo}
                       alt={client.name}
                       fill
+                      sizes="200px"
                       className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-60 group-hover/card:opacity-100 group-hover/card:scale-110"
                     />
                   </div>
@@ -95,6 +125,7 @@ export function ClientsSection() {
                       src={client.logo}
                       alt={client.name}
                       fill
+                      sizes="200px"
                       className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-60 group-hover/card:opacity-100 group-hover/card:scale-110"
                     />
                   </div>

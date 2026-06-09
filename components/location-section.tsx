@@ -10,10 +10,10 @@ export function LocationSection() {
         {
             city: "Bangalore",
             description: "Registered Office",
-            address: "108, Tower- 16, Janaadhar shubha phase-2, Attibele - Anekal Rd, Bengaluru, Karnataka 562107",
+            address: "108, Tower- 16, JANAADHAR SHUBHA PHASE PHASE-2, Attibele - Anekal Rd, Bengaluru, M.Medihalli, Karnataka 562106",
             phone: "+91 9835166140",
             email: "info@dgcrux.com",
-            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.643873583583!2d77.684!3d12.749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d2c9b6e9bb3%3A0x0!2sDgCrux%20Technology!5e0!3m2!1sen!2sin!4v1700000000000",
+            mapUrl: "https://www.google.com/maps?q=DgCrux+Technology+108+Tower+16+JANAADHAR+SHUBHA+PHASE+PHASE-2+Attibele+Anekal+Rd+Bengaluru+Karnataka+562106&output=embed",
         },
         {
             city: "Patna",
@@ -21,16 +21,16 @@ export function LocationSection() {
             address: "6th Floor, DS Business Park, Bailey Rd, Saguna More, Kaliket Nagar, Patna, Bihar 801503",
             phone: "+91 9835166140",
             email: "info@dgcrux.com",
-            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.5623091147544!2d85.045!3d25.607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed581a00000000%3A0x0!2sDS%20Business%20Park!5e0!3m2!1sen!2sin!4v1700000000001",
+            mapUrl: "https://www.google.com/maps?q=DgCrux+Technology+DS+Business+Park+Bailey+Rd+Saguna+More+Patna+Bihar+801503&output=embed",
         },
-        {
-            city: "New Delhi",
-            description: "Corporate Office",
-            address: "123 Business Park, Tech City, New Delhi, India 110001",
-            phone: "+91 123-456-7890",
-            email: "info@dgcrux.com",
-            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11516.3268482!2d77.209!3d28.613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b71dbff1b6b!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000002",
-        },
+        // {
+        //     city: "New Delhi",
+        //     description: "Corporate Office",
+        //     address: "123 Business Park, Tech City, New Delhi, India 110001",
+        //     phone: "+91 123-456-7890",
+        //     email: "info@dgcrux.com",
+        //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11516.3268482!2d77.209!3d28.613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b71dbff1b6b!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000002",
+        // },
     ]
 
     return (

@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
@@ -107,30 +110,71 @@ export default function ContactPage() {
       </section>
 
       {/* Map section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-black text-white">Find Us on the Map</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-6 rounded-full"></div>
-          </div>
-          <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0b22] p-2 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#05041a] pointer-events-none mix-blend-multiply opacity-50 z-10"></div>
-            <iframe
-              title="DgCrux Technology Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.643873583583!2d77.684!3d12.749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d2c9b6e9bb3%3A0x0!2sDgCrux%20Technology!5e0!3m2!1sen!2sin!4v1700000000000"
-              width="100%"
-              height="450"
-              style={{ border: 0, borderRadius: '1.25rem', filter: 'contrast(1.1) opacity(0.9)' }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full relative z-0"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+      <MapSection />
 
       <Footer />
     </main>
+  )
+}
+
+function MapSection() {
+  const [activeTab, setActiveTab] = useState(0)
+
+  const locations = [
+    {
+      city: "Bangalore",
+      address: "108, Tower- 16, JANAADHAR SHUBHA PHASE PHASE-2, Attibele - Anekal Rd, Bengaluru, M.Medihalli, Karnataka 562106",
+      mapUrl: "https://www.google.com/maps?q=DgCrux+Technology+108+Tower+16+JANAADHAR+SHUBHA+PHASE+PHASE-2+Attibele+Anekal+Rd+Bengaluru+Karnataka+562106&output=embed",
+    },
+    {
+      city: "Patna",
+      address: "6th Floor, DS Business Park, Bailey Rd, Saguna More, Kaliket Nagar, Patna, Bihar 801503",
+      mapUrl: "https://www.google.com/maps?q=DgCrux+Technology+DS+Business+Park+Bailey+Rd+Saguna+More+Patna+Bihar+801503&output=embed",
+    },
+  ]
+
+  return (
+    <section className="py-20 relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-black text-white">Find Us on the Map</h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div className="flex justify-center gap-4 mb-8">
+          {locations.map((loc, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveTab(index)}
+              className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${activeTab === index
+                ? "bg-amber-500 text-black"
+                : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10"
+              }`}
+            >
+              {loc.city}
+            </button>
+          ))}
+        </div>
+
+        <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0b22] p-2 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#05041a] pointer-events-none mix-blend-multiply opacity-50 z-10"></div>
+          <iframe
+            key={activeTab}
+            title={`DgCrux Technology ${locations[activeTab].city} Location`}
+            src={locations[activeTab].mapUrl}
+            width="100%"
+            height="450"
+            style={{ border: 0, borderRadius: '1.25rem', filter: 'contrast(1.1) opacity(0.9)' }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full relative z-0"
+          ></iframe>
+          <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 z-20">
+            <p className="text-sm text-white font-medium">{locations[activeTab].address}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 

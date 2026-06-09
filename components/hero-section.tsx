@@ -22,8 +22,10 @@ const partners = [
   { src: startupkarnataka, alt: "Partner 5" },
   { src: razorpay, alt: "Partner 6" },
   { src: google, alt: "Partner 7" },
-  { src: cmmi, alt: "Partner 8" },
-  { src: iso, alt: "Partner 9" }
+  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPTksIuHkp-7zuNNa4tXwZQ-sI6d8x9v6QaA&s", alt: "Partner 8" },
+  { src: iso, alt: "Partner 9" },
+  { src: "https://png.pngtree.com/png-clipart/20250514/original/pngtree-iso-9001-certified-company-logo-badge-vector-png-image_20971536.png", alt: "Partner 10" },
+
 
 ]
 
