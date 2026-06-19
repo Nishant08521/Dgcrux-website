@@ -31,7 +31,7 @@ export function MarqueeBanner({ isScrolled, isTransparent }: { isScrolled?: bool
             </Link>
             <Link
               href="/contact"
-              className="bg-blue-600 text-white px-3 py-1 rounded text-xs sm:text-sm font-medium hover:bg-blue-700 transition-colors whitespace-nowrap"
+              className="bg-yellow-400 text-black px-3 py-1 rounded text-xs sm:text-sm font-medium hover:bg-yellow-300 transition-colors whitespace-nowrap"
             >
               Get in touch
             </Link>

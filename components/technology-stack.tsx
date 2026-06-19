@@ -38,8 +38,8 @@ const getIconUrl = (name: string) => {
     "keras": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZcfpuMykcJZBUX8233o3FB_-yoEMgHA3lQ&s",
     "hugging face": "https://skillicons.dev/icons?i=pytorch", // Fallback for HF
     "vector db": "https://skillicons.dev/icons?i=mongodb", // Fallback for Vector DB
-    "rag systems": "https://skillicons.dev/icons?i=py", // Fallback
-    "langchain": "https://skillicons.dev/icons?i=py", // Fallback
+    "rag systems": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy3qURl5-XZc8obDYCpbf31TUMOVb_pLkU-A&s", // Fallback
+    "langchain": "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/logos/langchain-ipuhh4qo1jz5ssl4x0g2a.png/langchain-dp1uxj2zn3752pntqnpfu2.png?_a=DATAiZAAZAA0", // Fallback
     "ci/cd": "https://skillicons.dev/icons?i=github",
     "rest api": "https://skillicons.dev/icons?i=js",
     "jwt": "https://skillicons.dev/icons?i=js",
@@ -62,6 +62,16 @@ const getIconUrl = (name: string) => {
 }
 
 const categories = [
+
+    {
+    id: "ai",
+    name: "AI & ML",
+    icon: Cpu,
+    techs: ["TensorFlow", "PyTorch", "OpenAI API", "Keras", "Python", "LangChain", "Hugging Face", "RAG Systems", "Vector DB", "AI Chatbots"],
+    color: "from-rose-600 to-red-500",
+    glow: "rgba(244, 63, 94, 0.08)",
+    bg: "bg-rose-50/50"
+  },
   {
     id: "frontend",
     name: "Frontend",
@@ -107,15 +117,7 @@ const categories = [
     glow: "rgba(14, 165, 233, 0.08)",
     bg: "bg-sky-50/50"
   },
-  {
-    id: "ai",
-    name: "AI & ML",
-    icon: Cpu,
-    techs: ["TensorFlow", "PyTorch", "OpenAI API", "Keras", "Python", "LangChain", "Hugging Face", "RAG Systems", "Vector DB", "AI Chatbots"],
-    color: "from-rose-600 to-red-500",
-    glow: "rgba(244, 63, 94, 0.08)",
-    bg: "bg-rose-50/50"
-  }
+
 ]
 
 export function TechnologyStack() {

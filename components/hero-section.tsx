@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ArrowRight, Phone } from "lucide-react"
 import Image from "next/image"
 import { ContactPopup } from "@/components/contact-popup"
@@ -22,20 +22,15 @@ const partners = [
   { src: startupkarnataka, alt: "Partner 5" },
   { src: razorpay, alt: "Partner 6" },
   { src: google, alt: "Partner 7" },
-  { src: cmmi, alt: "Partner 8" },
-  { src: iso, alt: "Partner 9" }
+  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPTksIuHkp-7zuNNa4tXwZQ-sI6d8x9v6QaA&s", alt: "Partner 8" },
+  { src: iso, alt: "Partner 9" },
+  { src: "https://png.pngtree.com/png-clipart/20250514/original/pngtree-iso-9001-certified-company-logo-badge-vector-png-image_20971536.png", alt: "Partner 10" },
+
 
 ]
 
 export function HeroSection() {
-  const [isMounted, setIsMounted] = useState(false)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  if (!isMounted) return null
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-slate-900 text-white">
@@ -113,6 +108,9 @@ export function HeroSection() {
             </div>
           </div>
         </div>
+         <div className="absolute bottom-4 right-4">
+        <iframe width="100" height="100" src="https://clutch.co/share/badges/2241869/51907?utm_source=clutch_top_company_badge&utm_medium=image_embed" title="Top Clutch Software Developers Information Technology Bengaluru"></iframe>
+                  </div>
       </div>
 
       <style jsx>{`

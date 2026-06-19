@@ -5,34 +5,34 @@ import { ChevronUp, ChevronDown, Send } from "lucide-react"
 
 const faqs = [
   {
-    question: "What services does DGCrux provide?",
+    question: "What services does DgCrux provide?",
     answer:
-      "DGCrux offers end-to-end digital product engineering, including custom software development, SaaS product development, AI product engineering, cloud solutions, eCommerce development, digital marketing, and managed IT services. We help businesses build, scale, and optimize technology-driven products.",
+      "DgCrux offers end-to-end digital product engineering, including custom software development, SaaS product development, AI product engineering, cloud solutions, eCommerce development, digital marketing, and managed IT services. We help businesses build, scale, and optimize technology-driven products.",
   },
   {
-    question: "What types of businesses does DGCrux work with?",
+    question: "What types of businesses does DgCrux work with?",
     answer:
-      "We work with startups, growing companies, and enterprises across industries. Whether you're launching a new SaaS product, modernizing legacy systems, or scaling an AI-enabled platform, DGCrux adapts its approach to your business stage and goals.",
+      "We work with startups, growing companies, and enterprises across industries. Whether you're launching a new SaaS product, modernizing legacy systems, or scaling an AI-enabled platform, DgCrux adapts its approach to your business stage and goals.",
   },
   {
-    question: "How does DGCrux approach AI product engineering?",
+    question: "How does DgCrux approach AI product engineering?",
     answer:
       "Our AI product engineering focuses on practical, business-ready AI. We design and implement solutions like AI-powered software, automation, AI agents, chatbots, and data-driven applications that integrate seamlessly into your existing systems and workflows.",
   },
   {
-    question: "How does DGCrux choose the right technology stack for a project?",
+    question: "How does DgCrux choose the right technology stack for a project?",
     answer:
-      "We select the technology stack based on your product needs, scalability goals, and long-term growth. DGCrux works with modern technologies such as React, Next.js, Node.js, Python, cloud platforms, and AI/ML frameworks to build secure, high-performance digital products.",
+      "We select the technology stack based on your product needs, scalability goals, and long-term growth. DgCrux works with modern technologies such as React, Next.js, Node.js, Python, cloud platforms, and AI/ML frameworks to build secure, high-performance digital products.",
   },
   {
-    question: "Does DGCrux build scalable and cloud-ready software?",
+    question: "Does DgCrux build scalable and cloud-ready software?",
     answer:
       "Yes. All our solutions are designed with scalability, cloud readiness, and performance in mind. From cloud-native architectures to DevOps and deployment automation, we ensure your software can grow reliably as your business scales.",
   },
   {
-    question: "Does DGCrux build products with SEO and AI-readiness in mind?",
+    question: "Does DgCrux build products with SEO and AI-readiness in mind?",
     answer:
-      "Absolutely. DGCrux develops digital products that are SEO-friendly, performance-optimized, and AI-ready. Our approach ensures your software is structured for search visibility, future AI integrations, and long-term digital growth.",
+      "Absolutely. DgCrux develops digital products that are SEO-friendly, performance-optimized, and AI-ready. Our approach ensures your software is structured for search visibility, future AI integrations, and long-term digital growth.",
   },
   {
     question: "How long does a typical digital product project take?",
@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Do you offer post-launch support and maintenance?",
     answer:
-      "Yes. We believe in long-term partnerships. DGCrux offers managed IT services and dedicated support plans to ensure your product remains secure, updated, and high-performing as your user base and business needs grow.",
+      "Yes. We believe in long-term partnerships. DgCrux offers managed IT services and dedicated support plans to ensure your product remains secure, updated, and high-performing as your user base and business needs grow.",
   },
 ]
 

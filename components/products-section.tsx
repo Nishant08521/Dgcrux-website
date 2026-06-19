@@ -107,7 +107,7 @@ export function ProductsSection() {
               className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4"
             >
               <div className="w-8 h-[2px] bg-primary" />
-              Our Products
+              Our Clients Case Studies
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -202,13 +202,13 @@ export function ProductsSection() {
             viewport={{ once: true }}
             className="mt-2 text-center"
           >
-            <button
+            {/* <button
               onClick={() => setShowAll(true)}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all hover:shadow-[0_10px_30px_rgba(var(--primary),0.3)] group"
             >
               View More Products
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </button> */}
           </motion.div>
         )}
       </div>

@@ -71,7 +71,7 @@ export function AboutSection() {
           </div>
 
           {/* Right Side: Content */}
-          <div className="order-1 lg:order-2 lg:col-span-7 space-y-8">
+          <div className="order-1 lg:order-2 lg:col-span-6 space-y-8">
             <div className="space-y-4">
               <h2 className="text-sm font-bold uppercase tracking-widest text-blue-600">About DgCrux</h2>
               <h3 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">

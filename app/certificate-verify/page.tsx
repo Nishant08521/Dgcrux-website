@@ -19,7 +19,7 @@ export default function CertificateVerifyPage() {
     setIsLoading(true)
 
     try {
-      const res = await fetch(`${apiUrl}/api/certificates/verify`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/certificates/verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ certificateNumber: certNo, dob })

@@ -172,7 +172,7 @@ export function Navbar() {
 
   const company = [
     { name: "About Us", href: "/about", icon: Building, description: "Our journey and core values.", color: "bg-blue-600" },
-    { name: "Our Clients", href: "/#clients", icon: Users, description: "Global brands we partner with.", color: "bg-indigo-600" },
+    { name: "Our Clients", href: "/clients", icon: Users, description: "Global brands we partner with.", color: "bg-indigo-600" },
     { name: "Case Studies", href: "/case-studies", icon: BookOpen, description: "Success stories and project results.", color: "bg-purple-600" },
     { name: "Blogs", href: "/blogs", icon: FileText, description: "Latest insights and tech trends.", color: "bg-orange-600" },
     { name: "Contact Us", href: "/contact", icon: Phone, description: "Get in touch with our experts.", color: "bg-green-600" },
