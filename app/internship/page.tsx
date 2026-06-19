@@ -725,17 +725,17 @@ export default function InternshipPage() {
                         <div className="w-10 h-10 border border-slate-200 p-0.5 bg-slate-50 flex items-center justify-center rounded">
                           {/* Fake QR code SVG */}
                           <svg className="w-full h-full text-slate-800" viewBox="0 0 100 100" fill="currentColor">
-                            <rect x="0" y="0" width="20" height="20" />
+                            <rect x="0" y="0"  width="20" height="20" />
                             <rect x="30" y="0" width="10" height="20" />
                             <rect x="50" y="0" width="20" height="10" />
                             <rect x="80" y="0" width="20" height="20" />
                             <rect x="0" y="30" width="20" height="10" />
                             <rect x="30" y="30" width="30" height="30" fillOpacity="0.4" />
                             <rect x="70" y="30" width="10" height="20" />
-                            <rect x="0" y="50" width="10" height="20" />
+                            <rect x="0" y="50"  width="10" height="20" />
                             <rect x="20" y="60" width="20" height="10" />
                             <rect x="80" y="60" width="20" height="30" />
-                            <rect x="0" y="80" width="20" height="20" />
+                            <rect x="0" y="80"  width="20" height="20" />
                             <rect x="30" y="80" width="40" height="10" />
                           </svg>
                         </div>
