@@ -57,7 +57,7 @@ const allProducts = [
     icon: Car,
     description: "Streamline operations for dealer networks.",
     href: "/products/dms",
-    image: "/products/delar.png",
+    image: "/products/abs.png",
     color: "from-sky-600/20 to-indigo-500/20"
   },
   {

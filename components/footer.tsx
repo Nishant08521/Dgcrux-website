@@ -100,14 +100,10 @@ export function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">108, Tower- 16, JANAADHAR SHUBHA PHASE PHASE-2, Attibele - Anekal Rd, Bengaluru, M.Medihalli, Karnataka 562106, India</span>
+                <span className="text-slate-400"> Bengaluru , Patna </span>
 
               </li>
-                    <li className="flex items-start gap-2">
-                <MapPin className="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">6th Floor, DS Business Park, Bailey Rd, Saguna More, Kaliket Nagar, Patna, Bihar 801503, India</span>
-
-              </li>
+              
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#2563eb] flex-shrink-0" />
                 <a href="mailto:info@dgcrux.com" className="text-slate-400 hover:text-[#FFB800] transition-colors">
