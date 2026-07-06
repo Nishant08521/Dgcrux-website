@@ -194,7 +194,7 @@ export function TechnologyStack() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className={`h-full flex flex-col p-10 md:p-16 rounded-[3rem] border-2 border-slate-100 bg-white shadow-2xl shadow-slate-200 relative overflow-hidden`}
+                className={`h-full flex flex-col p-4 md:p-8 rounded-[3rem] border-2 border-slate-100 bg-white shadow-2xl shadow-slate-200 relative overflow-hidden`}
               >
                 {/* Dynamic Glow Background */}
                 <div
@@ -203,7 +203,7 @@ export function TechnologyStack() {
                 />
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-3 mb-12 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+                  <div className="flex items-center gap-3 mb-6 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
                     <Layers className="w-4 h-4" />
                     Stack Components
                   </div>
@@ -237,7 +237,7 @@ export function TechnologyStack() {
         </div>
 
         {/* Footer Stats - Box Type & Colorful */}
-        <div className="mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { label: "PROJECTS DELIVERED", icon: Laptop, value: "350+", color: "from-blue-600 to-indigo-500", bg: "bg-blue-50", border: "border-blue-200" },
             { label: "YEARS OF DOMAIN EXPERTISE", icon: ShieldCheck, value: "12+", color: "from-emerald-600 to-teal-500", bg: "bg-emerald-50", border: "border-emerald-200" },
