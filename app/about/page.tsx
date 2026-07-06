@@ -12,7 +12,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative pt-12 pb-20 lg:pt-28 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-400/20 rounded-full blur-3xl" />
@@ -43,10 +43,11 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/20 rounded-2xl overflow-hidden shadow-2xl">
             {[
-              { number: "9+", label: "Years Experience" },
-              { number: "100+", label: "Happy Clients" },
-              { number: "500+", label: "Projects Delivered" },
-              { number: "50+", label: "Team Members" },
+              { number: "350+", label: "PROJECTS DELIVERED" },
+              { number: "12+", label: "YEARS OF DOMAIN EXPERTISE" },
+              { number: "100%", label: "CLIENTS SATISFACTION" },
+              { number: "30+", label: "TECH STACK" },
+
             ].map((stat, i) => (
               <div key={i} className="bg-white p-6 text-center">
                 <div className="text-3xl font-black text-blue-600">{stat.number}</div>
@@ -58,7 +59,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-24 sm:py-32 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="relative order-2 lg:order-1">
@@ -121,7 +122,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 sm:py-32 bg-gradient-to-b from-slate-50 to-white">
+      <section className="bg-gradient-to-b from-slate-50 to-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -159,7 +160,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 sm:py-32 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <div className="mb-8 flex justify-center">
             <div className="relative">
@@ -167,8 +168,8 @@ export default function AboutPage() {
               <Image
                 src="/dgcrux.png"
                 alt="Dgcrux Technology Logo"
-                width={120}
-                height={120}
+                width={1200}
+                height={400}
                 className="object-contain relative"
               />
             </div>
@@ -202,7 +203,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-12 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700" />
         <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl" />

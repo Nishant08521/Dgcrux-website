@@ -51,7 +51,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950/80" />
 
       {/* Content Wrapper */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 py-20 lg:flex-row lg:items-center lg:gap-12 pt-40 lg:pt-52">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 py-20 lg:flex-row lg:items-center lg:gap-12 pt-50 lg:pt-52">
         {/* Left Side: Text Content */}
         <div className="flex-1 space-y-6 text-center lg:text-left">
           {/* <div className="inline-flex items-center rounded-full bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-400 backdrop-blur-md">
@@ -78,7 +78,7 @@ export function HeroSection() {
         </div>
 
         {/* Right Side: Moving Box with Partners */}
-        <div className="mt-24 flex flex-1 flex-col items-center justify-center lg:mt-32 lg:items-end">
+        <div className="mt-20 flex flex-1 flex-col items-center justify-center lg:mt-32 lg:items-end">
           <div className="w-full max-w-[600px]">
             <p className="mb-4 text-center text-sm font-medium uppercase tracking-widest text-slate-400 lg:text-right">Our Recognition Partners</p>
 

@@ -16,6 +16,7 @@ import {
   Zap,
   Laptop
 } from "lucide-react"
+import mediapipeLogo from "@/public/mediapipe.png"
 
 // Mapping names to skillicon slugs for clean logo generation
 const getIconUrl = (name: string) => {
@@ -49,7 +50,7 @@ const getIconUrl = (name: string) => {
     "ai chatbots": "https://png.pngtree.com/png-vector/20250903/ourlarge/pngtree-d-ai-chatbot-icon-cute-robot-head-with-glossy-blue-design-png-image_17355891.webp",
     "react native": "https://skillicons.dev/icons?i=react",
     "Open CV": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQR2Di8xIgli5lHv-9eHC-TcpWrUqe6_FeUQ&s",
-    "MediaPipe": "https://viz.mediapipe.dev/logo.png",
+
   }
 
   const lowName = name.toLowerCase()
@@ -65,11 +66,11 @@ const getIconUrl = (name: string) => {
 
 const categories = [
 
-    {
+  {
     id: "ai",
     name: "AI & ML",
     icon: Cpu,
-    techs: ["TensorFlow", "PyTorch", "OpenAI API", "Keras", "Python", "LangChain", "Hugging Face", "RAG Systems", "Vector DB", "AI Chatbots", "Open CV", "MediaPipe"],
+    techs: ["TensorFlow", "PyTorch", "OpenAI API", "Keras", "Python", "LangChain", "Hugging Face", "RAG Systems", "Vector DB", "AI Chatbots", "Open CV"],
     color: "from-rose-600 to-red-500",
     glow: "rgba(244, 63, 94, 0.08)",
     bg: "bg-rose-50/50"
@@ -216,7 +217,7 @@ export function TechnologyStack() {
                         transition={{ delay: idx * 0.05 }}
                         className="group relative aspect-square"
                       >
-                        <div className="relative w-full h-full p-6 rounded-[2rem] bg-white border border-slate-200 flex flex-col items-center justify-center gap-4 transition-all duration-500 hover:border-blue-500/20 hover:shadow-xl hover:shadow-slate-200 hover:scale-110">
+                        <div className="relative w-full h-full p-4 rounded-[2rem] bg-white border border-slate-200 flex flex-col items-center justify-center gap-4 transition-all duration-500 hover:border-blue-500/20 hover:shadow-xl hover:shadow-slate-200 hover:scale-110">
                           <img
                             src={getIconUrl(tech)}
                             alt={tech}

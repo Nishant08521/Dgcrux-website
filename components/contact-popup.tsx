@@ -41,10 +41,14 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
     setIsSubmitting(true)
     setSubmitError("")
     try {
+      const payload = {
+        ...formData,
+        businessEmail: formData.workEmail
+      }
       const res = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error("Server error")
       setIsSubmitted(true)

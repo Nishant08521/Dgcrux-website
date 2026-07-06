@@ -20,16 +20,10 @@ export const metadata: Metadata = {
   generator: "v0.app",
   icons: {
     icon: [
-      {
-        url: "https://dgcrux.com/images/logo.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "https://dgcrux.com/images/logo.png",
-        media: "(prefers-color-scheme: dark)",
-      },
+      { url: "/favicon.png", type: "image/png" },
     ],
-    apple: "https://dgcrux.com/images/logo.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 }
 
