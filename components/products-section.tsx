@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   FileCheck,
@@ -18,14 +17,17 @@ import {
 import Link from "next/link"
 import Image from "next/image"
 
+type ProductsSectionProps = {
+  showAll?: boolean
+}
+
 const allProducts = [
   {
-    title: "AI Proctoring",
+    title: "AI Proctor",
     icon: FileCheck,
     description: "Secure exams with real-time AI monitoring.",
     href: "/products/ai-proctor",
     image: "/products/ai-proctoring.png",
-    
     color: "from-blue-600/20 to-cyan-500/20"
   }, 
   {
@@ -34,7 +36,7 @@ const allProducts = [
     description: "Smart recruitment with automated screening.",
     href: "/products/ats",
     image: "/products/ats1.png",
-    color: "from-purple-600/20 to-pink-500/20"
+    color: "from-sky-600/20 to-blue-500/20"
   },
   {
     title: "AI QP Generator",
@@ -42,7 +44,7 @@ const allProducts = [
     description: "Instantly create balanced question papers.",
     href: "/products/qp-generator",
     image: "/products/aiqp.png",
-    color: "from-rose-600/20 to-red-500/20"
+    color: "from-indigo-600/20 to-blue-500/20"
   },
   {
     title: "Solar ERP",
@@ -50,44 +52,28 @@ const allProducts = [
     description: "Manage end-to-end solar project lifecycle.",
     href: "/products/solar-erp",
     image: "/products/solar.png",
-    color: "from-yellow-500/20 to-orange-400/20"
+    color: "from-sky-500/20 to-blue-500/20"
   },
   {
-    title: "Dealer Management",
+    title: "Dealer Management System",
     icon: Car,
     description: "Streamline operations for dealer networks.",
     href: "/products/dms",
     image: "/products/delar.png",
-    color: "from-sky-600/20 to-indigo-500/20"
+    color: "from-blue-600/20 to-sky-500/20"
   },
   {
-    title: "Hotel Booking",
+    title: "Hotel Booking Engine",
     icon: Hotel,
     description: "Smart system with dynamic pricing.",
     href: "/products/hotel-booking",
     image: "/products/staysmart.png",
-    color: "from-emerald-600/20 to-teal-500/20"
+    color: "from-blue-500/20 to-cyan-400/20"
   },
-  {
-    title: "Restaurant Management",
-    icon: Utensils,
-    description: "Complete POS for modern eateries.",
-    href: "/products/restaurant-management",
-    image: "/products/eco-eats.png",
-    color: "from-orange-600/20 to-amber-500/20"
-  },
-  {
-    title: "Learning Management",
-    icon: GraduationCap,
-    description: "Engaging platform for digital learning.",
-    href: "/products/lms",
-    image: "/online-learning-platform.png",
-    color: "from-indigo-600/20 to-purple-500/20"
-  }
+
 ]
 
-export function ProductsSection() {
-  const [showAll, setShowAll] = useState(false)
+export function ProductsSection({ showAll = false }: ProductsSectionProps) {
   const displayedProducts = showAll ? allProducts : allProducts.slice(0, 6)
 
   return (
@@ -104,10 +90,10 @@ export function ProductsSection() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4"
+              className="flex items-center gap-2 text-blue-500 font-bold text-sm uppercase tracking-[0.2em] mb-4"
             >
-              <div className="w-8 h-[2px] bg-primary" />
-              Our Clients Case Studies
+              <div className="w-8 h-[2px] bg-blue-500" />
+              In House Products
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -141,7 +127,7 @@ export function ProductsSection() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group relative flex flex-col h-full bg-card rounded-[2.5rem] overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(var(--primary),0.1)]"
+                className="group relative flex flex-col h-full bg-card rounded-[2.5rem] overflow-hidden border border-border/50 hover:border-blue-400/30 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(37,99,235,0.12)]"
               >
                 {/* Product Image Wrapper */}
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -163,7 +149,7 @@ export function ProductsSection() {
                 {/* Content Section */}
                 <div className="flex flex-col flex-grow p-8">
                   <div className="mb-4">
-                    <h3 className="text-xl font-black mb-1 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl font-black mb-1 group-hover:text-blue-500 transition-colors duration-300">
                       {product.title}
                     </h3>
                     <p className="text-muted-foreground text-xs leading-relaxed line-clamp-2">
@@ -174,41 +160,41 @@ export function ProductsSection() {
                   <div className="mt-auto flex items-center justify-between">
                     <Link
                       href={product.href}
-                      className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-primary group/link"
+                      className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-blue-500 group/link"
                     >
                       View Details
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover/link:bg-primary group-hover/link:text-white">
+                      <div className="w-8 h-8 rounded-full bg-blue-600/10 flex items-center justify-center transition-all duration-300 group-hover/link:bg-blue-600 group-hover/link:text-white">
                         <ArrowRight className="w-4 h-4" />
                       </div>
                     </Link>
 
                     <div className={`p-2 rounded-xl bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}>
-                      <Sparkles className="w-4 h-4 text-primary" />
+                      <Sparkles className="w-4 h-4 text-blue-500" />
                     </div>
                   </div>
                 </div>
 
                 {/* Hover Overlay Accent */}
-                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/20 rounded-[2.5rem] transition-all duration-500 pointer-events-none" />
+                <div className="absolute inset-0 border-2 border-blue-500/0 group-hover:border-blue-500/20 rounded-[2.5rem] transition-all duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
 
-        {!showAll && allProducts.length > 6 && (
+        {!showAll && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-2 text-center"
+            className="mt-10 text-center"
           >
-            {/* <button
-              onClick={() => setShowAll(true)}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all hover:shadow-[0_10px_30px_rgba(var(--primary),0.3)] group"
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-sm font-black uppercase tracking-widest text-white transition-all duration-300 hover:bg-blue-700"
             >
-              View More Products
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button> */}
+              View All Products
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </motion.div>
         )}
       </div>

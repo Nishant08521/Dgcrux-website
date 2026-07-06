@@ -12,8 +12,10 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
   const [formData, setFormData] = useState({
     fullName: "",
-    businessEmail: "",
+    designation: "",
     contactNumber: "",
+    workEmail: "",
+    budgetRange: "",
     projectDescription: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -60,11 +62,11 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
     setTimeout(() => {
       setIsSubmitted(false)
       setSubmitError("")
-      setFormData({ fullName: "", businessEmail: "", contactNumber: "", projectDescription: "" })
+      setFormData({ fullName: "", designation: "", contactNumber: "", workEmail: "", budgetRange: "", projectDescription: "" })
     }, 300)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -72,8 +74,8 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
+    <div className="fixed inset-0 z-[9999] flex min-h-screen items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div className="relative mx-auto bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -84,10 +86,10 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
         </button>
 
         {/* Left Side - Dark Theme */}
-        <div className="text-white p-8 md:w-2/5 relative overflow-hidden bg-gradient-to-br from-[#0b082a] via-[#090724] to-[#05041a]">
+        <div className="text-white p-8 md:w-2/5 relative overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-slate-950">
           {/* Decorative circles */}
-          <div className="absolute top-4 right-4 w-24 h-24 bg-amber-500/10 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-8 left-4 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
+          <div className="absolute top-4 right-4 w-24 h-24 bg-sky-500/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-8 left-4 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
 
           <div className="relative z-10">
             <div className="text-5xl mb-4 animate-wave inline-block">👋</div>
@@ -152,68 +154,87 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
 
-              <div>
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-0 py-2.5 text-sm border-0 border-b-2 border-slate-200 focus:outline-none bg-transparent placeholder-slate-400 text-slate-800 transition-colors"
-                  style={{ borderBottomColor: formData.fullName ? '#ff9f43' : undefined }}
-                  onFocus={(e) => e.target.style.borderBottomColor = '#ff9f43'}
-                  onBlur={(e) => e.target.style.borderBottomColor = formData.fullName ? '#ff9f43' : '#e2e8f0'}
-                />
-              </div>
-
-              <div>
-                <input
-                  type="email"
-                  name="businessEmail"
-                  placeholder="Business Email"
-                  value={formData.businessEmail}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-0 py-2.5 text-sm border-0 border-b-2 border-slate-200 focus:outline-none bg-transparent placeholder-slate-400 text-slate-800 transition-colors"
-                  style={{ borderBottomColor: formData.businessEmail ? '#ff9f43' : undefined }}
-                  onFocus={(e) => e.target.style.borderBottomColor = '#ff9f43'}
-                  onBlur={(e) => e.target.style.borderBottomColor = formData.businessEmail ? '#ff9f43' : '#e2e8f0'}
-                />
-              </div>
-
-              <div className="flex gap-2">
-                <div className="flex items-center gap-1 pb-2 border-b-2 border-slate-200">
-                  <span className="text-2xl">🇮🇳</span>
-                  <span className="text-sm font-medium text-slate-700">+91</span>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <label className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2 block">Full Name</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Enter your name"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-blue-400"
+                  />
                 </div>
-                <input
-                  type="tel"
-                  name="contactNumber"
-                  placeholder="Contact Number"
-                  value={formData.contactNumber}
-                  onChange={handleChange}
-                  required
-                  className="flex-1 px-0 py-2.5 text-sm border-0 border-b-2 border-slate-200 focus:outline-none bg-transparent placeholder-slate-400 text-slate-800 transition-colors"
-                  style={{ borderBottomColor: formData.contactNumber ? '#ff9f43' : undefined }}
-                  onFocus={(e) => e.target.style.borderBottomColor = '#ff9f43'}
-                  onBlur={(e) => e.target.style.borderBottomColor = formData.contactNumber ? '#ff9f43' : '#e2e8f0'}
-                />
-              </div>
 
-              <div>
-                <textarea
-                  name="projectDescription"
-                  placeholder="Describe Your Project/Idea in Brief"
-                  value={formData.projectDescription}
-                  onChange={handleChange}
-                  required
-                  rows={3}
-                  className="w-full px-0 py-2.5 text-sm border-0 border-b-2 border-slate-200 focus:outline-none bg-transparent placeholder-slate-400 text-slate-800 resize-none transition-colors"
-                  style={{ borderBottomColor: formData.projectDescription ? '#ff9f43' : undefined }}
-                  onFocus={(e) => e.target.style.borderBottomColor = '#ff9f43'}
-                  onBlur={(e) => e.target.style.borderBottomColor = formData.projectDescription ? '#ff9f43' : '#e2e8f0'}
-                />
+                <div>
+                  <label className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2 block">Designation</label>
+                  <input
+                    type="text"
+                    name="designation"
+                    placeholder="Enter your designation"
+                    value={formData.designation}
+                    onChange={handleChange}
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-blue-400"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2 block">Contact Number</label>
+                  <input
+                    type="tel"
+                    name="contactNumber"
+                    placeholder="Enter your number"
+                    value={formData.contactNumber}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-blue-400"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2 block">Work Email</label>
+                  <input
+                    type="email"
+                    name="workEmail"
+                    placeholder="Enter your email address"
+                    value={formData.workEmail}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-blue-400"
+                  />
+                </div>
+
+                <div className="sm:col-span-2">
+                  <label className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2 block">Budget Range</label>
+                  <select
+                    name="budgetRange"
+                    value={formData.budgetRange}
+                    onChange={handleChange}
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all focus:border-blue-400"
+                  >
+                    <option value="" disabled>Select a budget range</option>
+                    <option value="< $5,000">Under $5,000</option>
+                    <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+                    <option value="$15,000 - $50,000">$15,000 - $50,000</option>
+                    <option value="$50,000 - $100,000">$50,000 - $100,00０</option>
+                    <option value="> $1００,０００"> $1００,０００ +</option>
+                  </select>
+                </div>
+
+                <div className="sm:col-span-2">
+                  <label className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2 block">Describe Your Project</label>
+                  <textarea
+                    name="projectDescription"
+                    placeholder="Describe your project"
+                    value={formData.projectDescription}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-blue-400 resize-none"
+                  />
+                </div>
               </div>
 
               {submitError && (
@@ -226,7 +247,7 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-3 rounded-xl text-sm font-bold transition-all shadow-lg shadow-orange-500/20 disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-8 py-3 rounded-xl text-sm font-bold transition-all shadow-lg shadow-sky-500/20 disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>

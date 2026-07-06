@@ -46,7 +46,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Reusing the newly redesigned ProductsSection */}
-      <ProductsSection />
+      <ProductsSection showAll />
 
       {/* Extra Section: Why Our Products? */}
       <section className="py-24 bg-primary/5 relative overflow-hidden">

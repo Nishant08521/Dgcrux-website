@@ -48,6 +48,8 @@ const getIconUrl = (name: string) => {
     "nginx": "https://skillicons.dev/icons?i=nginx",
     "ai chatbots": "https://png.pngtree.com/png-vector/20250903/ourlarge/pngtree-d-ai-chatbot-icon-cute-robot-head-with-glossy-blue-design-png-image_17355891.webp",
     "react native": "https://skillicons.dev/icons?i=react",
+    "Open CV": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQR2Di8xIgli5lHv-9eHC-TcpWrUqe6_FeUQ&s",
+    "MediaPipe": "https://viz.mediapipe.dev/logo.png",
   }
 
   const lowName = name.toLowerCase()
@@ -67,7 +69,7 @@ const categories = [
     id: "ai",
     name: "AI & ML",
     icon: Cpu,
-    techs: ["TensorFlow", "PyTorch", "OpenAI API", "Keras", "Python", "LangChain", "Hugging Face", "RAG Systems", "Vector DB", "AI Chatbots"],
+    techs: ["TensorFlow", "PyTorch", "OpenAI API", "Keras", "Python", "LangChain", "Hugging Face", "RAG Systems", "Vector DB", "AI Chatbots", "Open CV", "MediaPipe"],
     color: "from-rose-600 to-red-500",
     glow: "rgba(244, 63, 94, 0.08)",
     bg: "bg-rose-50/50"

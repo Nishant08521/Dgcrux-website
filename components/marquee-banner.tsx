@@ -1,12 +1,16 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { Phone } from "lucide-react"
+import { ContactPopup } from "@/components/contact-popup"
 
 export function MarqueeBanner({ isScrolled, isTransparent }: { isScrolled?: boolean, isTransparent?: boolean }) {
+  const [isContactOpen, setIsContactOpen] = useState(false)
 
   return (
-    <div className="w-full transition-all duration-500 border-b bg-blue-600 text-white border-white/20">
+    <>
+      <div className="w-full transition-all duration-500 border-b bg-blue-600 text-white border-white/20">
         <div className="flex items-center justify-between h-10 px-4 sm:px-6 lg:px-8">
           {/* Marquee Text */}
           <div className="flex-1 overflow-hidden">
@@ -29,14 +33,18 @@ export function MarqueeBanner({ isScrolled, isTransparent }: { isScrolled?: bool
               <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
               Call now 9835166140
             </Link>
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={() => setIsContactOpen(true)}
               className="bg-yellow-400 text-black px-3 py-1 rounded text-xs sm:text-sm font-medium hover:bg-yellow-300 transition-colors whitespace-nowrap"
             >
               Get in touch
-            </Link>
+            </button>
           </div>
         </div>
       </div>
-    )
+
+      <ContactPopup isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+    </>
+  )
 }

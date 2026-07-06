@@ -100,14 +100,13 @@ export function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">108, Tower- 16, JANAADHAR SHUBHA PHASE PHASE-2, Attibele - Anekal Rd, Bengaluru, M.Medihalli, Karnataka 562106, India</span>
-
-              </li>
-                    <li className="flex items-start gap-2">
+                <span className="text-slate-400">Bangalore, Karnataka 560068, India</span>
+              </li>    
+                   <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">6th Floor, DS Business Park, Bailey Rd, Saguna More, Kaliket Nagar, Patna, Bihar 801503, India</span>
-
+                <span className="text-slate-400">Patna, Bihar 801503, India</span>
               </li>
+  
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#2563eb] flex-shrink-0" />
                 <a href="mailto:info@dgcrux.com" className="text-slate-400 hover:text-[#FFB800] transition-colors">
@@ -121,7 +120,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="pt-4">
-           <iframe width="100" height="100" src="https://clutch.co/share/badges/2241869/51907?utm_source=clutch_top_company_badge&utm_medium=image_embed" title="Top Clutch Software Developers Information Technology Bengaluru"></iframe>
+          <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> <div className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="45" data-nofollow="false" data-expandifr="true" data-darkbg="darkbg" data-clutchcompany-id="2241869"></div>
               </li>
             </ul>
           </div>
@@ -129,7 +128,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between border-t border-white/10 pt-8 mt-8 text-xs text-slate-500">
-          <p>&copy; {new Date().getFullYear()} DgCrux Technology. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} DgCrux Technology PVT. LTD. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>

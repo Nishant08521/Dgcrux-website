@@ -57,6 +57,8 @@ const budgetOptions = [
 export function FAQSection() {
   const [openId, setOpenId] = useState<string | null>(null)
   const [captchaAnswer, setCaptchaAnswer] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState<{ type: "success" | "error"; text: string } | null>(null)
   const [form, setForm] = useState({
     name: "",
     designation: "",
@@ -66,6 +68,8 @@ export function FAQSection() {
     project: "",
   })
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
+
   const toggle = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id))
   }
@@ -74,6 +78,43 @@ export function FAQSection() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setSubmitMessage(null)
+
+    if (captchaAnswer.trim() !== "7") {
+      setSubmitMessage({ type: "error", text: "Please solve the captcha correctly." })
+      return
+    }
+
+    if (!form.name || !form.contact || !form.email) {
+      setSubmitMessage({ type: "error", text: "Please fill in your name, contact, and email." })
+      return
+    }
+
+    setIsSubmitting(true)
+    try {
+      const res = await fetch(`${apiUrl}/api/faq`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error || "Unable to send request.")
+      }
+
+      setSubmitMessage({ type: "success", text: "Your message has been sent successfully." })
+      setForm({ name: "", designation: "", contact: "", email: "", budget: "", project: "" })
+      setCaptchaAnswer("")
+    } catch (err: any) {
+      setSubmitMessage({ type: "error", text: err.message || "Submission failed." })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -98,7 +139,7 @@ export function FAQSection() {
             list, don&apos;t hesitate to reach out.
           </p>
 
-          <div className="faq-form">
+          <form className="faq-form" onSubmit={handleSubmit}>
             {/* Row 1 */}
             <div className="faq-form-row">
               <div className="faq-form-group">
@@ -207,9 +248,16 @@ export function FAQSection() {
                   onChange={(e) => setCaptchaAnswer(e.target.value)}
                 />
               </div>
-              <button id="faq-submit-btn" className="faq-submit-btn">Submit</button>
+              <button id="faq-submit-btn" type="submit" disabled={isSubmitting} className="faq-submit-btn">
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
             </div>
-          </div>
+            {submitMessage && (
+              <p className={`mt-3 text-sm ${submitMessage.type === "success" ? "text-emerald-400" : "text-rose-400"}`}>
+                {submitMessage.text}
+              </p>
+            )}
+          </form>
         </div>
 
         {/* ── RIGHT: FAQ Accordion ────────────────────────────── */}

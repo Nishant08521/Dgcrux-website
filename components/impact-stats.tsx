@@ -95,11 +95,14 @@ import React from "react"
 import Image from "next/image"
 
 const images = [
-  { image: "/new/review.jpeg" },
-  { image: "/new/review.jpeg" },
-  { image: "/new/review.jpeg" },
-  { image: "/new/review.jpeg" },
-  { image: "/new/review.jpeg" },
+  { image: "/new/review.jpeg", href: "https://clutch.co/go-to-review/5966535f-6dab-458e-b87b-f7f8dd934f55/350674" },
+  { image: "/new/review2.jpeg", href: "https://clutch.co/go-to-review/5966535f-6dab-458e-b87b-f7f8dd934f55/334339" },
+  { image: "/new/review3.jpeg", href: "https://clutch.co/go-to-review/5966535f-6dab-458e-b87b-f7f8dd934f55/352894" },
+  { image: "/new/review4.jpeg", href: "https://clutch.co/go-to-review/5966535f-6dab-458e-b87b-f7f8dd934f55/342157" },
+  { image: "/new/review5.jpeg", href: "https://clutch.co/go-to-review/5966535f-6dab-458e-b87b-f7f8dd934f55/375868" },
+  { image: "/new/review6.jpeg", href: "https://clutch.co/go-to-review/5966535f-6dab-458e-b87b-f7f8dd934f55/393079" },
+  { image: "/new/review7.jpeg", href: "https://clutch.co/go-to-review/5966535f-6dab-458e-b87b-f7f8dd934f55/352566" },
+
 ]
 
 export function ImpactStats() {
@@ -125,18 +128,20 @@ export function ImpactStats() {
               key={idx}
               className="inline-block w-[380px] h-[500px] shrink-0 mx-4 rounded-[32px] overflow-hidden border border-white/10 bg-[#111] shadow-2xl transition-all duration-500 hover:scale-[1.03] hover:border-[#2563eb]/50 hover:shadow-[0_0_40px_rgba(37,99,235,0.3)]"
             >
-              <div className="relative h-full w-full">
-                <Image
-                  src={item.image}
-                  alt={`Review ${idx + 1}`}
-                  fill
-                  priority
-                  className="object-cover object-center transition-transform duration-700 hover:scale-110"
-                />
+              <a href={item.href} className="block h-full w-full" aria-label={`View review ${idx + 1}`}>
+                <div className="relative h-full w-full">
+                  <Image
+                    src={item.image}
+                    alt={`Review ${idx + 1}`}
+                    fill
+                    priority
+                    className="object-cover object-center transition-transform duration-700 hover:scale-110"
+                  />
 
-                {/* Premium Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-              </div>
+                  {/* Premium Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                </div>
+              </a>
             </div>
           ))}
         </div>
