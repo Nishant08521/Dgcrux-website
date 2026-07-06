@@ -197,7 +197,7 @@ export function Navbar() {
               {/* Logo */}
               <Link href="/" className="flex items-center">
                 <Image
-                  src="https://dgcrux.com/images/logo.png"
+                  src="/logo.png"
                   alt="dgcrux"
                   width={140}
                   height={50}

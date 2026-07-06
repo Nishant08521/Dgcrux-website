@@ -11,7 +11,7 @@ export function Footer() {
           <div className="space-y-6">
             <Link href="/" className="inline-block">
               <Image
-                src="https://dgcrux.com/images/logo.png"
+                src="/logo.png"
                 alt="DgCrux Logo"
                 width={150}
                 height={50}
