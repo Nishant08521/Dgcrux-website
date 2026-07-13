@@ -269,75 +269,60 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Case Studies Section */}
+      {/* Success Stories Section */}
       <section className="py-24 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="mb-4">Success Stories</Badge>
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">Real Results from Real Customers</h2>
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">Our Products in Action</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how enterprises transformed their operations with our products
+              Discover how our products deliver measurable value for customers across industries.
             </p>
           </div>
 
-          <div className="space-y-16">
-            {caseStudies.map((study, idx) => (
-              <div key={study.id} className={`grid gap-8 md:grid-cols-2 md:items-center ${idx % 2 === 1 ? "md:direction-reverse" : ""}`}>
-                <div className={idx % 2 === 1 ? "md:order-2" : ""}>
-                  <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src={study.image}
-                      alt={study.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  </div>
-                </div>
-
-                <div className={idx % 2 === 1 ? "md:order-1" : ""}>
-                  <Badge variant="outline" className="mb-4">
-                    {study.category}
-                  </Badge>
-                  
-                  <h3 className="text-3xl font-bold text-foreground mb-2">{study.title}</h3>
-                  <p className="text-sm text-muted-foreground font-semibold mb-4">{study.company}</p>
-
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-2">Challenge</h4>
-                      <p className="text-muted-foreground">{study.challenge}</p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {products.map((product) => {
+              const Icon = product.icon
+              return (
+                <Link key={product.title} href={product.href} className="group">
+                  <div className="relative h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div className="relative h-56 overflow-hidden bg-slate-100">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-2">Solution</h4>
-                      <p className="text-muted-foreground">{study.solution}</p>
+
+                    <div className="p-8">
+                      <div className="flex items-center justify-between gap-4 mb-5">
+                        <div className={`rounded-2xl bg-gradient-to-br ${product.color} p-3 text-white shadow-lg`}>
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <Badge className="bg-slate-100 text-slate-700">Live</Badge>
+                      </div>
+
+                      <h3 className="text-2xl font-bold text-foreground mb-3">{product.title}</h3>
+                      <p className="text-base leading-relaxed text-muted-foreground">{product.description}</p>
+
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {product.tags.map((tag) => (
+                          <Badge key={tag} variant="outline" className="bg-slate-50 border-slate-200">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <div className="mt-8 inline-flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
+                        View Product <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
                   </div>
-
-                  <div className="mb-6">
-                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wide mb-3">Results</h4>
-                    <ul className="space-y-2">
-                      {study.results.map((result, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <div className="w-2 h-2 rounded-full bg-blue-600"></div>
-                          <span className="text-muted-foreground font-semibold">{result}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <blockquote className="border-l-4 border-blue-600 pl-4 py-2 italic text-muted-foreground mb-6">
-                    "{study.testimonial}"
-                  </blockquote>
-
-                  <Button asChild>
-                    <Link href="/#contact">
-                      Get Similar Results <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            ))}
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>

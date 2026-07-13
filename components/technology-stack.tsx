@@ -185,10 +185,10 @@ export function TechnologyStack() {
             ))}
           </div>
 
-          {/* Tech Grid Content */}
-          <div className="lg:col-span-8 relative">
-            <AnimatePresence mode="wait">
-              <motion.div
+               {/* Tech Grid Content */}
+               <div className="lg:col-span-8 relative">
+               <AnimatePresence mode="wait">
+                <motion.div
                 key={activeTab}
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}

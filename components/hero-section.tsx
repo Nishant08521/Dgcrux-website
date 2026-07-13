@@ -108,9 +108,9 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-         <div className="absolute bottom-4 right-4">
-        <iframe width="100" height="100" src="https://clutch.co/share/badges/2241869/51907?utm_source=clutch_top_company_badge&utm_medium=image_embed" title="Top Clutch Software Developers Information Technology Bengaluru"></iframe>
-                  </div>
+        <div className="absolute bottom-4 right-4">
+          <iframe width="100" height="100" src="https://clutch.co/share/badges/2241869/51907?utm_source=clutch_top_company_badge&utm_medium=image_embed" title="Top Clutch Software Developers Information Technology Bengaluru"></iframe>
+        </div>
       </div>
 
       <style jsx>{`
