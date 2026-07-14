@@ -35,6 +35,7 @@ import startupindia from "@/public/startupindia.png"
 import iso from "@/public/iso.png"
 import aws from "@/public/aws-partner-logo.png"
 import razorpay from "@/public/razorpayy.png"
+import priya from "@/public/priya.webp"
 
 // Define types for fee cards
 interface FeeCard {
@@ -426,14 +427,14 @@ export default function InternshipPage() {
       {/* Recognized & Partnered By Strip */}
       <div className="relative -mt-10 z-20 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-slate-100 rounded-2xl shadow-xl py-4 px-6">
-          <p className="text-center text-[10px] font-bold text-slate-400 tracking-[0.25em] uppercase mb-4">
+          {/* <p className="text-center text-[10px] font-bold text-slate-400 tracking-[0.25em] uppercase mb-4">
             Recognized and Partnered By
-          </p>
+          </p> */}
           <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] py-1">
             {partnerLogos.map((logo, index) => (
               <div
                 key={index}
-                className="h-8 sm:h-10 w-16 sm:w-20 md:w-24 relative flex items-center justify-center transition-all duration-300 hover:scale-105 shrink-0"
+                className="h-14 sm:h-16 w-16 sm:w-20 md:w-24 relative flex items-center justify-center transition-all duration-300 hover:scale-105 shrink-0"
               >
                 <Image
                   src={logo.src}
@@ -449,12 +450,12 @@ export default function InternshipPage() {
       </div>
 
       {/* Course Fee Structure Section */}
-      <section className="py-24 bg-[#f8fafc] border-b border-slate-100">
+      <section className="py-12 bg-[#f8fafc] border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0a0b22]">
-              Course Fee Structure
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1160]">
+            Course Fee <span className="text-[#FCB614]">Structure</span> 
             </h2>
             <div className="w-16 h-1 bg-amber-500 mx-auto rounded-full mt-4 mb-3"></div>
             <p className="text-slate-500 text-sm">
@@ -547,7 +548,7 @@ export default function InternshipPage() {
       </section>
 
       {/* Courses Offered Section */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -598,7 +599,7 @@ export default function InternshipPage() {
       </section>
 
       {/* Why Choose DgCrux Technology Section */}
-      <section className="py-24 bg-[#f8fafc] border-t border-b border-slate-100">
+      <section className="py-12 bg-[#f8fafc] border-t border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -651,7 +652,7 @@ export default function InternshipPage() {
       </section>
 
       {/* Industry-Recognized Certification Section */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -669,90 +670,7 @@ export default function InternshipPage() {
 
               {/* Left Column: Interactive HTML Certificate */}
               <div className="lg:col-span-7 flex justify-center">
-                <div className="relative w-full max-w-[540px]">
-
-                  {/* Verified Tag floating above */}
-                  <span className="absolute -top-3 right-6 z-10 inline-flex items-center gap-1 px-3 py-1 bg-emerald-500 text-white font-bold text-[10px] uppercase rounded-full shadow-md tracking-wider">
-                    <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse"></span>
-                    Verified
-                  </span>
-
-                  {/* Certificate Document Structure */}
-                  <div className="aspect-[4/3] bg-white border-[14px] border-[#0a0b22] rounded-lg shadow-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden select-none">
-                    {/* Inner gold frame */}
-                    <div className="absolute inset-2 border border-amber-500 pointer-events-none opacity-50"></div>
-
-                    {/* Top Header */}
-                    <div className="text-center relative z-10">
-                      <div className="flex justify-between items-center mb-1">
-                        {/* Fake Logo */}
-                        <div className="text-left">
-                          <span className="text-[12px] font-extrabold tracking-tighter text-[#0a0b22] flex items-center gap-0.5">
-                            Dg<span className="text-[#ff9f43]">Crux</span>
-                          </span>
-                        </div>
-                        <span className="text-[7px] text-slate-400 font-mono">Cert No: DGC-2026-0492</span>
-                      </div>
-
-                      <h4 className="text-xs font-serif font-bold text-amber-600 uppercase tracking-widest mt-3">
-                        Certificate of Completion
-                      </h4>
-                      <p className="text-[7px] text-slate-400 uppercase tracking-wider mt-1">This certificate is proudly presented to</p>
-                    </div>
-
-                    {/* Name block */}
-                    <div className="text-center my-4 relative z-10">
-                      <h3 className="text-xl sm:text-2xl font-serif text-[#0a0b22] font-semibold italic border-b border-slate-200 pb-2 max-w-[280px] mx-auto min-h-[36px] flex items-center justify-center">
-                        {formData.fullName.trim() || "Priya Sharma"}
-                      </h3>
-                      <p className="text-[8px] text-slate-500 max-w-md mx-auto mt-2 leading-relaxed px-4">
-                        For successfully completing the 3-Month internship program in {formData.course || "Full Stack Development"} at our Patna Office. Duration from June to August 2026.
-                      </p>
-                    </div>
-
-                    {/* Bottom Signature & Verification Info */}
-                    <div className="flex justify-between items-end relative z-10">
-                      <div className="text-left">
-                        <div className="h-6 flex items-end">
-                          <span className="font-serif italic text-slate-500 text-[10px]">Shashi B. Rajan</span>
-                        </div>
-                        <div className="w-16 border-t border-slate-300 mt-0.5"></div>
-                        <span className="text-[6px] text-slate-400 block font-bold mt-1 uppercase">Managing Director</span>
-                      </div>
-
-                      {/* Fake Gold Seal or QR code */}
-                      <div className="flex items-center justify-center flex-col">
-                        <div className="w-10 h-10 border border-slate-200 p-0.5 bg-slate-50 flex items-center justify-center rounded">
-                          {/* Fake QR code SVG */}
-                          <svg className="w-full h-full text-slate-800" viewBox="0 0 100 100" fill="currentColor">
-                            <rect x="0" y="0"  width="20" height="20" />
-                            <rect x="30" y="0" width="10" height="20" />
-                            <rect x="50" y="0" width="20" height="10" />
-                            <rect x="80" y="0" width="20" height="20" />
-                            <rect x="0" y="30" width="20" height="10" />
-                            <rect x="30" y="30" width="30" height="30" fillOpacity="0.4" />
-                            <rect x="70" y="30" width="10" height="20" />
-                            <rect x="0" y="50"  width="10" height="20" />
-                            <rect x="20" y="60" width="20" height="10" />
-                            <rect x="80" y="60" width="20" height="30" />
-                            <rect x="0" y="80"  width="20" height="20" />
-                            <rect x="30" y="80" width="40" height="10" />
-                          </svg>
-                        </div>
-                        <span className="text-[5px] text-slate-400 mt-1 uppercase font-bold font-mono">Scan to Verify</span>
-                      </div>
-
-                      <div className="text-right">
-                        <div className="h-6 flex items-end justify-end">
-                          <span className="font-serif italic text-slate-500 text-[10px]">Anupa Kumari</span>
-                        </div>
-                        <div className="w-16 border-t border-slate-300 mt-0.5"></div>
-                        <span className="text-[6px] text-slate-400 block font-bold mt-1 uppercase">Mentor</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
+                <Image src={priya} alt="Priya" className="w-full max-w-[540px] rounded-lg shadow-2xl object-cover" />
               </div>
 
               {/* Right Column: Perks & Buttons */}
@@ -816,7 +734,7 @@ export default function InternshipPage() {
       </section>
 
       {/* Office Location Section */}
-      <section className="py-24 bg-[#f8fafc] border-t border-slate-100">
+      <section className="py-5 bg-[#f8fafc] border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-16">

@@ -60,6 +60,14 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Close mobile menu when any popup opens
+  useEffect(() => {
+    const handlePopupOpen = () => setMobileMenuOpen(false)
+    window.addEventListener("popup:open", handlePopupOpen)
+    return () => window.removeEventListener("popup:open", handlePopupOpen)
+  }, [])
+
+
   const softwareDevelopment = [
     { name: "Product Design", href: "/services/product-design", icon: Palette, description: "Creating user-centric UI/UX designs.", color: "bg-pink-500" },
     { name: "App Development", href: "/services/application-development", icon: Code, description: "Building scalable web & mobile apps.", color: "bg-blue-500" },
