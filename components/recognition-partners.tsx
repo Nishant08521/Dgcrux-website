@@ -8,7 +8,7 @@ import startupindia from "@/public/startupindia.png"
 import iso from "@/public/iso.png"
 import aws from "@/public/aws-partner-logo.png"
 import shopify from "@/public/shopify.png"
-import razorpay from "@/public/razorpayy.png"
+import razorpay from "@/public/razorpa.png"
 
 const partners = [
   { src: "https://miraculoustaxes.in/wp-content/uploads/2024/05/msme-ssi-registration.png", alt: "MSME" },

@@ -96,7 +96,7 @@ export function ClientsSection() {
                       alt={client.name}
                       fill
                       sizes="160px"
-                      className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-60 group-hover/card:opacity-100 group-hover/card:scale-110"
+                      className="object-contain transition-all duration-300 group-hover/card:scale-110"
                     />
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export function ClientsSection() {
                       alt={client.name}
                       fill
                       sizes="160px"
-                      className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-60 group-hover/card:opacity-100 group-hover/card:scale-110"
+                      className="object-contain transition-all duration-300 group-hover/card:scale-110"
                     />
                   </div>
                 </div>

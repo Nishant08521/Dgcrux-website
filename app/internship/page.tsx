@@ -526,7 +526,7 @@ export default function InternshipPage() {
                     ))}
                   </ul>
                 </div>
-
+         
                 {/* Card Bottom / Button */}
                 <div className="p-8 pt-0">
                   <button

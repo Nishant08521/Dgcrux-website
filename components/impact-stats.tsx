@@ -110,9 +110,9 @@ export function ImpactStats() {
     <section className="bg-[#050505] py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-16 text-center lg:text-left">
                 <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-[1.2]">
-                    Engineering <span className="text-[#2563eb] italic">Excellence</span> at Scale
+                    Trusted by <span className="text-[#2563eb] italic">Industry</span> Leaders
                  </h2>
-                 <p className="text-slate-400 text-lg max-w-2xl">Fueling innovation through deep technical expertise and industry-specific solutions.</p>
+                 <p className="text-slate-400 text-lg max-w-2xl">Explore verified client reviews and success stories on Clutch. Discover how we've helped startups and enterprises build scalable digital products.</p>
              </div>
 
       <div className="relative flex overflow-hidden">
