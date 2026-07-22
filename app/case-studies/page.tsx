@@ -12,54 +12,60 @@ const products = [
     description: "Secure exams with real-time AI monitoring.",
     icon: ShieldCheck,
     tags: ["Computer Vision", "Real-time", "Compliance"],
-    href: "/products/ai-proctor",
+       href: "/products/ai-proctor",
+    image: "/products/ai-proctoring.png",
     color: "from-red-500 to-red-600",
-    image: "https://images.unsplash.com/photo-1516534775068-bb4d2e0b6baf?w=500&h=300&fit=crop",
+   
   },
   {
     title: "AI-Powered ATS",
     description: "Smart recruitment with automated screening.",
     icon: UserSearch,
     tags: ["Automation", "Ranking", "Workflow"],
-    href: "/products/ats",
+     href: "/products/ats",
+    image: "/products/ats1.png",
     color: "from-blue-500 to-blue-600",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+   
   },
   {
     title: "AI QP Generator",
     description: "Instantly create balanced question papers.",
     icon: FileText,
     tags: ["Templates", "Difficulty Mix", "Export"],
-    href: "/products/qp-generator",
+     href: "/products/qp-generator",
+    image: "/products/aiqp.png",
     color: "from-purple-500 to-purple-600",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
+  
   },
   {
     title: "Solar ERP",
     description: "Manage end-to-end solar project lifecycle.",
     icon: Sun,
     tags: ["CRM", "Inventory", "Reporting"],
-    href: "/products/solar-erp",
+     href: "/products/solar-erp",
+    image: "/products/solar.png",
     color: "from-yellow-500 to-yellow-600",
-    image: "https://images.unsplash.com/photo-1497440150194-51ff8a0bfc41?w=500&h=300&fit=crop",
+    
   },
   {
     title: "Dealer Management",
     description: "Streamline operations for dealer networks.",
     icon: Workflow,
     tags: ["Orders", "Incentives", "Analytics"],
-    href: "/products/dms",
+   
     color: "from-emerald-500 to-emerald-600",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+    href: "/products/dms",
+    image: "/products/delar.png",
   },
   {
     title: "Hotel Booking",
     description: "Smart system with dynamic pricing.",
     icon: Hotel,
     tags: ["Channel Manager", "Pricing", "Payments"],
-    href: "/products/hotel-booking",
+  
     color: "from-orange-500 to-orange-600",
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&h=300&fit=crop",
+     href: "/products/hotel-booking",
+    image: "/products/staysmart.png",
   },
 ] as const
 
@@ -155,7 +161,7 @@ export default function CaseStudiesPage() {
                   Get a Demo <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-slate-600 text-slate-200">
+              <Button size="lg" variant="default" asChild className="bg-yellow-400 text-slate-950 hover:bg-yellow-400 focus-visible:ring-yellow-300 shadow-lg shadow-yellow-500/20">
                 <Link href="/products">View All Products</Link>
               </Button>
             </div>

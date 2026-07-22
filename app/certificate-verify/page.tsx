@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Calendar, Download, CheckCircle, User, BookOpen, CalendarDays, Hash } from "lucide-react"
@@ -68,8 +69,14 @@ export default function CertificateVerifyPage() {
             <div className="text-center mb-8">
               <div className="flex justify-center mb-6">
                 <div className="text-center">
-                  <h1 className="text-4xl font-extrabold text-[#5e17a3] mb-2">DgCrux</h1>
-                  <p className="text-sm text-slate-500 font-medium">Technology</p>
+                  <Image
+                    src="/logo.png"
+                    alt="DgCrux Logo"
+                    width={180}
+                    height={60}
+                    className="mx-auto mb-2"
+                  />
+                  
                 </div>
               </div>
               <h1 className="text-3xl font-extrabold text-[#1a1c35]">Certificate Verification</h1>

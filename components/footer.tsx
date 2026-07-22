@@ -15,7 +15,7 @@ export function Footer() {
                 alt="DgCrux Logo"
                 width={150}
                 height={50}
-                className="h-12 w-auto brightness-0 invert"
+                className="h-12 w-auto "
               />
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
@@ -79,9 +79,9 @@ export function Footer() {
               <li>
                 <Link href="/case-studies" className="text-slate-400 hover:text-[#FFB800] transition-colors">Case Studies</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/careers" className="text-slate-400 hover:text-[#FFB800] transition-colors">Careers</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/internship" className="text-slate-400 hover:text-[#FFB800] transition-colors">Internship Program</Link>
               </li>

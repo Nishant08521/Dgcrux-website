@@ -145,7 +145,7 @@ function MarqueeRow({
         {triple.map((client, idx) => (
           <div
             key={idx}
-            className="group/card flex-shrink-0 flex flex-col items-center justify-center gap-2 w-[152px] h-[96px] rounded-2xl border border-slate-100 bg-white/80 hover:bg-white shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer px-4"
+            className="group/card flex-shrink-0 flex flex-col items-center justify-center gap-2 w-[152px] h-[96px] rounded-2xl border border-slate-100 bg-white/95 hover:bg-white shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer px-4"
           >
             <div className="relative w-full h-[50px]">
               <Image
@@ -153,10 +153,10 @@ function MarqueeRow({
                 alt={client.name}
                 fill
                 sizes="140px"
-                className="object-contain transition-all duration-300 grayscale group-hover/card:grayscale-0 opacity-50 group-hover/card:opacity-100 group-hover/card:scale-105"
+                className="object-contain transition-all duration-300"
               />
             </div>
-            <span className="text-[9px] font-semibold text-slate-400 group-hover/card:text-slate-600 transition-colors tracking-wide truncate w-full text-center">
+            <span className="text-[9px] font-semibold text-slate-600 group-hover/card:text-slate-800 transition-colors tracking-wide truncate w-full text-center">
               {client.name}
             </span>
           </div>
@@ -321,11 +321,11 @@ export default function ClientsPage() {
                     alt={client.name}
                     fill
                     sizes="120px"
-                    className="object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                    className="object-contain transition-all duration-300 group-hover:scale-110"
                   />
                 </div>
                 <div className="relative text-center">
-                  <p className="text-xs font-bold text-slate-600 group-hover:text-slate-800 transition-colors leading-tight">{client.name}</p>
+                  <p className="text-xs font-bold text-slate-700 group-hover:text-slate-900 transition-colors leading-tight">{client.name}</p>
                   <span className="text-[10px] text-blue-500 font-semibold">{client.category}</span>
                 </div>
               </motion.div>
