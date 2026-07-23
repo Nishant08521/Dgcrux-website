@@ -28,17 +28,24 @@ export function ContactSection() {
         projectDescription: `Company: ${formData.company || "N/A"}\nMessage: ${formData.message}`
       }
 
-      const res = await fetch(`${apiUrl}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
+      const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzWC_kXyi2DwsIB7tuIOt3bG9cMYbwtAL4jPoiNZ-NBfVndB_7mMvo9GrR2tWAEhqWgFw/exec";
       
-      if (!res.ok) throw new Error("Server error")
+      const formParams = new URLSearchParams();
+      Object.entries(payload).forEach(([key, value]) => {
+        formParams.append(key, value as string);
+      });
+
+      await fetch(googleScriptUrl, {
+        method: "POST",
+        body: formParams,
+        // no-cors is sometimes needed for Google Scripts, but if it returns CORS headers, we can omit it.
+        // using URLSearchParams (application/x-www-form-urlencoded) avoids CORS preflight.
+      });
+
       setIsSubmitted(true)
     } catch (err) {
       console.error("Failed to submit form", err)
-      setIsSubmitted(true) // Show success anyway for UX if backend is offline
+      setIsSubmitted(true) // Show success anyway for UX
     } finally {
       setIsSubmitting(false)
     }

@@ -45,16 +45,23 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
         ...formData,
         businessEmail: formData.workEmail
       }
-      const res = await fetch(`${apiUrl}/api/contact`, {
+
+      const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzWC_kXyi2DwsIB7tuIOt3bG9cMYbwtAL4jPoiNZ-NBfVndB_7mMvo9GrR2tWAEhqWgFw/exec";
+      
+      const formParams = new URLSearchParams();
+      Object.entries(payload).forEach(([key, value]) => {
+        formParams.append(key, value as string);
+      });
+
+      await fetch(googleScriptUrl, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
-      if (!res.ok) throw new Error("Server error")
+        body: formParams,
+      });
+
       setIsSubmitted(true)
     } catch (err) {
       console.error("Failed to save contact form:", err)
-      setSubmitError("Failed to connect to the server. Please check your database connection.")
+      setSubmitError("Failed to submit to Google Sheet. Please try again.")
     } finally {
       setIsSubmitting(false)
     }

@@ -95,14 +95,20 @@ export function HeroSection() {
         <div className="hidden lg:flex  mt-100 ">
 
           <iframe
-            width="130"
-            height="130"
+            width="150"
+            height="150"
             src="https://clutch.co/share/badges/2241869/51907?utm_source=clutch_top_company_badge&utm_medium=image_embed"
             title="Clutch Badge"
             className="rounded-lg"
           />
 
         </div>
+            <div className="hidden lg:flex  mt-100 ">
+        <iframe width="150" height="150" src="https://clutch.co/share/badges/2241869/102181?utm_source=clutch_top_company_badge&utm_medium=image_embed" title="Top Clutch Generative Ai Company Bengaluru 2026"></iframe>
+        </div>
+            <div className="hidden lg:flex  mt-100 ">
+        <iframe width="150" height="150" src="https://clutch.co/share/badges/2241869/51702?utm_source=clutch_top_company_badge&utm_medium=image_embed" title="Top Clutch Software Developers Government Bengaluru"></iframe>
+      </div>
       </div>
 
       {/* Recognition Bar */}
