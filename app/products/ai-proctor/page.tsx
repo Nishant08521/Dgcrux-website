@@ -87,53 +87,60 @@ export default function AIProctoringPage() {
   }
 
   const colorMap: Record<string, {
-    cardBg: string;
     iconBg: string;
     iconText: string;
     hoverTitle: string;
     glowClass: string;
+    shadowHover: string;
+    borderHover: string;
   }> = {
     blue: {
-      cardBg: "bg-blue-50/40 dark:bg-blue-950/10 border border-blue-100/30 dark:border-blue-900/20 hover:bg-blue-50/70 dark:hover:bg-blue-950/20 hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-xl hover:shadow-blue-500/5",
-      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconBg: "bg-blue-50/80 dark:bg-blue-950/30",
       iconText: "text-blue-600 dark:text-blue-400",
       hoverTitle: "group-hover:text-blue-600 dark:group-hover:text-blue-400",
-      glowClass: "bg-blue-500/10 group-hover:bg-blue-500/20",
+      glowClass: "bg-blue-500/5 group-hover:bg-blue-500/12",
+      shadowHover: "group-hover:shadow-blue-500/8",
+      borderHover: "group-hover:border-blue-200/80 dark:group-hover:border-blue-900/50",
     },
     indigo: {
-      cardBg: "bg-indigo-50/40 dark:bg-indigo-950/10 border border-indigo-100/30 dark:border-indigo-900/20 hover:bg-indigo-50/70 dark:hover:bg-indigo-950/20 hover:border-indigo-300 dark:hover:border-indigo-800 hover:shadow-xl hover:shadow-indigo-500/5",
-      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconBg: "bg-indigo-50/80 dark:bg-indigo-950/30",
       iconText: "text-indigo-600 dark:text-indigo-400",
       hoverTitle: "group-hover:text-indigo-600 dark:group-hover:text-indigo-400",
-      glowClass: "bg-indigo-500/10 group-hover:bg-indigo-500/20",
+      glowClass: "bg-indigo-500/5 group-hover:bg-indigo-500/12",
+      shadowHover: "group-hover:shadow-indigo-500/8",
+      borderHover: "group-hover:border-indigo-200/80 dark:group-hover:border-indigo-900/50",
     },
     amber: {
-      cardBg: "bg-amber-50/40 dark:bg-amber-950/10 border border-amber-100/30 dark:border-amber-900/20 hover:bg-amber-50/70 dark:hover:bg-amber-950/20 hover:border-amber-300 dark:hover:border-amber-800 hover:shadow-xl hover:shadow-amber-500/5",
-      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconBg: "bg-amber-50/80 dark:bg-amber-950/30",
       iconText: "text-amber-600 dark:text-amber-400",
       hoverTitle: "group-hover:text-amber-600 dark:group-hover:text-amber-400",
-      glowClass: "bg-amber-500/10 group-hover:bg-amber-500/20",
+      glowClass: "bg-amber-500/5 group-hover:bg-amber-500/12",
+      shadowHover: "group-hover:shadow-amber-500/8",
+      borderHover: "group-hover:border-amber-200/80 dark:group-hover:border-amber-900/50",
     },
     emerald: {
-      cardBg: "bg-emerald-50/40 dark:bg-emerald-950/10 border border-emerald-100/30 dark:border-emerald-900/20 hover:bg-emerald-50/70 dark:hover:bg-emerald-950/20 hover:border-emerald-300 dark:hover:border-emerald-800 hover:shadow-xl hover:shadow-emerald-500/5",
-      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconBg: "bg-emerald-50/80 dark:bg-emerald-950/30",
       iconText: "text-emerald-600 dark:text-emerald-400",
       hoverTitle: "group-hover:text-emerald-600 dark:group-hover:text-emerald-400",
-      glowClass: "bg-emerald-500/10 group-hover:bg-emerald-500/20",
+      glowClass: "bg-emerald-500/5 group-hover:bg-emerald-500/12",
+      shadowHover: "group-hover:shadow-emerald-500/8",
+      borderHover: "group-hover:border-emerald-200/80 dark:group-hover:border-emerald-900/50",
     },
     rose: {
-      cardBg: "bg-rose-50/40 dark:bg-rose-950/10 border border-rose-100/30 dark:border-rose-900/20 hover:bg-rose-50/70 dark:hover:bg-rose-950/20 hover:border-rose-300 dark:hover:border-rose-800 hover:shadow-xl hover:shadow-rose-500/5",
-      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconBg: "bg-rose-50/80 dark:bg-rose-950/30",
       iconText: "text-rose-600 dark:text-rose-400",
       hoverTitle: "group-hover:text-rose-600 dark:group-hover:text-rose-400",
-      glowClass: "bg-rose-500/10 group-hover:bg-rose-500/20",
+      glowClass: "bg-rose-500/5 group-hover:bg-rose-500/12",
+      shadowHover: "group-hover:shadow-rose-500/8",
+      borderHover: "group-hover:border-rose-200/80 dark:group-hover:border-rose-900/50",
     },
     violet: {
-      cardBg: "bg-violet-50/40 dark:bg-violet-950/10 border border-violet-100/30 dark:border-violet-900/20 hover:bg-violet-50/70 dark:hover:bg-violet-950/20 hover:border-violet-300 dark:hover:border-violet-800 hover:shadow-xl hover:shadow-violet-500/5",
-      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconBg: "bg-violet-50/80 dark:bg-violet-950/30",
       iconText: "text-violet-600 dark:text-violet-400",
       hoverTitle: "group-hover:text-violet-600 dark:group-hover:text-violet-400",
-      glowClass: "bg-violet-500/10 group-hover:bg-violet-500/20",
+      glowClass: "bg-violet-500/5 group-hover:bg-violet-500/12",
+      shadowHover: "group-hover:shadow-violet-500/8",
+      borderHover: "group-hover:border-violet-200/80 dark:group-hover:border-violet-900/50",
     },
   }
 
@@ -256,7 +263,7 @@ export default function AIProctoringPage() {
                 <motion.div 
                   key={feature.title}
                   variants={itemVariants}
-                  className={`group p-8 rounded-[2.5rem] ${colors.cardBg}`}
+                  className={`group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl ${colors.shadowHover} ${colors.borderHover} transition-all duration-500 overflow-hidden relative`}
                 >
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-md ${colors.iconBg}`}>
                     <Icon className={`w-7 h-7 ${colors.iconText}`} />
