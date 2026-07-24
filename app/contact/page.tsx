@@ -63,9 +63,8 @@ export default function ContactPage() {
               <div className="flex gap-2">
                 {[
                   { icon: Linkedin, href: "https://www.linkedin.com/company/dgcrux-technology/" },
-                  { icon: Instagram, href: "https://www.instagram.com" },
-                  { icon: Facebook, href: "https://www.facebook.com" },
-                  { icon: Globe2, href: "https://www.google.com" }
+                  { icon: Instagram, href: "https://www.instagram.com/dgcrux.technology/" },
+                  { icon: Facebook, href: "https://www.facebook.com/dgcrux.technology" },
                 ].map((social, i) => (
                   <Link
                     key={i}

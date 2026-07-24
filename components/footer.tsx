@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Twitter, Linkedin, Instagram, Youtube, MapPin, Mail, PhoneCall, Sparkles } from "lucide-react"
+import { ClutchWidget } from "./clutch-widget"
 
 export function Footer() {
   return (
@@ -120,7 +121,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="pt-4">
-          <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> <div className="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="45" data-nofollow="false" data-expandifr="true" data-darkbg="darkbg" data-clutchcompany-id="2241869"></div>
+                <ClutchWidget />
               </li>
             </ul>
           </div>

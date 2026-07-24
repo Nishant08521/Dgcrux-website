@@ -9,118 +9,7 @@ import { Card } from "@/components/ui/card"
 import { ArrowRight, Calendar, Clock, User, Search, Tag, ChevronRight } from "lucide-react"
 import Link from "next/link"
 
-const categories = ["All", "AI & ML", "Cloud Computing", "Software Development", "Digital Marketing", "Tech Trends"]
-
-const blogs = [
-  {
-    id: "ai-transformation",
-    title: "How AI-First Product Engineering is Transforming Businesses in 2026",
-    excerpt: "Discover how enterprises are leveraging AI-first strategies to build intelligent products that adapt, learn, and scale autonomously in today's competitive landscape.",
-    author: "Sashikant Singh",
-    role: "CEO, DgCrux Technology",
-    date: "June 5, 2026",
-    readTime: "8 min read",
-    category: "AI & ML",
-    tags: ["Generative AI", "Product Engineering", "Digital Transformation"],
-    image: "/ai_solutions_featured_1778046359542.png",
-  },
-  {
-    id: "cloud-migration-guide",
-    title: "Cloud Migration Strategy: A Step-by-Step Guide for Enterprises",
-    excerpt: "Learn the proven framework for migrating enterprise workloads to the cloud with minimal disruption, optimized costs, and maximum security.",
-    author: "DgCrux Tech Team",
-    role: "Cloud Solutions",
-    date: "May 28, 2026",
-    readTime: "12 min read",
-    category: "Cloud Computing",
-    tags: ["AWS", "Azure", "Migration", "FinOps"],
-    image: "/cloud_solutions_featured.png",
-  },
-  {
-    id: "nextjs-16",
-    title: "Building High-Performance Web Apps with Next.js 16",
-    excerpt: "A deep dive into the latest features of Next.js 16 including the App Router, server components, and optimized rendering strategies for modern web applications.",
-    author: "DgCrux Tech Team",
-    role: "Software Development",
-    date: "May 20, 2026",
-    readTime: "10 min read",
-    category: "Software Development",
-    tags: ["Next.js", "React", "Web Performance", "SSR"],
-    image: "/software_dev_featured.png",
-  },
-  {
-    id: "generative-ai-enterprise",
-    title: "Generative AI in Enterprise: Use Cases That Deliver Real ROI",
-    excerpt: "From automated content generation to intelligent document processing, explore the generative AI applications that are driving measurable business outcomes today.",
-    author: "Sashikant Singh",
-    role: "CEO, DgCrux Technology",
-    date: "May 15, 2026",
-    readTime: "7 min read",
-    category: "AI & ML",
-    tags: ["Generative AI", "LLMs", "Enterprise AI", "ROI"],
-    image: "/ai_solutions_featured_1778046359542.png",
-  },
-  {
-    id: "devops-best-practices",
-    title: "DevOps Best Practices for 2026: CI/CD, Automation, and Security",
-    excerpt: "Stay ahead with the latest DevOps methodologies including GitOps, infrastructure as code, shift-left security, and observability-driven development.",
-    author: "DgCrux Tech Team",
-    role: "DevOps & Cloud",
-    date: "May 10, 2026",
-    readTime: "9 min read",
-    category: "Cloud Computing",
-    tags: ["DevOps", "CI/CD", "Kubernetes", "Security"],
-    image: "/cloud_solutions_featured.png",
-  },
-  {
-    id: "seo-trends-2026",
-    title: "SEO Trends in 2026: Adapting to AI-Powered Search Algorithms",
-    excerpt: "Google's AI-driven search updates are changing the game. Learn how to optimize your content strategy for AI overviews, entity-based SEO, and voice search.",
-    author: "DgCrux Marketing Team",
-    role: "Digital Marketing",
-    date: "May 5, 2026",
-    readTime: "6 min read",
-    category: "Digital Marketing",
-    tags: ["SEO", "AI Search", "Content Strategy", "Voice Search"],
-    image: "/software_dev_featured.png",
-  },
-  {
-    id: "microservices-architecture",
-    title: "Microservices vs Monolith: Choosing the Right Architecture",
-    excerpt: "A practical guide to help you decide between microservices and monolithic architecture based on your team size, project complexity, and scaling needs.",
-    author: "DgCrux Tech Team",
-    role: "Software Development",
-    date: "April 28, 2026",
-    readTime: "11 min read",
-    category: "Software Development",
-    tags: ["Microservices", "Architecture", "Scalability", "System Design"],
-    image: "/software_dev_featured.png",
-  },
-  {
-    id: "ai-customer-support",
-    title: "Building Intelligent Customer Support Systems with AI Agents",
-    excerpt: "Explore how AI-powered agents and chatbots are revolutionizing customer support with 24/7 availability, contextual understanding, and seamless human escalation.",
-    author: "Sashikant Singh",
-    role: "CEO, DgCrux Technology",
-    date: "April 20, 2026",
-    readTime: "7 min read",
-    category: "AI & ML",
-    tags: ["AI Agents", "Customer Support", "Chatbots", "NLP"],
-    image: "/ai_solutions_featured_1778046359542.png",
-  },
-  {
-    id: "finops-cloud-cost",
-    title: "FinOps: Mastering Cloud Cost Optimization in Multi-Cloud Environments",
-    excerpt: "Learn how to implement a FinOps practice that brings financial accountability to your cloud spend while maintaining performance and innovation velocity.",
-    author: "DgCrux Tech Team",
-    role: "Cloud Solutions",
-    date: "April 15, 2026",
-    readTime: "8 min read",
-    category: "Cloud Computing",
-    tags: ["FinOps", "Cloud Cost", "AWS", "Multi-Cloud"],
-    image: "/cloud_solutions_featured.png",
-  },
-]
+import { categories, blogs } from "./data"
 
 export default function BlogsPage() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -143,7 +32,7 @@ export default function BlogsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 pt-20 pb-16 sm:pt-32 sm:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 pt-10 pb-16 sm:pt-32 sm:pb-20">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -335,9 +224,9 @@ export default function BlogsPage() {
             <input
               type="email"
               placeholder="Enter your work email"
-              className="flex-1 px-5 py-3.5 rounded-full border-0 text-sm focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="flex-1 px-5 py-3.5 bg-white rounded-full border-0 text-sm focus:outline-none focus:ring-2 focus:ring-white/50"
             />
-            <Button type="submit" className="bg-white text-blue-700 hover:bg-white/90 font-bold px-8 rounded-full">
+            <Button type="submit" className="bg-white text-blue-700 hover:bg-white/90 font-bold px-8 py-6 rounded-full">
               Subscribe
             </Button>
           </form>

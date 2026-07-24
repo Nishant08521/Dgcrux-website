@@ -229,7 +229,7 @@ export default function ClientsPage() {
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 rounded-full shadow-lg shadow-blue-500/30" asChild>
               <Link href="/contact">Start Your Project <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full" asChild>
+            <Button size="lg" variant="outline" className="border-white/20 text-black hover:bg-yellow-500 rounded-full" asChild>
               <Link href="/case-studies">View Case Studies</Link>
             </Button>
           </motion.div>
@@ -486,7 +486,7 @@ export default function ClientsPage() {
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 rounded-full shadow-xl shadow-blue-500/30" asChild>
                 <Link href="/contact">Start Your Project <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full" asChild>
+              <Button size="lg" variant="outline" className="border-white/20 text-black hover:bg-yellow-500 rounded-full" asChild>
                 <Link href="/case-studies">View Case Studies</Link>
               </Button>
             </div>

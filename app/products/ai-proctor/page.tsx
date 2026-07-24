@@ -86,12 +86,63 @@ export default function AIProctoringPage() {
     }
   }
 
+  const colorMap: Record<string, {
+    cardBg: string;
+    iconBg: string;
+    iconText: string;
+    hoverTitle: string;
+    glowClass: string;
+  }> = {
+    blue: {
+      cardBg: "bg-blue-50/40 dark:bg-blue-950/10 border border-blue-100/30 dark:border-blue-900/20 hover:bg-blue-50/70 dark:hover:bg-blue-950/20 hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-xl hover:shadow-blue-500/5",
+      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconText: "text-blue-600 dark:text-blue-400",
+      hoverTitle: "group-hover:text-blue-600 dark:group-hover:text-blue-400",
+      glowClass: "bg-blue-500/10 group-hover:bg-blue-500/20",
+    },
+    indigo: {
+      cardBg: "bg-indigo-50/40 dark:bg-indigo-950/10 border border-indigo-100/30 dark:border-indigo-900/20 hover:bg-indigo-50/70 dark:hover:bg-indigo-950/20 hover:border-indigo-300 dark:hover:border-indigo-800 hover:shadow-xl hover:shadow-indigo-500/5",
+      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconText: "text-indigo-600 dark:text-indigo-400",
+      hoverTitle: "group-hover:text-indigo-600 dark:group-hover:text-indigo-400",
+      glowClass: "bg-indigo-500/10 group-hover:bg-indigo-500/20",
+    },
+    amber: {
+      cardBg: "bg-amber-50/40 dark:bg-amber-950/10 border border-amber-100/30 dark:border-amber-900/20 hover:bg-amber-50/70 dark:hover:bg-amber-950/20 hover:border-amber-300 dark:hover:border-amber-800 hover:shadow-xl hover:shadow-amber-500/5",
+      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconText: "text-amber-600 dark:text-amber-400",
+      hoverTitle: "group-hover:text-amber-600 dark:group-hover:text-amber-400",
+      glowClass: "bg-amber-500/10 group-hover:bg-amber-500/20",
+    },
+    emerald: {
+      cardBg: "bg-emerald-50/40 dark:bg-emerald-950/10 border border-emerald-100/30 dark:border-emerald-900/20 hover:bg-emerald-50/70 dark:hover:bg-emerald-950/20 hover:border-emerald-300 dark:hover:border-emerald-800 hover:shadow-xl hover:shadow-emerald-500/5",
+      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconText: "text-emerald-600 dark:text-emerald-400",
+      hoverTitle: "group-hover:text-emerald-600 dark:group-hover:text-emerald-400",
+      glowClass: "bg-emerald-500/10 group-hover:bg-emerald-500/20",
+    },
+    rose: {
+      cardBg: "bg-rose-50/40 dark:bg-rose-950/10 border border-rose-100/30 dark:border-rose-900/20 hover:bg-rose-50/70 dark:hover:bg-rose-950/20 hover:border-rose-300 dark:hover:border-rose-800 hover:shadow-xl hover:shadow-rose-500/5",
+      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconText: "text-rose-600 dark:text-rose-400",
+      hoverTitle: "group-hover:text-rose-600 dark:group-hover:text-rose-400",
+      glowClass: "bg-rose-500/10 group-hover:bg-rose-500/20",
+    },
+    violet: {
+      cardBg: "bg-violet-50/40 dark:bg-violet-950/10 border border-violet-100/30 dark:border-violet-900/20 hover:bg-violet-50/70 dark:hover:bg-violet-950/20 hover:border-violet-300 dark:hover:border-violet-800 hover:shadow-xl hover:shadow-violet-500/5",
+      iconBg: "bg-white dark:bg-slate-900 shadow-sm",
+      iconText: "text-violet-600 dark:text-violet-400",
+      hoverTitle: "group-hover:text-violet-600 dark:group-hover:text-violet-400",
+      glowClass: "bg-violet-500/10 group-hover:bg-violet-500/20",
+    },
+  }
+
   return (
     <main className="min-h-screen bg-slate-50 font-sans">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[#0a0a0a]">
+      <section className="relative pt-10 pb-20 lg:pt-18 lg:pb-32 overflow-hidden bg-[#0a0a0a]">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-purple-600/20" />
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
@@ -180,7 +231,7 @@ export default function AIProctoringPage() {
       </section>
 
       {/* Features Grid */}
-      <section id="features" className="py-32 bg-white relative">
+      <section id="features" className="py-18 bg-white relative">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
@@ -200,16 +251,17 @@ export default function AIProctoringPage() {
           >
             {features.map((feature, idx) => {
               const Icon = feature.icon
+              const colors = colorMap[feature.color] || colorMap.blue
               return (
                 <motion.div 
                   key={feature.title}
                   variants={itemVariants}
-                  className="group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 overflow-hidden relative"
+                  className={`group p-8 rounded-[2.5rem] ${colors.cardBg}`}
                 >
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg bg-white`}>
-                    <Icon className="w-7 h-7 text-blue-600" />
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-md ${colors.iconBg}`}>
+                    <Icon className={`w-7 h-7 ${colors.iconText}`} />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  <h3 className={`text-2xl font-bold text-slate-900 mb-4 ${colors.hoverTitle} transition-colors`}>
                     {feature.title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed text-sm">
@@ -217,7 +269,7 @@ export default function AIProctoringPage() {
                   </p>
                   
                   {/* Subtle Background Glow */}
-                  <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors duration-500" />
+                  <div className={`absolute -bottom-10 -right-10 w-24 h-24 rounded-full blur-2xl ${colors.glowClass} transition-colors duration-500`} />
                 </motion.div>
               )
             })}
@@ -280,15 +332,15 @@ export default function AIProctoringPage() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-32 bg-white">
+      <section id="contact" className="py-8 bg-white">
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[3.5rem] p-12 md:p-24 relative overflow-hidden shadow-2xl">
+          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[3.5rem] p-4 md:p-12 relative overflow-hidden shadow-2xl">
             {/* Abstract Background Shapes */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
             
-            <div className="relative z-10 max-w-3xl">
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight">
+            <div className="relative z-10 max-w-2xl">
+              <h2 className="text-2xl md:text-4xl font-black text-white mb-8 tracking-tight">
                 Ready to <span className="text-indigo-200">Secure</span> Your Examinations?
               </h2>
               <p className="text-xl text-white/80 mb-12 leading-relaxed">
